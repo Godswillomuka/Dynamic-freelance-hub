@@ -110,7 +110,7 @@ function Home() {
         <h2>Popular Products</h2>
         <div className="product-list">
           <motion.div className="product-card" whileHover={{ scale: 1.03 }}>
-            <img src="/images/businesscard.png" alt="Business Cards" />
+            <img src="/bussinescard.png" alt="Business Cards" />
             <h4>Business Cards</h4>
             <p>Premium, double-sided cards with bold designs and crisp finishes to leave a lasting impression.</p>
           </motion.div>
