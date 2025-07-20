@@ -1,8 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./Header.css";
 
 function Header() {
-  // Optional: Add a scroll listener to add a "scrolled" class for styling
+  const [menuOpen, setMenuOpen] = useState(false);
+  const navRef = useRef(null);
+
   useEffect(() => {
     const handleScroll = () => {
       const header = document.querySelector(".header");
@@ -12,9 +14,25 @@ function Header() {
         header.classList.remove("scrolled");
       }
     };
+
+    const handleClickOutside = (event) => {
+      if (navRef.current && !navRef.current.contains(event.target)) {
+        setMenuOpen(false);
+      }
+    };
+
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
   }, []);
+
+  const toggleMenu = () => {
+    setMenuOpen((prev) => !prev);
+  };
 
   return (
     <header className="header">
@@ -28,10 +46,26 @@ function Header() {
         </a>
       </div>
 
-      <nav className="navbar">
+      {/* Hamburger */}
+      <div className={`hamburger ${menuOpen ? "active" : ""}`} onClick={toggleMenu}>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <nav ref={navRef} className={`navbar ${menuOpen ? "open" : ""}`}>
         <ul className="nav-links">
-          <li><a href="/">Home</a></li>
-          
+          <li className="dropdown">
+            <a href="#">Services <span className="arrow">&#9662;</span></a>
+            <ul className="dropdown-menu">
+              <li><a href="/services/graphic-design">Graphic Design</a></li>
+              <li><a href="/services/printing">Printing</a></li>
+              <li><a href="/services/branding">Branding</a></li>
+              <li><a href="/services/packaging">Packaging Design</a></li>
+              <li><a href="/services/social-media">Social Media Design</a></li>
+              <li><a href="/services/logo-design">Logo Creation</a></li>
+            </ul>
+          </li>
           <li className="dropdown">
             <a href="#">Products <span className="arrow">&#9662;</span></a>
             <ul className="dropdown-menu">
@@ -45,33 +79,6 @@ function Header() {
               <li><a href="/products/promo">Promotional Items</a></li>
             </ul>
           </li>
-
-          <li className="dropdown">
-            <a href="#">Services <span className="arrow">&#9662;</span></a>
-            <ul className="dropdown-menu">
-              <li><a href="/services/graphic-design">Graphic Design</a></li>
-              <li><a href="/services/printing">Printing</a></li>
-              <li><a href="/services/branding">Branding</a></li>
-              <li><a href="/services/packaging">Packaging Design</a></li>
-              <li><a href="/services/social-media">Social Media Design</a></li>
-              <li><a href="/services/logo-design">Logo Creation</a></li>
-            </ul>
-          </li>
-          
-          <li className="dropdown">
-            <a href="#">Company <span className="arrow">&#9662;</span></a>
-            <ul className="dropdown-menu">
-              <li><a href="/about">About Us</a></li>
-              <li><a href="/team">Our Team</a></li>
-              <li><a href="/testimonials">Testimonials</a></li>
-              <li><a href="/careers">Careers</a></li>
-              <li><a href="/press">Press</a></li>
-            </ul>
-          </li>
-          
-          <li><a href="/portfolio">Portfolio</a></li>
-          <li><a href="/blog">Blog</a></li>
-          
           <li className="dropdown">
             <a href="#">Resources <span className="arrow">&#9662;</span></a>
             <ul className="dropdown-menu">
@@ -82,11 +89,9 @@ function Header() {
               <li><a href="/returns">Return Policy</a></li>
             </ul>
           </li>
-          
+          <li><a href="/portfolio">Portfolio</a></li>
           <li><a href="/contact">Contact</a></li>
-          <li><a href="/track">Track Order</a></li>
         </ul>
-
         <a className="quote-btn" href="/quote">Get Quote</a>
       </nav>
     </header>

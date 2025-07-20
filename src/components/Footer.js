@@ -81,6 +81,16 @@ const Footer = () => {
               <a href="#" aria-label="LinkedIn" className="social-link"><FontAwesomeIcon icon={faLinkedinIn} /></a>
             </div>
           </div>
+          <div className="newsletter">
+              <h5>Stay Updated</h5>
+              <p>Get the latest news and offers</p>
+              <div className="newsletter-form">
+                <input type="email" placeholder="Your email" />
+                <button className="btn btn-primary">Subscribe</button>
+              </div>
+            </div>
+
+          
         </motion.div>
         
         <motion.div
