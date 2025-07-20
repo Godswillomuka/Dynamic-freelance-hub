@@ -116,19 +116,19 @@ function Home() {
           </motion.div>
 
           <motion.div className="product-card" whileHover={{ scale: 1.03 }}>
-            <img src="/images/flyer.jpg" alt="Event Flyers" />
+            <img src="/flyer.png" alt="Event Flyers" />
             <h4>Event Flyers</h4>
             <p>Eye-catching promotional flyers printed in full color on high-quality stock for maximum visibility.</p>
           </motion.div>
 
           <motion.div className="product-card" whileHover={{ scale: 1.03 }}>
-            <img src="/images/shirt.jpg" alt="Branded Shirts" />
+            <img src="/t-shirts.png" alt="Branded Shirts" />
             <h4>Branded Shirts</h4>
             <p>Stylish, custom-printed apparel ideal for teams, events, and promotional giveaways.</p>
           </motion.div>
 
           <motion.div className="product-card" whileHover={{ scale: 1.03 }}>
-            <img src="/images/mug.jpg" alt="Custom Mugs" />
+            <img src="/mug.png" alt="Custom Mugs" />
             <h4>Custom Mugs</h4>
             <p>Personalized mugs perfect for branding or gifting — printed with long-lasting color.</p>
           </motion.div>
