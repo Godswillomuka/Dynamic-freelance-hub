@@ -15,15 +15,17 @@ function Home() {
           transition={{ duration: 1 }}
         >
           <h1>Transform Your Brand with Premium Design & Print</h1>
-          <p>
-            From bold ideas to brilliant products, we craft brand experiences that last. Design. Print. Impact. Whether you're launching a startup, rebranding an established business, or preparing for a major campaign, our team of creative experts and printing specialists is here to bring your vision to life.
-          </p>
-          <p>
-            At Dynamic Freelance Hub, we believe that every brand has a story — and we’re here to help you tell yours in the most compelling, memorable way. With top-tier designs, vibrant print finishes, and unmatched attention to detail, we make sure your brand stands out in a crowded marketplace.
-          </p>
-          <p>
-            From business cards, brochures, and banners to custom merchandise like branded t-shirts, mugs, and notebooks — we deliver quality and consistency across every product. Let us help you build credibility, spark engagement, and leave a lasting impression with every piece you share.
-          </p>
+<p>
+  We turn bold ideas into standout brand experiences. From startups to campaigns, our team brings your vision to life with expert design and print.
+</p>
+<p>
+  At Dynamic Freelance Hub, we help you tell your brand’s story with eye-catching designs, vibrant prints, and attention to detail.
+</p>
+<p>
+  From cards and brochures to custom merchandise, we deliver quality that builds trust and drives engagement.
+</p>
+
+
           <div className="hero-buttons">
           <a href="/quote" className="hero-btn">Get Started</a>
           <a href="/profile.pdf" className="hero-btn" target="_blank" rel="noopener noreferrer">Download company profile</a>
