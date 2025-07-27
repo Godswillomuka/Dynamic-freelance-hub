@@ -56,7 +56,9 @@ function Header() {
       <nav ref={navRef} className={`navbar ${menuOpen ? "open" : ""}`}>
         <ul className="nav-links">
           <li className="dropdown">
-            <a href="#">Services <span className="arrow">&#9662;</span></a>
+            <button type="button" className="dropdown-toggle">
+              Services <span className="arrow">&#9662;</span>
+            </button>
             <ul className="dropdown-menu">
               <li><a href="/services/graphic-design">Graphic Design</a></li>
               <li><a href="/services/printing">Printing</a></li>
@@ -67,7 +69,9 @@ function Header() {
             </ul>
           </li>
           <li className="dropdown">
-            <a href="#">Products <span className="arrow">&#9662;</span></a>
+            <button type="button" className="dropdown-toggle">
+              Products <span className="arrow">&#9662;</span>
+            </button>
             <ul className="dropdown-menu">
               <li><a href="/products/business-cards">Business Cards</a></li>
               <li><a href="/products/flyers">Flyers & Brochures</a></li>
@@ -80,7 +84,9 @@ function Header() {
             </ul>
           </li>
           <li className="dropdown">
-            <a href="#">Resources <span className="arrow">&#9662;</span></a>
+            <button type="button" className="dropdown-toggle">
+              Resources <span className="arrow">&#9662;</span>
+            </button>
             <ul className="dropdown-menu">
               <li><a href="/faq">FAQs</a></li>
               <li><a href="/file-guidelines">Design Guidelines</a></li>

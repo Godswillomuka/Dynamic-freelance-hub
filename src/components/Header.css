@@ -93,6 +93,22 @@
   color: var(--primary-green);
 }
 
+.nav-links .dropdown-toggle {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--dark);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px 10px;
+  transition: color 0.3s ease;
+  text-align: left;
+}
+
+.nav-links .dropdown-toggle:hover {
+  color: var(--primary-green);
+}
+
 /* Default state: hide the menu */
 .dropdown-menu {
   position: absolute;
