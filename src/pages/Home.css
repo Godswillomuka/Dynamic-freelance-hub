@@ -1,8 +1,8 @@
 /* src/components/Home/Home.css */
-
+/* (Base styles remain the same) */
 /* --- Base Styles --- */
 .home-page {
-  font-family: 'Poppins', sans-serif; /* Ensure 'Poppins' is loaded in your project (e.g., via Google Fonts) */
+  font-family: 'Poppins', sans-serif;
   overflow-x: hidden;
   color: #333;
   background-color: #fff;
@@ -22,6 +22,7 @@
   margin-bottom: 50px;
   color: #1a202c;
   line-height: 1.2;
+  position: relative; /* For potential pseudo-elements */
 }
 
 /* --- Buttons - General Styles --- */
@@ -40,11 +41,28 @@
   text-decoration: none;
   min-width: 180px;
   box-sizing: border-box;
+  position: relative; /* For icon positioning */
+  overflow: hidden; /* Contain potential pseudo-elements */
+}
+
+/* Micro-interaction for buttons */
+.btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+.btn:hover::after {
+  left: 100%;
 }
 
 /* --- PRIMARY BUTTON (Using Brand Green) --- */
 .btn-primary-alt {
-  background-color: #009f6f; /* Your brand's green color from the Header */
+  background-color: #009f6f;
   color: white;
   border: none;
   box-shadow: 0 4px 6px rgba(0, 159, 111, 0.2);
@@ -52,9 +70,9 @@
 
 .btn-primary-alt:hover,
 .btn-primary-alt:focus {
-  background-color: #007a55; /* Slightly darker green on hover/focus */
+  background-color: #007a55;
   transform: translateY(-3px);
-  box-shadow: 0 7px 14px rgba(0, 159, 111, 0.3);
+  box-shadow: 0 7px 14px rgba(0, 159, 111, 0.4); /* Slightly stronger shadow */
   color: white;
 }
 
@@ -70,14 +88,13 @@
   background-color: rgba(0, 159, 111, 0.1);
   color: #007a55;
   transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow */
 }
 
-
 /* --- Hero Section --- */
+/* (Hero styles remain the same, including clock) */
 .hero-section {
   padding: 100px 0;
-  /* Use the same gradient background as the header */
   background: linear-gradient(97deg, rgb(5, 21, 39) 11.18%, rgb(7, 25, 69) 98.67%);
   color: white;
   position: relative;
@@ -96,41 +113,48 @@
   z-index: 2;
 }
 
-/* Hero Text Content */
 .hero-content-text {
   flex: 1;
   max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .hero-title {
   font-size: 3rem;
   font-weight: 800;
-  margin-bottom: 20px;
   line-height: 1.2;
   color: white;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  order: 1;
 }
 
 .hero-subtitle {
   font-size: 1.2rem;
-  margin-bottom: 30px;
   line-height: 1.6;
   color: #cbd5e0;
   max-width: 95%;
+  order: 2;
 }
 
 .hero-ctas {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
+  order: 3;
+  margin-top: 10px;
 }
 
-/* --- Hero Clock Styles --- */
 .hero-clock-wrapper {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
+  order: 2;
+  width: 100%;
+  margin: 15px 0;
+  
 }
 
 .hero-clock-container {
@@ -140,24 +164,19 @@
   gap: 20px;
 }
 
-/* Main Clock Container */
 .hero-clock {
   width: 250px;
   height: 250px;
   position: relative;
   border-radius: 50%;
-  /* Changed background to match the primary site gradient */
   background: linear-gradient(135deg, rgba(5, 21, 39, 0.95) 0%, rgba(7, 25, 69, 0.95) 100%);
-  /* Outer shadow */
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
   display: flex;
   justify-content: center;
   align-items: center;
-  /* Add border */
-  border: 8px solid #007a55; /* Darker green border */
+  border: 8px solid #007a55;
 }
 
-/* Clock Face */
 .hero-clock-face {
   position: relative;
   width: 95%;
@@ -165,23 +184,20 @@
   border-radius: 50%;
 }
 
-/* Pseudo-element for inner shadow effect */
 .hero-clock-face::before {
   content: "";
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
   border-radius: 50%;
-  /* Inward, darker shadow */
   box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
   pointer-events: none;
   z-index: 1;
 }
 
-/* Roman Numerals */
 .hero-clock-numeral {
   font-size: 1.2rem;
   font-weight: bold;
-  color: #cbd5e0; /* Light color for numerals to contrast dark background */
+  color: #cbd5e0;
   width: 24px;
   height: 24px;
   display: flex;
@@ -189,12 +205,11 @@
   justify-content: center;
   z-index: 2;
   text-shadow: 0 1px 2px rgba(0,0,0,0.3);
-  -webkit-user-select: none; /* Safari support */
+  -webkit-user-select: none;
   user-select: none;
   pointer-events: none;
 }
 
-/* --- Clock Hands --- */
 .hero-clock-hand {
   position: absolute;
   bottom: 50%;
@@ -202,37 +217,37 @@
   transform-origin: bottom center;
   border-radius: 10px;
   z-index: 3;
+  /* Add smooth transition for hand movement */
+  transition: transform 0.1s linear; /* Second hand will override this */
 }
 
-/* Hour Hand - Thickest and lightest color */
 .hero-clock-hour-hand {
   width: 6px;
   height: 22%;
-  background-color: #cbd5e0; /* Light color for contrast */
+  background-color: #cbd5e0;
 }
 
-/* Minute Hand - Medium thickness */
 .hero-clock-minute-hand {
   width: 4px;
   height: 32%;
-  background-color: #94a3b8; /* Slightly darker light color */
+  background-color: #94a3b8;
 }
 
-/* Second Hand - Thinnest and brand green */
 .hero-clock-second-hand {
   width: 2px;
   height: 38%;
-  background-color: #009f6f; /* Brand green color */
+  background-color: #009f6f;
+  /* Faster transition for second hand for smooth ticking */
+  transition: transform 0.1s steps(1); /* Creates a ticking effect */
 }
 
-/* Clock Center Dot */
 .hero-clock-center {
   position: absolute;
   top: 50%;
   left: 50%;
   width: 12px;
   height: 12px;
-  background-color: #009f6f; /* Brand green center dot */
+  background-color: #009f6f;
   border: 2px solid #ffffff;
   border-radius: 50%;
   transform: translate(-50%, -50%);
@@ -240,18 +255,20 @@
   box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }
 
-/* Combined Time and Date Display */
 .hero-clock-time-date {
   text-align: center;
   padding: 12px 20px;
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.15);
-  -webkit-backdrop-filter: blur(5px); /* Safari support */
+  -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   color: #ffffff;
   z-index: 2;
+  width: 100%;
+  max-width: 250px;
+  margin: 0 auto;
 }
 
 .hero-clock-time {
@@ -267,20 +284,35 @@
   opacity: 0.95;
 }
 
-
 /* --- About Us Section --- */
 .about-us-section {
   padding: 100px 0;
   background-color: #fff;
+  position: relative; /* For potential background elements */
+  overflow: hidden; /* Contain pseudo-elements */
 }
+
+/* Optional subtle background pattern */
+/* .about-us-section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="1" height="1" fill="%23f0f0f0" opacity="0.5"/></svg>');
+  opacity: 0.3;
+  z-index: 0;
+} */
 
 .about-us-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 50px;
   align-items: center;
+  position: relative; /* Above potential background */
+  z-index: 1;
 }
 
+/* Animate team image */
 .team-image {
   width: 100%;
   max-width: 500px;
@@ -288,11 +320,27 @@
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   display: block;
+  transition: transform 0.5s ease, box-shadow 0.3s ease; /* Add transform transition */
+}
+
+/* Enhance image hover effect */
+.team-image:hover {
+    transform: scale(1.02); /* Slight scale */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15); /* Stronger shadow */
 }
 
 .about-us-text .section-title {
     text-align: left;
     margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between icon and text */
+}
+
+/* Optional icon for section title */
+.about-us-text .section-title::before {
+    content: "👥"; /* Or use an SVG icon */
+    font-size: 1.5rem;
 }
 
 .section-description {
@@ -302,12 +350,24 @@
   color: #4a5568;
 }
 
+/* Enhance Learn More button hover */
+.about-us-text .btn-primary-alt:hover {
+    box-shadow: 0 7px 18px rgba(0, 159, 111, 0.5); /* Even stronger shadow */
+}
+
 
 /* --- Core Services Section --- */
 .core-services-section {
   padding: 100px 0;
-  background-color: #f8fafc;
+  background-color: #f8fafc; /* Very light background */
+  position: relative;
+  overflow: hidden;
 }
+
+/* Optional subtle gradient background */
+/* .core-services-section {
+  background: linear-gradient(to bottom, #ffffff 0%, #f8fafc 100%);
+} */
 
 .services-grid {
   display: grid;
@@ -320,25 +380,35 @@
   border-radius: 12px;
   padding: 35px 25px;
   text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  /* Enhanced transition with scaling */
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), transform 0.3s ease;
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 100%;
   border: 1px solid #e2e8f0;
+  position: relative;
+  overflow: hidden; /* Contain potential pseudo-elements */
+  /* Add a subtle initial state for entrance */
+  opacity: 0;
+  transform: translateY(20px);
+}
+/* Animate card entrance (handled by framer-motion, but CSS provides initial state) */
+.service-card.animate-in {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .service-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  transform: translateY(-10px) scale(1.02); /* Add slight scale */
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 15px 15px -5px rgba(0, 0, 0, 0.08); /* Enhanced shadow */
   border-color: #cbd5e0;
 }
 
 .service-icon {
   font-size: 2.5rem;
   margin-bottom: 25px;
-  color: #009f6f; /* Brand color - Green */
+  color: #009f6f;
   width: 70px;
   height: 70px;
   display: flex;
@@ -347,13 +417,36 @@
   background-color: rgba(0, 159, 111, 0.1);
   border-radius: 50%;
   padding: 15px;
+  transition: all 0.3s ease; /* Transition for icon effects */
+  position: relative;
+  z-index: 2; /* Above potential background effects */
 }
+
+/* Animate icon on card hover */
+.service-card:hover .service-icon {
+    transform: scale(1.1) rotate(5deg); /* Scale and slight rotation */
+    background-color: rgba(0, 159, 111, 0.15); /* Slightly darker bg */
+    /* Optional: Add a subtle pulse effect */
+    /* animation: iconPulse 1s infinite; */
+}
+
+/* @keyframes iconPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+} */
 
 .service-title {
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 15px;
   color: #1a202c;
+  transition: color 0.3s ease; /* Transition for title color */
+}
+
+/* Optional: Change title color on hover */
+.service-card:hover .service-title {
+    color: #009f6f;
 }
 
 .service-description {
@@ -368,6 +461,8 @@
 .popular-products-section {
   padding: 100px 0;
   background-color: #fff;
+  position: relative;
+  overflow: hidden;
 }
 
 .products-grid {
@@ -380,19 +475,29 @@
   background-color: #fff;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  /* Enhanced transition */
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), transform 0.3s ease;
   text-align: center;
   display: flex;
   flex-direction: column;
   height: 100%;
   border: 1px solid #e2e8f0;
+  position: relative;
+  /* Add a subtle initial state for entrance */
+  opacity: 0;
+  transform: translateY(20px);
+}
+/* Animate card entrance */
+.product-card.animate-in {
+    opacity: 1;
+    transform: translateY(0);
 }
 
+/* Enhanced hover effect */
 .product-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  border-color: #cbd5e0;
+  transform: translateY(-10px) scale(1.03) rotate(1deg); /* Add scale and slight rotation */
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 15px 15px -5px rgba(0, 0, 0, 0.08);
+  border-color: #009f6f; /* Change border color to brand green */
 }
 
 .product-image-wrapper {
@@ -410,11 +515,13 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  /* Enhanced transition for image */
   transition: transform 0.5s ease;
 }
 
+/* Enhanced image zoom and rotation */
 .product-card:hover .product-image {
-    transform: scale(1.05);
+    transform: scale(1.1) rotate(-2deg); /* Zoom and counter-rotate slightly */
 }
 
 .product-card h3 {
@@ -423,6 +530,13 @@
   margin: 20px 0 10px 0;
   color: #1a202c;
   padding: 0 15px;
+  transition: transform 0.3s ease, color 0.3s ease; /* Transition for title */
+}
+
+/* Animate title on hover */
+.product-card:hover h3 {
+    transform: translateY(-3px); /* Lift title slightly */
+    color: #007a55; /* Darker green */
 }
 
 .product-card p {
@@ -437,8 +551,15 @@
 /* --- Why Choose Us Section --- */
 .why-choose-us-section {
   padding: 100px 0;
-  background-color: #f8fafc;
+  background-color: #f8fafc; /* Light background */
+  position: relative;
+  overflow: hidden;
 }
+
+/* Optional subtle pattern or gradient */
+/* .why-choose-us-section {
+  background-image: radial-gradient(circle at 10% 20%, rgba(0, 159, 111, 0.03) 0%, transparent 20%), radial-gradient(circle at 90% 80%, rgba(5, 21, 39, 0.03) 0%, transparent 20%);
+} */
 
 .reasons-grid {
   display: grid;
@@ -451,22 +572,35 @@
   align-items: flex-start;
   gap: 15px;
   padding: 25px;
-  border-radius: 12px; /* More rounded */
+  border-radius: 12px;
   background-color: #fff;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
+  /* Enhanced transition */
+  transition: all 0.3s ease, transform 0.3s ease;
   border: 1px solid #e2e8f0;
+  position: relative;
+  overflow: hidden;
+  /* Add a subtle initial state for entrance */
+  opacity: 0;
+  transform: translateX(-20px);
+}
+/* Animate reason entrance */
+.reason.animate-in {
+    opacity: 1;
+    transform: translateX(0);
 }
 
+/* Enhanced hover effect */
 .reason:hover {
-    transform: translateY(-5px); /* Lift on hover */
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transform: translateY(-5px) scale(1.01); /* Lift and slight scale */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 6px 8px -2px rgba(0, 0, 0, 0.08);
     border-color: #cbd5e0;
+    /* Optional: Slight background color change */
+    /* background-color: #f9fafb; */
 }
 
 .checkmark {
   font-size: 1.8rem;
-  color: #009f6f; /* Brand color - Green */
+  color: #009f6f;
   font-weight: bold;
   line-height: 1;
   flex-shrink: 0;
@@ -478,13 +612,30 @@
   align-items: center;
   justify-content: center;
   padding: 5px;
+  transition: all 0.3s ease; /* Transition for checkmark */
+}
+
+/* Animate checkmark on hover */
+.reason:hover .checkmark {
+    transform: scale(1.15); /* Scale up */
+    background-color: rgba(0, 159, 111, 0.2); /* Darker background */
+    box-shadow: 0 4px 8px rgba(0, 159, 111, 0.2); /* Add shadow */
+    /* Optional: Color change */
+    /* color: #ffffff; */
+    /* background-color: #009f6f; */
 }
 
 .reason h3 {
   font-size: 1.4rem;
   font-weight: 700;
-  margin-bottom: 12px; /* Increased margin */
+  margin-bottom: 12px;
   color: #1a202c;
+  transition: color 0.3s ease; /* Transition for title */
+}
+
+/* Optional: Change title color on hover */
+.reason:hover h3 {
+    color: #007a55;
 }
 
 .reason p {
@@ -492,6 +643,12 @@
   color: #4a5568;
   line-height: 1.6;
   margin: 0;
+  transition: transform 0.3s ease; /* Transition for description */
+}
+
+/* Optional: Subtle shift for description on hover */
+.reason:hover p {
+    transform: translateX(3px); /* Small shift */
 }
 
 
@@ -507,23 +664,33 @@
 
 @media (max-width: 992px) {
   .hero-content-container {
-    flex-direction: column-reverse;
+    flex-direction: column;
     text-align: center;
-    gap: 30px;
+    gap: 25px;
   }
+
   .hero-content-text {
-    max-width: 100%;
     align-items: center;
-  }
-  .hero-ctas {
-    justify-content: center;
-  }
-  .hero-title {
-    font-size: 2.5rem;
-  }
-  .hero-subtitle {
     max-width: 100%;
   }
+
+  .hero-clock-wrapper {
+    order: 2;
+    display: flex;
+    margin: 20px 0;
+  }
+
+  .hero-subtitle {
+    order: 3;
+    max-width: 100%;
+  }
+
+  .hero-ctas {
+    order: 4;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
   .hero-clock {
     width: 200px;
     height: 200px;
@@ -535,6 +702,7 @@
   }
   .hero-clock-time-date {
     padding: 10px 15px;
+    max-width: 200px;
   }
   .hero-clock-time {
     font-size: 1.2rem;
@@ -634,6 +802,7 @@
   }
   .hero-clock-time-date {
     padding: 8px 12px;
+    max-width: 180px;
   }
   .hero-clock-time {
     font-size: 1.1rem;
