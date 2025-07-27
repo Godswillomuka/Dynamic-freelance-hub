@@ -57,7 +57,7 @@ const HeroClock = () => {
   const dateString = time.toLocaleDateString('en-US', options);
 
   // Roman numerals for the clock face
-  const romanNumerals = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII'];
+  const romanNumerals = ['XII','I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI'];
 
   return (
     <div className="hero-clock-container">
