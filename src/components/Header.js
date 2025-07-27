@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import "./Header.css";
 
 function Header() {
@@ -36,70 +37,43 @@ function Header() {
 
   return (
     <header className="header">
-      <div className="logo">
-        <a href="/" className="logo-link">
-          <img src="/logo.png" alt="Dynamic Freelance Hub Logo" />
-          <div className="logo-text">
-            <span className="logo-main">Dynamic</span>
-            <span className="logo-sub">Freelance Hub</span>
-          </div>
-        </a>
-      </div>
+      <div className="header-container">
+        {/* === Logo Section === */}
+        <div className="logo">
+          <Link to="/" className="logo-link">
+            <img src="/logo.png" alt="Dynamic Freelance Hub Logo" />
+            <div className="logo-text">
+              <span className="logo-main">Dynamic</span>
+              <span className="logo-sub">Freelance Hub</span>
+            </div>
+          </Link>
+        </div>
 
-      {/* Hamburger */}
-      <div className={`hamburger ${menuOpen ? "active" : ""}`} onClick={toggleMenu}>
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+        {/* === Hamburger Button === */}
+        <button
+          className={`hamburger ${menuOpen ? "active" : ""}`}
+          onClick={toggleMenu}
+          aria-label="Toggle menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
 
-      <nav ref={navRef} className={`navbar ${menuOpen ? "open" : ""}`}>
-        <ul className="nav-links">
-          <li className="dropdown">
-            <button type="button" className="dropdown-toggle">
-              Services <span className="arrow">&#9662;</span>
-            </button>
-            <ul className="dropdown-menu">
-              <li><a href="/services/graphic-design">Graphic Design</a></li>
-              <li><a href="/services/printing">Printing</a></li>
-              <li><a href="/services/branding">Branding</a></li>
-              <li><a href="/services/packaging">Packaging Design</a></li>
-              <li><a href="/services/social-media">Social Media Design</a></li>
-              <li><a href="/services/logo-design">Logo Creation</a></li>
-            </ul>
-          </li>
-          <li className="dropdown">
-            <button type="button" className="dropdown-toggle">
-              Products <span className="arrow">&#9662;</span>
-            </button>
-            <ul className="dropdown-menu">
-              <li><a href="/products/business-cards">Business Cards</a></li>
-              <li><a href="/products/flyers">Flyers & Brochures</a></li>
-              <li><a href="/products/posters">Posters</a></li>
-              <li><a href="/products/banners">Banners</a></li>
-              <li><a href="/products/apparel">T-Shirts & Apparel</a></li>
-              <li><a href="/products/stickers">Stickers</a></li>
-              <li><a href="/products/mugs">Mugs & Gifts</a></li>
-              <li><a href="/products/promo">Promotional Items</a></li>
-            </ul>
-          </li>
-          <li className="dropdown">
-            <button type="button" className="dropdown-toggle">
-              Resources <span className="arrow">&#9662;</span>
-            </button>
-            <ul className="dropdown-menu">
-              <li><a href="/faq">FAQs</a></li>
-              <li><a href="/file-guidelines">Design Guidelines</a></li>
-              <li><a href="/order-process">Order Process</a></li>
-              <li><a href="/delivery">Delivery Info</a></li>
-              <li><a href="/returns">Return Policy</a></li>
-            </ul>
-          </li>
-          <li><a href="/portfolio">Portfolio</a></li>
-          <li><a href="/contact">Contact</a></li>
-        </ul>
-        <a className="quote-btn" href="/quote">Get Quote</a>
-      </nav>
+        {/* === Navigation Links === */}
+        <nav className={`nav-links ${menuOpen ? "open" : ""}`} ref={navRef}>
+          <ul>
+            <li><Link to="/" className="nav-link">Home</Link></li>
+            <li><Link to="/services" className="nav-link">Services</Link></li>
+            <li><Link to="/portfolio" className="nav-link">Portfolio</Link></li>
+            <li><Link to="/about" className="nav-link">About Us</Link></li>
+            <li><Link to="/contact" className="nav-link">Contact</Link></li>
+          </ul>
+          <Link to="/get-quote">
+            <button className="quote-btn">Get Quote</button>
+          </Link>
+        </nav>
+      </div>
     </header>
   );
 }
