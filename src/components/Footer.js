@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import './Footer.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone, faEnvelope, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
-import { faFacebookF, faInstagram, faTwitter, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
+import { faFacebookF, faInstagram, faTwitter, faTiktok} from '@fortawesome/free-brands-svg-icons';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -18,7 +18,7 @@ const Footer = () => {
           viewport={{ once: true }}
           className="footer-content"
         >
-          {/* This section will now only contain the main brand info */}
+          {/* Brand Info Section */}
           <div className="footer-section">
             <h3>Dynamic Freelance Hub</h3>
             <p>
@@ -27,7 +27,7 @@ const Footer = () => {
             </p>
           </div>
           
-          {/* New section for Contact Us, separate from the main brand info */}
+          {/* Contact Section */}
           <div className="footer-section">
             <h4>Contact Us</h4>
             <div className="contact-info">
@@ -37,6 +37,7 @@ const Footer = () => {
             </div>
           </div>
           
+          {/* Services Section */}
           <div className="footer-section">
             <h4>Our Services</h4>
             <ul>
@@ -49,6 +50,7 @@ const Footer = () => {
             </ul>
           </div>
           
+          {/* Quick Links Section */}
           <div className="footer-section">
             <h4>Quick Links</h4>
             <ul>
@@ -61,7 +63,7 @@ const Footer = () => {
             </ul>
           </div>
           
-          {/* New section for Business Hours, separate from social links */}
+          {/* Business Hours Section */}
           <div className="footer-section">
             <h4>Business Hours</h4>
             <div className="business-hours">
@@ -71,26 +73,38 @@ const Footer = () => {
             </div>
           </div>
           
-          {/* New section for Social Links, separate from business hours */}
+          {/* Social Links Section */}
           <div className="footer-section">
-            <h4>Follow Us</h4>
-            <div className="social-links-container">
-              <a href="#" aria-label="Facebook" className="social-link"><FontAwesomeIcon icon={faFacebookF} /></a>
-              <a href="#" aria-label="Instagram" className="social-link"><FontAwesomeIcon icon={faInstagram} /></a>
-              <a href="#" aria-label="Twitter" className="social-link"><FontAwesomeIcon icon={faTwitter} /></a>
-              <a href="#" aria-label="LinkedIn" className="social-link"><FontAwesomeIcon icon={faLinkedinIn} /></a>
-            </div>
-          </div>
-          <div className="newsletter">
-              <h5>Stay Updated</h5>
-              <p>Get the latest news and offers</p>
-              <div className="newsletter-form">
-                <input type="email" placeholder="Your email" />
-                <button className="btn btn-primary">Subscribe</button>
-              </div>
-            </div>
+        <h4>Follow Us</h4>
+        <div className="social-links-container">
+          <a href="/" aria-label="Facebook" className="social-link">
+            <FontAwesomeIcon icon={faFacebookF} />
+          </a>
+          <a href="/" aria-label="Instagram" className="social-link">
+            <FontAwesomeIcon icon={faInstagram} />
+          </a>
+          <a href="/" aria-label="Twitter" className="social-link">
+            <FontAwesomeIcon icon={faTwitter} />
+          </a>
+          <a href="/" aria-label="Tiktok" className="social-link">
+            <FontAwesomeIcon icon={faTiktok} />
+          </a>
+        </div>
+      </div>
 
-          
+      {/* Newsletter Section */}
+      <div className="footer-section">
+        <div className="newsletter">
+          <h5>Stay Connected</h5>
+          <p>Join our mailing list for the latest news and offers</p>
+          <form className="newsletter-form">
+            <input type="email" placeholder="username@gmail.com" required />
+            <button type="submit" className="btn btn-primary">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    
+  
         </motion.div>
         
         <motion.div

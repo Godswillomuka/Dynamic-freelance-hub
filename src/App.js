@@ -1,15 +1,15 @@
 import React from 'react';
 // import Home from './pages/Home';
 import Header from './components/Header';
-// import Footer from './components/Footer';
+import Footer from './components/Footer';
 import './App.css'; // Import global styles
 
 function App() {
   return (
     <div>
       <Header />
-      {/* <Home />
-      <Footer /> */}
+      {/* <Home /> */}
+      <Footer />
 
       {/* Floating WhatsApp Icon */}
       <a
