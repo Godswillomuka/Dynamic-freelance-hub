@@ -1,41 +1,65 @@
-:root {
-  --primary-green: #2ecc71;
-  --dark: #111;
-  --light: #fff;
-  --soft-bg: rgba(255, 255, 255, 0.9);
-  --soft-border: rgba(0, 0, 0, 0.1);
+/* === Hamburger Menu === */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 101;
+  background: none;
+  border: none;
+  padding: 10px;
+  margin-left: auto;
+  position: relative;
 }
 
-/* === Header Layout === */
+.hamburger span {
+  height: 3px;
+  width: 25px;
+  background: white;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+  display: block;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* === Desktop Styles (Default) === */
 .header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 40px;
-  background: var(--soft-bg);
-  border-bottom: 1px solid var(--soft-border);
+  background: linear-gradient(97deg, rgb(5, 21, 39) 11.18%, rgb(7, 25, 69) 98.67%);
   position: sticky;
   top: 0;
   z-index: 100;
   transition: padding 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* On Scroll - shrink effect */
-.header.scrolled {
-  padding: 8px 30px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-/* === Logo Section === */
 .logo-link {
   display: flex;
   align-items: center;
   text-decoration: none;
-  gap: 10px;
+  gap: 20px;
 }
 
 .logo img {
-  height: 50px; /* Reduced height for better proportion */
+  height: 44px;
 }
 
 .logo-text {
@@ -47,134 +71,427 @@
 .logo-main {
   font-size: 1.3rem;
   font-weight: bold;
-  color: var(--dark);
+  color: white;
 }
 
 .logo-sub {
   font-size: 0.8rem;
-  color: var(--primary-green);
+  color: rgb(0, 159, 111);
 }
 
-/* === Navigation Section === */
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 24px; /* space between nav list and quote button */
+  gap: 100px;
 }
 
 .nav-links ul {
   display: flex;
   list-style: none;
-  gap: 24px; /* even space between nav items */
+  gap: 50px;
   margin: 0;
   padding: 0;
 }
 
-.nav-links li {
-  display: flex;
-  align-items: center;
-}
-
 .nav-link {
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 500;
-  color: var(--dark);
+  color: white;
   text-decoration: none;
   padding: 6px 8px;
   transition: color 0.3s ease;
+  position: relative;
 }
 
 .nav-link:hover {
-  color: var(--primary-green);
+  color: rgb(0, 159, 111);
 }
 
-/* === Quote Button === */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: rgb(0, 159, 111);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
 .quote-btn {
-  background-color: var(--primary-green);
-  color: var(--light);
-  padding: 10px 16px;
-  border-radius: 6px;
+  background-color: rgb(0, 159, 111);
+  color: white;
+  padding: 10px 18px;
+  border-radius: 12px;
   font-weight: 600;
-  text-decoration: none;
   border: none;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.quote-btn:hover {
-  background-color: #28b463;
-}
-
-/* === Hamburger Menu === */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-  z-index: 101;
-  background: none;
-  border: none;
-}
-
-.hamburger span {
-  height: 3px;
-  width: 25px;
-  background: var(--dark);
-  border-radius: 3px;
   transition: all 0.3s ease;
 }
 
-.hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-.hamburger.active span:nth-child(2) {
-  opacity: 0;
-}
-.hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
+.quote-btn:hover {
+  background-color: rgb(17, 136, 100);
+  color: rgb(153, 218, 198);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* === Responsive Styles === */
+/* === Responsive Breakpoints === */
+
+/* === Tablet - 900px and below */
 @media (max-width: 900px) {
-  .header {
-    flex-wrap: wrap;
-    padding: 12px 20px;
-  }
-
   .hamburger {
     display: flex;
-    margin-left: auto;
   }
 
   .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
     width: 100%;
     flex-direction: column;
     align-items: flex-start;
     display: none;
-    margin-top: 10px;
+    background-color: rgb(5, 21, 39);
+    padding: 10px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 100;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
   }
 
   .nav-links.open {
     display: flex;
+    opacity: 1;
+    transform: translateY(0);
   }
 
   .nav-links ul {
     flex-direction: column;
     width: 100%;
-    gap: 10px;
+    gap: 0;
+    padding: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
   }
 
   .nav-links li {
     width: 100%;
+    position: relative;
+    padding: 0 20px;
+    box-sizing: border-box;
   }
 
   .nav-link {
     width: 100%;
-    padding: 10px 0;
-    border-bottom: 1px solid #eee;
+    padding: 16px 0;
+    font-size: 16px;
+    position: relative;
+    transition: all 0.3s ease;
+    margin: 0;
+    display: block;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Remove border for last link (Contact) - but we'll add it back properly */
+  .nav-links li:last-child .nav-link {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Keep the border on Contact */
+  }
+
+  /* Hover effect for single line */
+  .nav-links li:hover .nav-link {
+    border-bottom-color: rgb(0, 159, 111);
+    color: rgb(0, 159, 111);
+  }
+
+  /* Mobile hover/focus effects */
+  .nav-link:hover,
+  .nav-link:focus {
+    background-color: transparent;
+    color: rgb(0, 159, 111);
+  }
+
+  /* Quote button - full width with proper bounds and reduced margin */
+  .quote-btn-wrapper {
+    width: 100%;
+    padding: 0 20px;
+    max-width: 1200px;
+    margin: 6px auto 12px auto; /* Reduced top margin from 12px to 6px */
+    box-sizing: border-box;
   }
 
   .quote-btn {
-    margin-top: 12px;
+    width: 100%;
+    margin: 0;
+    padding: 16px;
+    text-align: center;
+    font-size: 16px;
+    background-color: rgb(0, 159, 111);
+    color: white;
+    border-radius: 12px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+  }
+
+  .quote-btn:hover {
+    background-color: rgb(17, 136, 100);
+    color: rgb(153, 218, 198);
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+/* Small Tablet - 768px and below */
+@media (max-width: 768px) {
+  .header-container {
+    padding: 10px 20px;
+  }
+
+  .logo img {
+    height: 36px;
+  }
+
+  .logo-main {
+    font-size: 1.1rem;
+  }
+
+  .logo-sub {
+    font-size: 0.75rem;
+  }
+
+  .hamburger {
+    padding: 8px;
+  }
+
+  .hamburger span {
+    width: 22px;
+    height: 2.5px;
+  }
+
+  .nav-links li {
+    padding: 0 20px;
+  }
+
+  .nav-link {
+    padding: 14px 0;
+    font-size: 15px;
+  }
+
+  .quote-btn-wrapper {
+    padding: 0 20px;
+    margin: 4px auto 10px auto; /* Reduced top margin */
+  }
+
+  .quote-btn {
+    padding: 14px;
+    font-size: 15px;
+  }
+}
+
+/* Large Mobile - 600px and below */
+@media (max-width: 600px) {
+  .header-container {
+    padding: 8px 16px;
+  }
+
+  .logo img {
+    height: 32px;
+  }
+
+  .logo-main {
+    font-size: 1rem;
+  }
+
+  .logo-sub {
+    font-size: 0.7rem;
+  }
+
+  .logo-link {
+    gap: 12px;
+  }
+
+  .hamburger {
+    padding: 6px;
+  }
+
+  .hamburger span {
+    width: 20px;
+    height: 2px;
+  }
+
+  .nav-links li {
+    padding: 0 16px;
+  }
+
+  .nav-link {
+    padding: 12px 0;
+    font-size: 14px;
+  }
+
+  .quote-btn-wrapper {
+    padding: 0 16px;
+    margin: 3px auto 8px auto; /* Reduced top margin */
+  }
+
+  .quote-btn {
+    padding: 12px;
+    font-size: 14px;
+  }
+}
+
+/* Medium Mobile - 480px and below */
+@media (max-width: 480px) {
+  .header-container {
+    padding: 6px 12px;
+  }
+
+  .logo img {
+    height: 28px;
+  }
+
+  .logo-main {
+    font-size: 0.9rem;
+  }
+
+  .logo-sub {
+    font-size: 0.65rem;
+  }
+
+  .logo-link {
+    gap: 10px;
+  }
+
+  .hamburger {
+    padding: 5px;
+  }
+
+  .hamburger span {
+    width: 18px;
+    height: 2px;
+  }
+
+  .nav-links li {
+    padding: 0 12px;
+  }
+
+  .nav-link {
+    padding: 10px 0;
+    font-size: 13px;
+  }
+
+  .quote-btn-wrapper {
+    padding: 0 12px;
+    margin: 2px auto 6px auto; /* Reduced top margin */
+  }
+
+  .quote-btn {
+    padding: 10px;
+    font-size: 13px;
+    border-radius: 8px;
+  }
+}
+
+/* Small Mobile - 360px and below */
+@media (max-width: 360px) {
+  .header-container {
+    padding: 4px 8px;
+  }
+
+  .logo img {
+    height: 24px;
+  }
+
+  .logo-main {
+    font-size: 0.8rem;
+  }
+
+  .logo-sub {
+    font-size: 0.6rem;
+  }
+
+  .logo-link {
+    gap: 8px;
+  }
+
+  .hamburger {
+    padding: 4px;
+  }
+
+  .hamburger span {
+    width: 16px;
+    height: 1.5px;
+  }
+
+  .nav-links li {
+    padding: 0 8px;
+  }
+
+  .nav-link {
+    padding: 8px 0;
+    font-size: 12px;
+  }
+
+  .quote-btn-wrapper {
+    padding: 0 8px;
+    margin: 2px auto 4px auto; /* Reduced top margin */
+  }
+
+  .quote-btn {
+    padding: 8px;
+    font-size: 12px;
+    border-radius: 6px;
+  }
+}
+
+/* Extra Small Mobile - 320px and below */
+@media (max-width: 320px) {
+  .header-container {
+    padding: 4px 6px;
+  }
+
+  .logo img {
+    height: 22px;
+  }
+
+  .logo-main {
+    font-size: 0.75rem;
+  }
+
+  .logo-sub {
+    font-size: 0.55rem;
+  }
+
+  .hamburger span {
+    width: 15px;
+  }
+
+  .nav-links li {
+    padding: 0 6px;
+  }
+
+  .nav-link {
+    padding: 6px 0;
+    font-size: 11px;
+  }
+
+  .quote-btn-wrapper {
+    padding: 0 6px;
+    margin: 1px auto 3px auto; /* Minimal top margin */
+  }
+
+  .quote-btn {
+    padding: 6px;
+    font-size: 11px;
   }
 }

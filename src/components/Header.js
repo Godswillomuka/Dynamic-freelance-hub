@@ -5,19 +5,22 @@ import "./Header.css";
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const navRef = useRef(null);
+  const hamburgerRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
       const header = document.querySelector(".header");
       if (window.scrollY > 50) {
-        header.classList.add("scrolled");
+        header?.classList.add("scrolled");
       } else {
-        header.classList.remove("scrolled");
+        header?.classList.remove("scrolled");
       }
     };
 
     const handleClickOutside = (event) => {
-      if (navRef.current && !navRef.current.contains(event.target)) {
+      // Check if click is outside both hamburger and nav menu
+      if (navRef.current && !navRef.current.contains(event.target) && 
+          hamburgerRef.current && !hamburgerRef.current.contains(event.target)) {
         setMenuOpen(false);
       }
     };
@@ -33,6 +36,10 @@ function Header() {
 
   const toggleMenu = () => {
     setMenuOpen((prev) => !prev);
+  };
+
+  const closeMenu = () => {
+    setMenuOpen(false);
   };
 
   return (
@@ -51,9 +58,11 @@ function Header() {
 
         {/* === Hamburger Button === */}
         <button
+          ref={hamburgerRef}
           className={`hamburger ${menuOpen ? "active" : ""}`}
           onClick={toggleMenu}
-          aria-label="Toggle menu"
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={menuOpen}
         >
           <span></span>
           <span></span>
@@ -61,17 +70,22 @@ function Header() {
         </button>
 
         {/* === Navigation Links === */}
-        <nav className={`nav-links ${menuOpen ? "open" : ""}`} ref={navRef}>
+        <nav 
+          className={`nav-links ${menuOpen ? "open" : ""}`} 
+          ref={navRef}
+        >
           <ul>
-            <li><Link to="/" className="nav-link">Home</Link></li>
-            <li><Link to="/services" className="nav-link">Services</Link></li>
-            <li><Link to="/portfolio" className="nav-link">Portfolio</Link></li>
-            <li><Link to="/about" className="nav-link">About Us</Link></li>
-            <li><Link to="/contact" className="nav-link">Contact</Link></li>
+            <li><Link to="/" className="nav-link" onClick={closeMenu}>Home</Link></li>
+            <li><Link to="/services" className="nav-link" onClick={closeMenu}>Services</Link></li>
+            <li><Link to="/portfolio" className="nav-link" onClick={closeMenu}>Portfolio</Link></li>
+            <li><Link to="/about" className="nav-link" onClick={closeMenu}>About Us</Link></li>
+            <li><Link to="/contact" className="nav-link" onClick={closeMenu}>Contact</Link></li>
           </ul>
-          <Link to="/get-quote">
-            <button className="quote-btn">Get Quote</button>
-          </Link>
+          <div className="quote-btn-wrapper">
+            <Link to="/get-quote" onClick={closeMenu}>
+              <button className="quote-btn">Get Quote</button>
+            </Link>
+          </div>
         </nav>
       </div>
     </header>
