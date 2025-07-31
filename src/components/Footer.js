@@ -57,9 +57,69 @@ const Footer = () => {
               <li><a href="#about">About Us</a></li>
               <li><a href="#portfolio">Our Work</a></li>
               <li><a href="#contact">Get Quote</a></li>
-              <li><a href="#">FAQ</a></li>
-              <li><a href="#">Terms & Conditions</a></li>
-              <li><a href="#">Privacy Policy</a></li>
+              <li>
+                <button
+                  type="button"
+                  className="footer-link-btn"
+                  aria-label="FAQ"
+                  style={{
+                    background: "none",
+                    border: "none",
+                    color: "inherit",
+                    padding: 0,
+                    margin: 0,
+                    font: "inherit",
+                    cursor: "pointer",
+                    textAlign: "left",
+                  }}
+                  tabIndex={0}
+                  onClick={() => window.location.href = '/faq'}
+                >
+                  FAQ
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  className="footer-link-btn"
+                  aria-label="Terms & Conditions"
+                  style={{
+                    background: "none",
+                    border: "none",
+                    color: "inherit",
+                    padding: 0,
+                    margin: 0,
+                    font: "inherit",
+                    cursor: "pointer",
+                    textAlign: "left",
+                  }}
+                  tabIndex={0}
+                  onClick={() => window.location.href = '/terms'}
+                >
+                  Terms & Conditions
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  className="footer-link-btn"
+                  aria-label="Privacy Policy"
+                  style={{
+                    background: "none",
+                    border: "none",
+                    color: "inherit",
+                    padding: 0,
+                    margin: 0,
+                    font: "inherit",
+                    cursor: "pointer",
+                    textAlign: "left",
+                  }}
+                  tabIndex={0}
+                  onClick={() => window.location.href = '/privacy'}
+                >
+                  Privacy Policy
+                </button>
+              </li>
             </ul>
           </div>
           
