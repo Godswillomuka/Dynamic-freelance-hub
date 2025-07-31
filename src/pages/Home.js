@@ -1,13 +1,16 @@
+// src/components/Home/Home.js
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import './Home.css';
+// --- Ensure these image paths are correct for your project structure ---
+// The hero image import is removed as it's replaced by the clock
 import aboutTeam from '../images/about-team.png';
-import businessCard from '../images/bussinescard.png'; 
+import businessCard from '../images/bussinescard.png'; // Note: Check filename typo (bussinescard vs. businesscard)
 import flyer from '../images/flyer.png';
 import tshirts from '../images/t-shirts.png';
 import customMugs from '../images/mug.png';
 
-
+// --- Animation Variants ---
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
   show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
