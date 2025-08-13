@@ -1,3 +1,4 @@
+/* WhatsApp Icon Styles (already in your code) */
 .whatsapp-float {
   position: fixed;
   bottom: 20px;
@@ -21,4 +22,33 @@
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
+}
+
+/* AI Chat Icon Styles */
+.ai-chat-float {
+  position: fixed;
+  bottom: 100px; /* above WhatsApp */
+  right: 20px;
+  z-index: 1000;
+  background-color: #007bff;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ai-chat-float:hover {
+  transform: scale(1.1);
+  background-color: #0056b3;
+}
+
+.ai-chat-float img {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
 }

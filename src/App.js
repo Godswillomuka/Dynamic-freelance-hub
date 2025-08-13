@@ -21,6 +21,9 @@ function App() {
       >
         <img src="/whatsapp-icon.png" alt="WhatsApp" />
       </a>
+       <div className="ai-chat-float" onClick={() => alert('Open AI chat widget')}>
+        <img src="/ai-icon.png" alt="AI Chat" />
+      </div>
     </div>
   );
 }
