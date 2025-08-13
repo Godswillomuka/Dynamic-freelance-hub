@@ -21,7 +21,7 @@ function App() {
           <img src="https://img.icons8.com/color/96/whatsapp.png" alt="WhatsApp" />
         </a>
         <div className="floating-card-tooltip">
-          Have questions? <br /> Chat with us on WhatsApp!
+          Have questions? <br /> Chat with us
         </div>
       </div>
     </div>
