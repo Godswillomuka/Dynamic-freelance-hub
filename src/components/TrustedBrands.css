@@ -1,0 +1,41 @@
+.trusted-brands {
+  padding: 50px 400px;
+  background: #f7f7f7; /* light gray background */
+  overflow: hidden;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #222;
+}
+
+.brand-row {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.brand-track {
+  display: flex;
+  flex-shrink: 0;
+  min-width: 200%; /* ensures smooth scrolling */
+}
+
+.brand-track img {
+  height: 60px;
+  margin: 0 30px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.8;
+  transition: filter 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+}
+
+.brand-track img:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.05);
+}

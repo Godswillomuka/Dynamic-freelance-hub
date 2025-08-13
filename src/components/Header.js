@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import logo from '../assets/logo.png';
 import "./Header.css";
 
 function Header() {
@@ -48,7 +49,7 @@ function Header() {
         {/* === Logo Section === */}
         <div className="logo">
           <Link to="/" className="logo-link">
-            <img src="/logo.png" alt="Dynamic Freelance Hub Logo" />
+            <img src={logo} alt="Dynamic Freelance Hub Logo" />
             <div className="logo-text">
               <span className="logo-main">Dynamic</span>
               <span className="logo-sub">Freelance Hub</span>

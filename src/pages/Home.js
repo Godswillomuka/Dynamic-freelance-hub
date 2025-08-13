@@ -2,13 +2,12 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import './Home.css';
-// --- Ensure these image paths are correct for your project structure ---
-// The hero image import is removed as it's replaced by the clock
-import aboutTeam from '../images/about-team.png';
-import businessCard from '../images/bussinescard.png'; // Note: Check filename typo (bussinescard vs. businesscard)
-import flyer from '../images/flyer.png';
-import tshirts from '../images/t-shirts.png';
-import customMugs from '../images/mug.png';
+import TrustedBrands from '../components/TrustedBrands';
+import aboutTeam from '../assets/about-team.png';
+import businessCard from '../assets/bussinescard.png'; // Note: Check filename typo (bussinescard vs. businesscard)
+import flyer from '../assets/flyer.png';
+import tshirts from '../assets/t-shirts.png';
+import customMugs from '../assets/mug.png';
 
 // --- Animation Variants ---
 const fadeInUp = {
@@ -177,7 +176,19 @@ const Home = () => {
             <motion.div className="about-us-text" variants={fadeInUp}>
               <h2 className="section-title">Who We Are</h2>
               <p className="section-description">
-                Dynamic Freelance Hub is more than just a printing service. We are a team of dedicated designers, creators, and branding experts. Our mission is to empower businesses by crafting compelling visual identities and high-quality printed materials that drive growth, enhance credibility, and boost competitiveness in the market.
+                <strong>Dynamic Freelance Hub</strong> is more than just a printing service,we specialize in crafting compelling visual identities and producing high-quality printed materials that help businesses:
+
+<li>Grow their visibility in competitive markets</li>
+
+<li>Enhance credibility with professional, polished designs</li>
+
+<li>Strengthen brand consistency across every platform</li>
+
+From business cards and branded merchandise to large-scale prints and corporate branding, we ensure every detail reflects your brand’s quality and professionalism.
+
+Using modern design tools and state-of-the-art printing, we deliver results that build trust, attract customers, and drive success.
+
+
               </p>
               <a href="/about" className="btn btn-primary-alt">
                 Learn More
@@ -207,6 +218,9 @@ const Home = () => {
               <p className="service-description">
                 Transform your ideas into stunning visuals. Our design team crafts logos, marketing materials, and brand assets that capture your unique identity and resonate with your audience.
               </p>
+              <a href="/services" className="btn btn-primary-alt">
+                view more
+              </a>
             </motion.div>
             <motion.div className="service-card" variants={fadeInUp}>
               <div className="service-icon">
@@ -217,6 +231,9 @@ const Home = () => {
               <p className="service-description">
                 Showcase your brand on a wide range of products. From custom t-shirts and apparel to promotional items, we deliver high-quality prints that make a lasting impression.
               </p>
+              <a href="/services" className="btn btn-primary-alt">
+                view more
+              </a>
             </motion.div>
             <motion.div className="service-card" variants={fadeInUp}>
               <div className="service-icon">
@@ -227,6 +244,9 @@ const Home = () => {
               <p className="service-description">
                 Build a strong, cohesive brand presence. We help you develop a complete brand identity, from strategy and visual elements to consistent application across all touchpoints.
               </p>
+              <a href="/services" className="btn btn-primary-alt">
+                view more
+              </a>
             </motion.div>
           </div>
         </div>
@@ -255,6 +275,9 @@ const Home = () => {
               <p className="product-description">
                 Make a professional first impression with our high-quality, customizable business cards.
               </p>
+              <a href="/portfolio" className="btn btn-primary-alt">
+                view more
+              </a>
             </motion.div>
             <motion.div className="product-card" variants={fadeInUp}>
               <div className="product-image-wrapper">
@@ -268,6 +291,9 @@ const Home = () => {
               <p className="product-description">
                 Promote your events effectively with vibrant, attention-grabbing flyers designed to convert.
               </p>
+               <a href="/portfolio" className="btn btn-primary-alt">
+                view more
+              </a>
             </motion.div>
             <motion.div className="product-card" variants={fadeInUp}>
               <div className="product-image-wrapper">
@@ -281,6 +307,9 @@ const Home = () => {
               <p className="product-description">
                 Create team unity or promote your brand with comfortable, custom-printed apparel.
               </p>
+               <a href="/portfolio" className="btn btn-primary-alt">
+                view more
+              </a>
             </motion.div>
             <motion.div className="product-card" variants={fadeInUp}>
               <div className="product-image-wrapper">
@@ -294,10 +323,15 @@ const Home = () => {
               <p className="product-description">
                 Perfect for corporate gifts or daily use, our personalized mugs keep your brand visible.
               </p>
+               <a href="/portfolio" className="btn btn-primary-alt">
+                view more
+              </a>
             </motion.div>
           </div>
         </div>
       </motion.section>
+
+      <TrustedBrands />
 
       {/* --- Why Choose Us Section --- */}
       <motion.section
