@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import './Footer.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone, faEnvelope, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
-import { faFacebookF, faInstagram, faTwitter, faTiktok} from '@fortawesome/free-brands-svg-icons';
+import { faFacebookF, faInstagram, faTwitter, faTiktok } from '@fortawesome/free-brands-svg-icons';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -57,69 +57,9 @@ const Footer = () => {
               <li><a href="#about">About Us</a></li>
               <li><a href="#portfolio">Our Work</a></li>
               <li><a href="#contact">Get Quote</a></li>
-              <li>
-                <button
-                  type="button"
-                  className="footer-link-btn"
-                  aria-label="FAQ"
-                  style={{
-                    background: "none",
-                    border: "none",
-                    color: "inherit",
-                    padding: 0,
-                    margin: 0,
-                    font: "inherit",
-                    cursor: "pointer",
-                    textAlign: "left",
-                  }}
-                  tabIndex={0}
-                  onClick={() => window.location.href = '/faq'}
-                >
-                  FAQ
-                </button>
-              </li>
-              <li>
-                <button
-                  type="button"
-                  className="footer-link-btn"
-                  aria-label="Terms & Conditions"
-                  style={{
-                    background: "none",
-                    border: "none",
-                    color: "inherit",
-                    padding: 0,
-                    margin: 0,
-                    font: "inherit",
-                    cursor: "pointer",
-                    textAlign: "left",
-                  }}
-                  tabIndex={0}
-                  onClick={() => window.location.href = '/terms'}
-                >
-                  Terms & Conditions
-                </button>
-              </li>
-              <li>
-                <button
-                  type="button"
-                  className="footer-link-btn"
-                  aria-label="Privacy Policy"
-                  style={{
-                    background: "none",
-                    border: "none",
-                    color: "inherit",
-                    padding: 0,
-                    margin: 0,
-                    font: "inherit",
-                    cursor: "pointer",
-                    textAlign: "left",
-                  }}
-                  tabIndex={0}
-                  onClick={() => window.location.href = '/privacy'}
-                >
-                  Privacy Policy
-                </button>
-              </li>
+              <li><a href="#contact">FAQ</a></li>
+              <li><a href="#contact">Terms & Conditions</a></li>
+              <li><a href="#contact">Privacy Policy</a></li>
             </ul>
           </div>
           
@@ -134,39 +74,43 @@ const Footer = () => {
           </div>
           
           {/* Social Links Section */}
-          <div className="footer-section">
-        <h4>Follow Us</h4>
-        <div className="social-links-container">
-          <a href="/" aria-label="Facebook" className="social-link">
-            <FontAwesomeIcon icon={faFacebookF} />
-          </a>
-          <a href="/" aria-label="Instagram" className="social-link">
-            <FontAwesomeIcon icon={faInstagram} />
-          </a>
-          <a href="/" aria-label="Twitter" className="social-link">
-            <FontAwesomeIcon icon={faTwitter} />
-          </a>
-          <a href="/" aria-label="Tiktok" className="social-link">
-            <FontAwesomeIcon icon={faTiktok} />
-          </a>
-        </div>
-      </div>
+          <div className="footer-section social-section">
+            <h4>Follow Us</h4>
+            <div className="social-links-container">
+              <a href="https://facebook.com" aria-label="Facebook" className="social-link">
+                <FontAwesomeIcon icon={faFacebookF} />
+                <span className="social-name">Facebook</span>
+              </a>
+              <a href="https://instagram.com" aria-label="Instagram" className="social-link">
+                <FontAwesomeIcon icon={faInstagram} />
+                <span className="social-name">Instagram</span>
+              </a>
+              <a href="https://twitter.com" aria-label="Twitter" className="social-link">
+                <FontAwesomeIcon icon={faTwitter} />
+                <span className="social-name">Twitter</span>
+              </a>
+              <a href="https://tiktok.com" aria-label="TikTok" className="social-link">
+                <FontAwesomeIcon icon={faTiktok} />
+                <span className="social-name">TikTok</span>
+              </a>
+            </div>
+          </div>
 
-      {/* Newsletter Section */}
-      <div className="footer-section">
-        <div className="newsletter">
-          <h5>Stay Connected</h5>
-          <p>Join our mailing list for the latest news and offers</p>
-          <form className="newsletter-form">
-            <input type="email" placeholder="username@gmail.com" required />
-            <button type="submit" className="btn btn-primary">Subscribe</button>
-          </form>
-        </div>
-      </div>
-    
-  
+          {/* Newsletter Section */}
+          <div className="footer-section newsletter-section-stretch">
+            <div className="newsletter">
+              <h5>Stay Connected</h5>
+              <p>Join our mailing list for the latest news and offers</p>
+              <form className="newsletter-form">
+                <div className="newsletter-form-row">
+                  <input type="email" placeholder="username@gmail.com" required />
+                  <button type="submit" className="btn">Subscribe</button>
+                </div>
+              </form>
+            </div>
+          </div>
         </motion.div>
-        
+
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

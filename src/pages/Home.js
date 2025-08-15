@@ -19,7 +19,9 @@ import penImg from '../assets/product-pen.png';            // https://images.uns
 import bagImg from '../assets/product-bag.png';            // https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=600&q=80
 import stickerImg from '../assets/product-sticker.png';    // https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=600&q=80
 import notebookImg from '../assets/product-notebook.png';  // https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=600&q=80
-import lanyardImg from '../assets/product-lanyard.png';    // https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?auto=format&fit=crop&w=600&q=80
+import lanyardImg from '../assets/product-lanyard.png';
+import deskcalender from '../assets/deskcalender.png' 
+import giftvoucher from '../assets/giftvoucher.png'  // https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?auto=format&fit=crop&w=600&q=80
 import './Home.css';
 
 
@@ -217,13 +219,13 @@ const products = [
   {
     title: "Desk Calendars",
     desc: "Custom branded desk calendars for year-round visibility.",
-    img: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80",
+    img: deskcalender,
     link: "/portfolio"
   },
   {
     title: "Gift Vouchers",
     desc: "Personalized gift vouchers to reward and engage your customers.",
-    img: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80",
+    img: giftvoucher,
     link: "/portfolio"
   }
 ];
