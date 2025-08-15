@@ -1,15 +1,28 @@
 // src/components/Home/Home.js
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import './Home.css';
 import TrustedBrands from '../components/TrustedBrands';
+import Reviews from '../components/Review';
 import aboutTeam from '../assets/about-team.png';
-import businessCard from '../assets/bussinescard.png'; // Note: Check filename typo (bussinescard vs. businesscard)
+import businessCard from '../assets/bussinescard.png';
 import flyer from '../assets/flyer.png';
 import tshirts from '../assets/t-shirts.png';
 import customMugs from '../assets/mug.png';
+import designImg from '../assets/service-design.png';      // https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80
+import printImg from '../assets/service-print.png';        // https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=600&q=80
+import brandingImg from '../assets/service-branding.png';  // https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80
+import signageImg from '../assets/service-signage.png';    // https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80
+import packagingImg from '../assets/service-packaging.png';// https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=600&q=80
+import promoImg from '../assets/service-promo.png';        // https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80
+import capImg from '../assets/product-cap.png';            // https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80
+import penImg from '../assets/product-pen.png';            // https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=600&q=80
+import bagImg from '../assets/product-bag.png';            // https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=600&q=80
+import stickerImg from '../assets/product-sticker.png';    // https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=600&q=80
+import notebookImg from '../assets/product-notebook.png';  // https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=600&q=80
+import lanyardImg from '../assets/product-lanyard.png';    // https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?auto=format&fit=crop&w=600&q=80
+import './Home.css';
 
-// --- Animation Variants ---
+
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
   show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
@@ -25,16 +38,14 @@ const staggerContainer = {
   },
 };
 
-// --- Hero Clock Component ---
+
 const HeroClock = () => {
   const [time, setTime] = useState(new Date());
 
   useEffect(() => {
     const timerID = setInterval(() => {
       setTime(new Date());
-    }, 1000); // Update every second
-
-    // Cleanup interval on component unmount
+    }, 1000); 
     return () => {
       clearInterval(timerID);
     };
@@ -43,26 +54,18 @@ const HeroClock = () => {
   const seconds = time.getSeconds();
   const minutes = time.getMinutes();
   const hours = time.getHours();
-
-  // Calculate rotation degrees for clock hands
   const secondDegrees = seconds * 6;
   const minuteDegrees = minutes * 6 + seconds * 0.1;
   const hourDegrees = (hours % 12) * 30 + minutes * 0.5;
-
-  // Format time like "12:00 PM"
   const timeString = time.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true });
-  // Format date like "Wednesday, October 27, 2023"
   const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
   const dateString = time.toLocaleDateString('en-US', options);
-
-  // Roman numerals for the clock face
   const romanNumerals = ['XII','I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI'];
 
   return (
     <div className="hero-clock-container">
       <div className="hero-clock">
         <div className="hero-clock-face">
-          {/* Roman Numerals */}
           {romanNumerals.map((numeral, index) => {
             const angle = (index * 30) * (Math.PI / 180);
             const radius = 42;
@@ -111,7 +114,122 @@ const HeroClock = () => {
   );
 };
 
+const services = [
+  {
+    title: "Creative Design",
+    desc: "We create unique logos, marketing materials, and brand assets that make your business stand out and connect with your audience. Every design is tailored to your goals.",
+    img: designImg,
+    link: "/services"
+  },
+  {
+    title: "Merchandise Printing",
+    desc: "Get your brand on t-shirts, apparel, and promo items. We deliver quality prints that leave a lasting impression everywhere, using the best materials and vibrant colors.",
+    img: printImg,
+    link: "/services"
+  },
+  {
+    title: "Business Branding",
+    desc: "From strategy to visuals, we build a strong, consistent identity for your business across all platforms and materials. Stand out and grow with a professional brand.",
+    img: brandingImg,
+    link: "/services"
+  },
+  {
+    title: "Signage & Displays",
+    desc: "We design and produce banners, pop-ups, and event displays to help your business get noticed at any venue or location. Make your message visible and memorable.",
+    img: signageImg,
+    link: "/services"
+  },
+  {
+    title: "Packaging & Labels",
+    desc: "Enhance your product with custom packaging and labels that reflect your brand’s quality and attract customers. Creative solutions for every industry.",
+    img: packagingImg,
+    link: "/services"
+  },
+  {
+    title: "Promo Products",
+    desc: "Branded gifts and giveaways for events and marketing. Boost your brand visibility with memorable promo products your clients and partners will love.",
+    img: promoImg,
+    link: "/services"
+  }
+];
+
+const products = [
+  {
+    title: "Business Cards",
+    desc: "Premium custom cards to make a strong first impression and promote your brand identity.",
+    img: businessCard,
+    link: "/portfolio"
+  },
+  {
+    title: "Event Flyers",
+    desc: "Vibrant, eye-catching flyers designed to attract attention and promote your events.",
+    img: flyer,
+    link: "/portfolio"
+  },
+  {
+    title: "Branded Shirts",
+    desc: "Quality custom shirts for your team or event, printed with your logo or message.",
+    img: tshirts,
+    link: "/portfolio"
+  },
+  {
+    title: "Custom Mugs",
+    desc: "Personalized mugs for your brand, perfect for gifts, staff, or daily use.",
+    img: customMugs,
+    link: "/portfolio"
+  },
+  {
+    title: "Branded Caps",
+    desc: "Stylish logo caps for staff, events, or giveaways to boost your brand.",
+    img: capImg,
+    link: "/portfolio"
+  },
+  {
+    title: "Custom Pens",
+    desc: "Affordable branded pens for promotion, events, and everyday business use.",
+    img: penImg,
+    link: "/portfolio"
+  },
+  {
+    title: "Branded Bags",
+    desc: "Tote and event bags with your logo, ideal for conferences and promotions.",
+    img: bagImg,
+    link: "/portfolio"
+  },
+  {
+    title: "Stickers & Labels",
+    desc: "Custom stickers and labels for packaging, branding, and creative marketing.",
+    img: stickerImg,
+    link: "/portfolio"
+  },
+  {
+    title: "Notebooks",
+    desc: "Branded notebooks for meetings, gifts, and professional note-taking.",
+    img: notebookImg,
+    link: "/portfolio"
+  },
+  {
+    title: "Lanyards",
+    desc: "Custom event lanyards for staff, guests, and promotional branding.",
+    img: lanyardImg,
+    link: "/portfolio"
+  },
+  {
+    title: "Desk Calendars",
+    desc: "Custom branded desk calendars for year-round visibility.",
+    img: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80",
+    link: "/portfolio"
+  },
+  {
+    title: "Gift Vouchers",
+    desc: "Personalized gift vouchers to reward and engage your customers.",
+    img: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80",
+    link: "/portfolio"
+  }
+];
+
 const Home = () => {
+
   return (
     <main className="home-page">
       {/* --- Hero Section --- */}
@@ -209,49 +327,42 @@ Using modern design tools and state-of-the-art printing, we deliver results that
         <div className="section-container">
           <motion.h2 className="section-title" variants={fadeInUp}>Our Core Services</motion.h2>
           <div className="services-grid">
-            <motion.div className="service-card" variants={fadeInUp}>
-              <div className="service-icon">
-                {/* Creative Design Icon */}
-                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12.5 2a7.5 7.5 0 0 1 7.5 7.5c0 2.5 -1.5 4.5 -3.5 5.5l-1.5 3.5l-4 -1l-1.5 1l-1.5 -3.5c-2 -1 -3.5 -3 -3.5 -5.5a7.5 7.5 0 0 1 7.5 -7.5z"/><path d="M12.5 6a2 2 0 0 1 2 2"/><path d="M10.5 9h4"/></svg>
-              </div>
-              <h3 className="service-title">Creative Design</h3>
-              <p className="service-description">
-                Transform your ideas into stunning visuals. Our design team crafts logos, marketing materials, and brand assets that capture your unique identity and resonate with your audience.
-              </p>
-              <a href="/services" className="btn btn-primary-alt">
-                view more
-              </a>
-            </motion.div>
-            <motion.div className="service-card" variants={fadeInUp}>
-              <div className="service-icon">
-                {/* Merchandise Printing Icon */}
-                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="12" y1="7" x2="12" y2="17"/><line x1="7" y1="12" x2="17" y2="12"/></svg>
-              </div>
-              <h3 className="service-title">Merchandise Printing</h3>
-              <p className="service-description">
-                Showcase your brand on a wide range of products. From custom t-shirts and apparel to promotional items, we deliver high-quality prints that make a lasting impression.
-              </p>
-              <a href="/services" className="btn btn-primary-alt">
-                view more
-              </a>
-            </motion.div>
-            <motion.div className="service-card" variants={fadeInUp}>
-              <div className="service-icon">
-               {/* Business Branding Icon */}
-                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6" y2="6"/><line x1="6" y1="18" x2="6" y2="18"/></svg>
-              </div>
-              <h3 className="service-title">Business Branding</h3>
-              <p className="service-description">
-                Build a strong, cohesive brand presence. We help you develop a complete brand identity, from strategy and visual elements to consistent application across all touchpoints.
-              </p>
-              <a href="/services" className="btn btn-primary-alt">
-                view more
-              </a>
-            </motion.div>
+            {services.map((service, idx) => (
+              <motion.div className="service-card overlay-card" variants={fadeInUp} key={idx} style={{padding: 0, border: 'none', minHeight: '420px'}}>
+                <div
+                  className="overlay-card-image"
+                  style={{
+                    backgroundImage: `url(${service.img})`,
+                    width: '100%',
+                    height: '100%',
+                    minHeight: '420px',
+                    margin: 0,
+                    borderRadius: '16px',
+                  }}
+                >
+                  <div
+                    className="overlay-card-content"
+                    style={{
+                      paddingLeft: 0,
+                      paddingRight: 0,
+                      display: 'flex',
+                      flexDirection: 'column',
+                      justifyContent: 'center',
+                      alignItems: 'center'
+                    }}
+                  >
+                    <h3 className="service-title" style={{textAlign: 'center', width: '100%', marginBottom: 6}}>{service.title}</h3>
+                    <p className="service-description" style={{textAlign: 'center', width: '100%', marginTop: 0}}>{service.desc}</p>
+                    <a href={service.link} className="card-link">
+                      view more
+                    </a>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </motion.section>
-
       {/* --- Popular Products Section --- */}
       <motion.section
         className="popular-products-section"
@@ -262,76 +373,45 @@ Using modern design tools and state-of-the-art printing, we deliver results that
       >
         <div className="section-container">
           <motion.h2 className="section-title" variants={fadeInUp}>Popular Products</motion.h2>
-          <div className="products-grid">
-            <motion.div className="product-card" variants={fadeInUp}>
-              <div className="product-image-wrapper">
-                <img
-                  src={businessCard}
-                  alt="Premium Business Cards"
-                  className="product-image"
-                />
-              </div>
-              <h3 className="product-title">Business Cards</h3>
-              <p className="product-description">
-                Make a professional first impression with our high-quality, customizable business cards.
-              </p>
-              <a href="/portfolio" className="btn btn-primary-alt">
-                view more
-              </a>
-            </motion.div>
-            <motion.div className="product-card" variants={fadeInUp}>
-              <div className="product-image-wrapper">
-                <img
-                  src={flyer}
-                  alt="Eye-catching Event Flyers"
-                  className="product-image"
-                />
-              </div>
-              <h3 className="product-title">Event Flyers</h3>
-              <p className="product-description">
-                Promote your events effectively with vibrant, attention-grabbing flyers designed to convert.
-              </p>
-               <a href="/portfolio" className="btn btn-primary-alt">
-                view more
-              </a>
-            </motion.div>
-            <motion.div className="product-card" variants={fadeInUp}>
-              <div className="product-image-wrapper">
-                <img
-                  src={tshirts}
-                  alt="Custom Branded T-Shirts"
-                  className="product-image"
-                />
-              </div>
-              <h3 className="product-title">Branded Shirts</h3>
-              <p className="product-description">
-                Create team unity or promote your brand with comfortable, custom-printed apparel.
-              </p>
-               <a href="/portfolio" className="btn btn-primary-alt">
-                view more
-              </a>
-            </motion.div>
-            <motion.div className="product-card" variants={fadeInUp}>
-              <div className="product-image-wrapper">
-                <img
-                  src={customMugs}
-                  alt="Personalized Custom Mugs"
-                  className="product-image"
-                />
-              </div>
-              <h3 className="product-title">Custom Mugs</h3>
-              <p className="product-description">
-                Perfect for corporate gifts or daily use, our personalized mugs keep your brand visible.
-              </p>
-               <a href="/portfolio" className="btn btn-primary-alt">
-                view more
-              </a>
-            </motion.div>
+          <div className="products-grid even-products-grid">
+            {products.map((product, idx) => (
+              <motion.div className="product-card overlay-card" variants={fadeInUp} key={idx} style={{padding: 0, border: 'none', minHeight: '320px'}}>
+                <div
+                  className="overlay-card-image"
+                  style={{
+                    backgroundImage: `url(${product.img})`,
+                    width: '100%',
+                    height: '100%',
+                    minHeight: '320px',
+                    margin: 0,
+                    borderRadius: '16px',
+                  }}
+                >
+                  <div
+                    className="overlay-card-content"
+                    style={{
+                      paddingLeft: 0,
+                      paddingRight: 0,
+                      display: 'flex',
+                      flexDirection: 'column',
+                      justifyContent: 'center',
+                      alignItems: 'center'
+                    }}
+                  >
+                    <h3 className="product-title" style={{textAlign: 'center', width: '100%', marginBottom: 6}}>{product.title}</h3>
+                    <p className="product-description" style={{textAlign: 'center', width: '100%', marginTop: 0}}>{product.desc}</p>
+                    <a href={product.link} className="card-link">
+                      view more
+                    </a>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </motion.section>
-
       <TrustedBrands />
+      
 
       {/* --- Why Choose Us Section --- */}
       <motion.section
@@ -368,6 +448,7 @@ Using modern design tools and state-of-the-art printing, we deliver results that
           </div>
         </div>
       </motion.section>
+      <Reviews />
     </main>
   );
 };

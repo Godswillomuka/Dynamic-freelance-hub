@@ -1,4 +1,3 @@
-
 .home-page {
   font-family: 'Poppins', sans-serif;
   overflow-x: hidden;
@@ -294,7 +293,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 50px;
-  align-items: center;
+  align-items: flex-start;
   position: relative;
   z-index: 1;
 }
@@ -312,6 +311,12 @@
 .team-image:hover {
   transform: scale(1.02);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.about-us-text {
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .about-us-text .section-title {
@@ -332,6 +337,12 @@
   line-height: 1.7;
   margin-bottom: 20px;
   color: #4a5568;
+  text-align: left;
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .section-description strong {
@@ -342,7 +353,9 @@
 .section-description ul {
   list-style: none;
   padding-left: 0;
-  margin: 15px 0 20px;
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
 }
 
 .section-description ul li {
@@ -352,6 +365,9 @@
   font-size: 1rem;
   line-height: 1.5;
   color: #2d3748;
+  text-align: left;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .section-description ul li::before {
@@ -513,53 +529,118 @@
   border-color: #009f6f; /* Change border color to brand green */
 }
 
-.product-image-wrapper {
-  width: 100%;
-  height: 200px;
+/* Overlay Card Styles for Services & Products */
+.overlay-card {
+  position: relative;
+
+  min-height: 600px; /* Increased height for service cards only */
+  border-radius: 16px;
   overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.07);
+  border: 1px solid #e2e8f0;
+  margin-bottom: 0;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #f0f0f0;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0;
 }
 
-.product-image {
+.overlay-card-image {
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 600px; /* Match card min-height */
+  margin: 0 !important;
+  border-radius: 16px 16px 0 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.overlay-card-content {
+  position: absolute;
+  left: 0;
+  bottom: 0;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  /* Enhanced transition for image */
-  transition: transform 0.5s ease;
+  /* Set the overlay to cover exactly half the card height */
+  height: 50%; /* Back to exactly half for better balance */
+  min-height: unset;
+  max-height: none; /* Remove scroll, let content fit */
+  overflow-y: visible;
+  background: rgba(255,255,255,0.92);
+  -webkit-backdrop-filter: blur(0.5px);
+  backdrop-filter: blur(0.5px);
+  border-radius: 0 0 16px 16px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+  justify-content: center;
+  text-align: center;
 }
 
-/* Enhanced image zoom and rotation */
-.product-card:hover .product-image {
-    transform: scale(1.1) rotate(-2deg); /* Zoom and counter-rotate slightly */
+.overlay-card-content h3,
+.overlay-card-content .service-title,
+.overlay-card-content .product-title {
+  font-size: 1.08rem;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 6px; /* Reduce gap below title */
 }
 
-.product-card h3 {
-  font-size: 1.3rem;
-  font-weight: 700;
-  margin: 20px 0 10px 0;
-  color: #1a202c;
-  padding: 0 15px;
-  transition: transform 0.3s ease, color 0.3s ease; /* Transition for title */
+.overlay-card-content p,
+.overlay-card-content .service-description,
+.overlay-card-content .product-description {
+  font-size: 0.97rem;
+  width: 100%;
+  text-align: center;
+  margin-top: 0; /* Remove gap above paragraph */
 }
 
-/* Animate title on hover */
-.product-card:hover h3 {
-    transform: translateY(-3px); /* Lift title slightly */
-    color: #007a55; /* Darker green */
+.overlay-card .btn {
+  font-size: 0.97rem;
+  padding: 7px 16px;
+  margin-top: 10px;
+  max-width: 100%;
+  align-self: center;
 }
 
-.product-card p {
-  font-size: 1rem;
-  color: #4a5568;
-  line-height: 1.6;
-  padding: 0 15px 20px 15px;
-  flex-grow: 1;
+/* Remove button styles from card links */
+.overlay-card .btn,
+.product-card .btn,
+.service-card .btn {
+  display: none !important;
 }
 
+/* Card link style for service/product cards */
+.overlay-card .card-link,
+.product-card .card-link,
+.service-card .card-link {
+  display: inline-block;
+  font-size: 0.97rem;
+  padding: 0;
+  margin-top: 10px;
+  border: none;
+  background: none;
+  color: #009f6f;
+  text-decoration: none; /* Remove underline */
+  font-weight: 600;
+  transition: color 0.2s;
+  align-self: center;
+  cursor: pointer;
+}
+
+.overlay-card .card-link:hover,
+.product-card .card-link:hover,
+.service-card .card-link:hover {
+  color: #007a55;
+  background: none;
+  border: none;
+  text-decoration: none; /* No underline on hover */
+}
 
 /* --- Why Choose Us Section --- */
 .why-choose-us-section {
@@ -659,6 +740,175 @@
     transform: translateX(3px); /* Small shift */
 }
 
+
+/* --- Service/Product Card Button Fixes (Refined) --- */
+.service-card .btn,
+.product-card .btn {
+  margin-top: 14px;
+  width: auto;
+  min-width: 120px;
+  max-width: 180px;
+  align-self: center;
+  font-size: 0.98rem;
+  padding: 8px 18px;
+  box-sizing: border-box;
+  border-radius: 6px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  /* Make button less prominent */
+  box-shadow: none;
+  background-color: #f8fafc;
+  color: #009f6f;
+  border: 1px solid #009f6f;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+}
+
+.service-card .btn:hover,
+.product-card .btn:hover {
+  background-color: #009f6f;
+  color: #fff;
+  border: 1px solid #007a55;
+}
+
+@media (max-width: 992px) {
+  .services-grid,
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .service-card,
+  .product-card {
+    padding: 16px 6px;
+    min-width: 0;
+    max-width: 100%;
+  }
+  .service-card .btn,
+  .product-card .btn {
+    width: auto;
+    max-width: 90vw;
+    font-size: 0.97rem;
+    padding: 8px 16px;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .service-card,
+  .product-card {
+    padding: 10px 2px;
+    min-width: 0;
+    max-width: 100%;
+  }
+  .service-card .btn,
+  .product-card .btn {
+    font-size: 0.95rem;
+    padding: 7px 10px;
+    margin-top: 8px;
+    min-width: 90px;
+    max-width: 140px;
+  }
+}
+
+/* --- Fix Card Flex Layout for Buttons and Prevent Overlap --- */
+.service-card,
+.product-card {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.service-card .btn,
+.product-card .btn {
+  margin-bottom: 0;
+}
+
+/* --- Card Content Alignment Fixes for Responsiveness --- */
+.service-card,
+.product-card {
+  align-items: flex-start;
+  text-align: left;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+@media (max-width: 992px) {
+  .service-card,
+  .product-card {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .service-card,
+  .product-card {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
+
+/* Ensure text elements inside cards align to left and fill width */
+.service-title,
+.product-title,
+.service-description,
+.product-description,
+.product-card h3,
+.product-card p {
+  text-align: left;
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  /* Remove any inherited center alignment */
+}
+
+/* Ensure button is centered on mobile if desired */
+@media (max-width: 576px) {
+  .service-card .btn,
+  .product-card .btn {
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* --- Ensure Card Content Doesn't Overflow --- */
+.service-description,
+.product-description {
+  flex-grow: 1;
+  margin-bottom: 0;
+  min-width: 0;
+  word-break: break-word;
+}
+
+/* --- Fix for Button Overlap/Overflow --- */
+.service-card .btn:last-child,
+.product-card .btn:last-child {
+  margin-bottom: 0;
+}
+
+/* --- Prevent Card Overlap on Mobile --- */
+.services-grid,
+.products-grid {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 576px) {
+  .services-grid,
+  .products-grid {
+    gap: 12px;
+  }
+  .service-card,
+  .product-card {
+    margin-bottom: 0;
+    min-width: 0;
+    max-width: 100%;
+  }
+}
 
 /* --- Responsive Design --- */
 @media (max-width: 1200px) {
@@ -792,7 +1042,7 @@
     width: 18px;
     height: 18px;
   }
-  .hero-clock-hand {
+  .hero_clock_hand {
     border-radius: 5px;
   }
   .hero-clock-hour-hand {
@@ -850,4 +1100,163 @@
     height: 16px;
   }
   /* Further adjust hands and center for small screens if needed */
+}
+
+/* --- About Us Section Responsive Alignment Fixes --- */
+.about-us-section {
+  /* ...existing code... */
+}
+
+.about-us-grid {
+  /* ...existing code... */
+  align-items: flex-start;
+}
+
+.about-us-text {
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.section-description {
+  text-align: left;
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+  /* Remove any inherited center alignment */
+}
+
+.section-description ul {
+  padding-left: 0;
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+}
+
+.section-description ul li {
+  padding-left: 28px;
+  margin-bottom: 12px;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #2d3748;
+  text-align: left;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.section-description ul li::before {
+  left: 0;
+}
+
+@media (max-width: 992px) {
+  .about-us-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: left;
+    align-items: flex-start;
+  }
+  .about-us-text {
+    text-align: left;
+    align-items: flex-start;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .about-us_text .section-title {
+    text-align: left;
+    justify-content: flex-start;
+  }
+  .section-description,
+  .section-description ul,
+  .section-description ul li {
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .about-us-section {
+    padding: 40px 0;
+  }
+  .about-us-grid {
+    gap: 18px;
+  }
+  .about-us-text {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .section-description {
+    font-size: 0.98rem;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .section-description ul {
+    padding-left: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .section-description ul li {
+    font-size: 0.97rem;
+    padding-left: 24px;
+  }
+}
+
+/* Make product grid always 4 columns on large screens, 3 on tablets, 2 on small tablets, 1 on mobile */
+.even-products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+@media (max-width: 1200px) {
+  .even-products-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+}
+
+@media (max-width: 900px) {
+  .even-products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .even-products-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
+
+/* --- Service Card Height Consistency --- */
+.overlay-card,
+.service-card.overlay-card {
+  min-height: 420px; /* Reduced height for service cards */
+}
+
+.overlay-card-image {
+  min-height: 420px;
+}
+
+/* Restore product card height to original for products */
+.product-card.overlay-card,
+.product_card .overlay-card-image {
+  min-height: 320px !important;
+}
+.product-card .overlay-card-image {
+  min-height: 320px !important;
+}
+
+/* Force overlay content to scroll if too tall, so button is always visible */
+.overlay-card-content {
+  height: 50%;
+  min-height: unset;
+  max-height: none; /* Remove scroll, let content fit */
+  overflow-y: visible;
+  /* ...existing code... */
 }
