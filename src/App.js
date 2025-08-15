@@ -18,7 +18,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src="https://img.icons8.com/color/96/whatsapp.png" alt="WhatsApp" />
+          <img src="/whatsapp-icon.png" alt="WhatsApp" />
         </a>
         <div className="floating-card-tooltip">
           Have questions? <br /> Chat with us

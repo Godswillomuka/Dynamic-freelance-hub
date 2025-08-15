@@ -455,11 +455,6 @@
   margin: 0;
 }
 
-/* Social section class for clarity */
-.social-section {
-  /* No extra styles — used for targeting */
-}
-
 /* 3x2 layout adjustment for mid-sized screens */
 @media (max-width: 900px) {
   .footer-content {
