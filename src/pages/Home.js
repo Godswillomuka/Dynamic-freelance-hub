@@ -8,20 +8,20 @@ import businessCard from '../assets/bussinescard.png';
 import flyer from '../assets/flyer.png';
 import tshirts from '../assets/t-shirts.png';
 import customMugs from '../assets/mug.png';
-import designImg from '../assets/service-design.png';      // https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80
-import printImg from '../assets/service-print.png';        // https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=600&q=80
-import brandingImg from '../assets/service-branding.png';  // https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80
-import signageImg from '../assets/service-signage.png';    // https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80
-import packagingImg from '../assets/service-packaging.png';// https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=600&q=80
-import promoImg from '../assets/service-promo.png';        // https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80
-import capImg from '../assets/product-cap.png';            // https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80
-import penImg from '../assets/product-pen.png';            // https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=600&q=80
-import bagImg from '../assets/product-bag.png';            // https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=600&q=80
-import stickerImg from '../assets/product-sticker.png';    // https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=600&q=80
-import notebookImg from '../assets/product-notebook.png';  // https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=600&q=80
+import designImg from '../assets/service-design.png';     
+import printImg from '../assets/service-print.png';        
+import brandingImg from '../assets/service-branding.png';  
+import signageImg from '../assets/service-signage.png';    
+import packagingImg from '../assets/service-packaging.png';
+import promoImg from '../assets/service-promo.png';        
+import capImg from '../assets/product-cap.png';            
+import penImg from '../assets/product-pen.png';           
+import bagImg from '../assets/product-bag.png';            
+import stickerImg from '../assets/product-sticker.png';    
+import notebookImg from '../assets/product-notebook.png';  
 import lanyardImg from '../assets/product-lanyard.png';
 import deskcalender from '../assets/deskcalender.png' 
-import giftvoucher from '../assets/giftvoucher.png'  // https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?auto=format&fit=crop&w=600&q=80
+import giftvoucher from '../assets/giftvoucher.png'  
 import './Home.css';
 
 
@@ -297,18 +297,10 @@ const Home = () => {
               <h2 className="section-title">Who We Are</h2>
               <p className="section-description">
                 <strong>Dynamic Freelance Hub</strong> is more than just a printing service,we specialize in crafting compelling visual identities and producing high-quality printed materials that help businesses:
-
-<li>Grow their visibility in competitive markets</li>
-
-<li>Enhance credibility with professional, polished designs</li>
-
-<li>Strengthen brand consistency across every platform</li>
-
-From business cards and branded merchandise to large-scale prints and corporate branding, we ensure every detail reflects your brand’s quality and professionalism.
-
-Using modern design tools and state-of-the-art printing, we deliver results that build trust, attract customers, and drive success.
-
-
+                  <li>Grow their visibility in competitive markets</li>
+                  <li>Enhance credibility with professional, polished designs</li>
+                  <li>Strengthen brand consistency across every platform</li>
+                  From business cards and branded merchandise to large-scale prints and corporate branding, we ensure every detail reflects your brand’s quality and professionalism.Using modern design tools and state-of-the-art printing, we deliver results that build trust, attract customers, and drive success.
               </p>
               <a href="/about" className="btn btn-primary-alt">
                 Learn More
