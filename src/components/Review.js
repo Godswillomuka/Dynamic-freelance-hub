@@ -15,7 +15,7 @@ const Reviews = () => {
       company: 'TechStart Solutions',
       role: 'Marketing Director',
       rating: 5,
-      text: 'Brandblast transformed our entire brand identity! Their attention to detail and creative vision exceeded our expectations. The vehicle wraps they designed for our fleet have significantly increased our brand visibility.',
+      text: 'Dynamic Freelance Hub transformed our entire brand identity! Their attention to detail and creative vision exceeded our expectations. The vehicle wraps they designed for our fleet have significantly increased our brand visibility.',
       image: 'https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg',
       service: 'Brand Design & Vehicle Wraps',
       date: '2024-01-15'
@@ -26,7 +26,7 @@ const Reviews = () => {
       company: 'Urban Eats Food Truck',
       role: 'Owner',
       rating: 5,
-      text: 'The custom apparel and promotional materials from Brandblast helped us stand out at every event. Their quality is unmatched, and the customer service is exceptional. Highly recommend!',
+      text: 'The custom apparel and promotional materials from Dynamic Freelance Hub helped us stand out at every event. Their quality is unmatched, and the customer service is exceptional. Highly recommend!',
       image: 'https://images.pexels.com/photos/3806749/pexels-photo-3806749.jpeg',
       service: 'Custom Apparel & Promotional Products',
       date: '2024-02-03'
@@ -37,7 +37,7 @@ const Reviews = () => {
       company: 'Luxe Beauty Co.',
       role: 'Brand Manager',
       rating: 5,
-      text: 'The premium finishing work on our packaging is absolutely stunning. The foil stamping and embossing details make our products feel truly luxury. Brandblast understands quality.',
+      text: 'The premium finishing work on our packaging is absolutely stunning. The foil stamping and embossing details make our products feel truly luxury. Dynamic Freelance Hub understands quality.',
       image: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg',
       service: 'Premium Finishing & Packaging',
       date: '2024-01-28'
@@ -48,7 +48,7 @@ const Reviews = () => {
       company: 'Summit Construction',
       role: 'Operations Manager',
       rating: 5,
-      text: 'Professional, reliable, and creative. Brandblast delivered our trade show displays on time and they looked incredible. We received so many compliments and leads at the expo.',
+      text: 'Professional, reliable, and creative. Dynamic Freelance Hub delivered our trade show displays on time and they looked incredible. We received so many compliments and leads at the expo.',
       image: 'https://images.pexels.com/photos/1687845/pexels-photo-1687845.jpeg',
       service: 'Trade Show Displays & Signage',
       date: '2024-02-10'
@@ -59,7 +59,7 @@ const Reviews = () => {
       company: 'Green Valley Organics',
       role: 'CEO',
       rating: 5,
-      text: 'From concept to completion, Brandblast made the entire process seamless. Their team understood our vision and brought it to life beautifully. Our new branding has boosted sales significantly.',
+      text: 'From concept to completion, Dynamic Freelance Hub made the entire process seamless. Their team understood our vision and brought it to life beautifully. Our new branding has boosted sales significantly.',
       image: 'https://images.pexels.com/photos/3747468/pexels-photo-3747468.jpeg',
       service: 'Complete Brand Identity',
       date: '2024-01-20'
@@ -80,7 +80,7 @@ const Reviews = () => {
   const stats = [
     { icon: Users, value: '500+', label: 'Happy Clients' },
     { icon: Star, value: '4.9/5', label: 'Average Rating' },
-    { icon: Award, value: '15+', label: 'Years Experience' },
+    { icon: Award, value: '10+', label: 'Years Experience' },
     { icon: ThumbsUp, value: '99%', label: 'Satisfaction Rate' }
   ];
 
@@ -117,7 +117,7 @@ const Reviews = () => {
     try {
       if (navigator.share) {
         await navigator.share({
-          title: 'Brandblast Client Review',
+          title: 'Dynamic Freelance Hub Client Review',
           text: shareText,
           url: shareUrl,
         });
@@ -186,7 +186,7 @@ const Reviews = () => {
           </h2>
           
           <p className="reviews__description">
-            Don't just take our word for it. Here's what our satisfied clients have to say about their experience with Brandblast.
+            Don't just take our word for it. Here's what our satisfied clients have to say about their experience with Dynamic Freelance Hub.
           </p>
         </motion.div>
 
