@@ -1,0 +1,40 @@
+.floating-button {
+  position: fixed;
+  right: 20px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.floating-button img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.floating-button img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+}
+
+.floating-card-tooltip {
+  background-color: #25D366;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  text-align: center;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  opacity: 0.95;
+}
+
+.whatsapp-button {
+  bottom: 20px;
+}

@@ -3,6 +3,9 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import TrustedBrands from '../components/TrustedBrands';
 import Reviews from '../components/Review';
+import WhatsApp from '../components/WhatsApp';
+
+// images 
 import aboutTeam from '../assets/about-team.png';
 import businessCard from '../assets/bussinescard.png';
 import flyer from '../assets/flyer.png';
@@ -443,7 +446,9 @@ const Home = () => {
         </div>
       </motion.section>
       <Reviews />
+      <WhatsApp />
     </main>
+    
   );
 };
 

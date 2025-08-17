@@ -99,9 +99,10 @@
 .reviews__title-highlight {
   background: linear-gradient(135deg, #009f6f 0%, #2ecc71 100%);
   ;
-  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
+  
 }
 
 .reviews__description {
