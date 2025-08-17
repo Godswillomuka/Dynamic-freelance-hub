@@ -1102,11 +1102,6 @@
   /* Further adjust hands and center for small screens if needed */
 }
 
-/* --- About Us Section Responsive Alignment Fixes --- */
-.about-us-section {
-  /* ...existing code... */
-}
-
 .about-us-grid {
   /* ...existing code... */
   align-items: flex-start;
