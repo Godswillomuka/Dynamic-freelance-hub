@@ -1,0 +1,65 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Sidebar Container */
+.sidebar {
+  width: 280px;
+  background: #1e293b;
+  color: white;
+  height: 100vh;
+  overflow-y: auto;
+  position: fixed;
+  padding: 10px 0;
+}
+
+/* Title */
+.sidebar-title {
+  text-align: center;
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+/* Menu Items */
+.menu-item {
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background 0.3s;
+}
+
+.menu-item:hover {
+  background: #334155;
+}
+
+/* Submenu */
+.submenu {
+  display: none;
+  background: #0f172a;
+  transition: all 0.3s;
+}
+
+.submenu.open {
+  display: block;
+}
+
+.submenu a {
+  display: block;
+  padding: 8px 40px;
+  text-decoration: none;
+  color: #cbd5e1;
+  font-size: 0.9rem;
+}
+
+.submenu a:hover {
+  background: #1e293b;
+  color: white;
+}
+
+/* For Main Content Area */
+.main-content {
+  margin-left: 280px;
+  padding: 20px;
+}
