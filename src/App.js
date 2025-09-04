@@ -6,13 +6,14 @@ import Footer from "./components/Footer";
 import Services from "./pages/Service";
 import Portfolio from "./pages/Portfolio";
 import About from "./pages/About";
-import Sidebar from "./components/Sidebar";
+
+
 
 
 function App() {
   return (
     <>
-      <Sidebar />
+      
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
