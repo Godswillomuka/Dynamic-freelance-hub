@@ -1,3 +1,5 @@
+import heroImage from "../assets/3d/professional 3d printing factory.png";
+
 const servicesData = [
   {
     slug: "3d-printing",
@@ -5,7 +7,7 @@ const servicesData = [
     tagline: "From imagination to reality in 3D.",
 
     hero: {
-      image: "https://source.unsplash.com/1200x720/?3d-printer,additive-manufacturing",
+      image: heroImage,
       headline: "Revolutionizing Ideas Through 3D Printing",
       subheadline: "Transform your digital designs into physical objects with speed, precision, and limitless creativity.",
       ctaButton: "Get a Free Quote",
