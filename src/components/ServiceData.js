@@ -1,6 +1,3 @@
-// Full servicesData covering every service from the sidebar, modeled on the 3D Printing example
-// NOTE: Images use Unsplash queries as placeholders. Replace with local assets where needed.
-
 const servicesData = [
   {
     slug: "digital-offset-printing",
