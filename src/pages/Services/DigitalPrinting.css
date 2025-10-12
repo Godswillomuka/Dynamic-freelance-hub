@@ -3,12 +3,25 @@
   color: #333;
   line-height: 1.6;
   overflow-x: hidden;
-  padding: 80px 0 32px;
+  padding: 80px 32px 32px 312px; /* top, right, bottom, left (sidebar width + gap) */
+  box-sizing: border-box;
+}
+
+/* For smaller screens, remove left padding so it doesn't push content off screen */
+@media (max-width: 900px) {
+  .printing-page {
+    padding: 70px 16px 24px 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .printing-page {
+    padding: 40px 6px 16px 0;
+  }
 }
 
 /* HERO */
 .hero {
-  background: url("/home/zilla/development/dynamic-freelance-hub/src/assets/hero.png") center/cover no-repeat;
   height: 85vh;
   display: flex;
   justify-content: center;

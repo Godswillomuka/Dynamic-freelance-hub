@@ -24,7 +24,8 @@ import stickerImg from '../assets/product-sticker.png';
 import notebookImg from '../assets/product-notebook.png';  
 import lanyardImg from '../assets/product-lanyard.png';
 import deskcalender from '../assets/deskcalender.png' 
-import giftvoucher from '../assets/giftvoucher.png'  
+import giftvoucher from '../assets/giftvoucher.png' 
+import Footer from '../components/Footer'; 
 import './Home.css';
 
 
@@ -236,6 +237,7 @@ const products = [
 const Home = () => {
 
   return (
+    <>
     <main className="home-page">
       {/* --- Hero Section --- */}
       <section className="hero-section">
@@ -448,7 +450,8 @@ const Home = () => {
       <Reviews />
       <WhatsApp />
     </main>
-    
+    <Footer />
+    </>
   );
 };
 

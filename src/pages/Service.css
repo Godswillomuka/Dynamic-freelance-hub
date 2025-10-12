@@ -1,60 +1,135 @@
+/* ==== Services Page Layout ==== */
 .services-layout {
   display: flex;
   min-height: 100vh;
   background: #f8fafc;
+  color: #333;
 }
 
-.main-content {
-  flex: 1;
-  margin-left: 280px;
-  padding: 40px 60px;
-  background: #fff;
-  box-sizing: border-box;
-  overflow-y: auto;
-}
-
+/* The right content section beside the sidebar */
 .service-display {
   flex: 1;
   padding: 32px 24px;
   background: #fff;
   overflow-y: auto;
+  box-sizing: border-box;
 }
 
-.services-hero {
+/* ==== Search/Filter Bar ==== */
+.service-filter-bar {
+  width: 100%;
+  max-width: 420px;
+  margin-bottom: 28px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-end;
+  margin-left: auto;
+}
+
+.service-filter-bar input[type="text"] {
+  flex: 1;
+  padding: 10px 16px;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+  font-size: 1rem;
+  background: #f8fafc;
+  color: #333;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.service-filter-bar input[type="text"]:focus {
+  border-color: #ff7b00;
+  box-shadow: 0 0 0 2px rgba(255, 123, 0, 0.2);
+  outline: none;
+}
+
+.service-filter-bar button {
+  padding: 10px 22px;
+  border-radius: 6px;
+  border: none;
+  background: #ff7b00;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.1s ease;
+}
+
+.service-filter-bar button:hover {
+  background: #e26d00;
+}
+
+.service-filter-bar button:active {
+  transform: scale(0.97);
+}
+
+/* ==== Error Message ==== */
+.service-display p[style*="color: red"] {
+  background: #fff6f5;
+  border: 1px solid #ffd5d0;
+  padding: 10px 16px;
+  border-radius: 6px;
+  color: #e11d48 !important;
+}
+
+/* ==== Coming Soon Page ==== */
+.coming-soon {
   text-align: center;
-  margin-bottom: 50px;
+  padding: 60px 0;
+  color: #ff7b00;
 }
 
-.services-hero h1 {
-  font-size: 2.3rem;
-  color: #ff7b00;
+.coming-soon h2 {
+  font-size: 2rem;
   margin-bottom: 10px;
 }
 
-.services-hero p {
-  max-width: 700px;
-  margin: 0 auto;
+.coming-soon p {
   color: #555;
-  font-size: 1.05rem;
+  font-size: 1rem;
 }
 
+/* ==== Scrollbar Styling ==== */
+.service-display::-webkit-scrollbar {
+  width: 8px;
+}
+
+.service-display::-webkit-scrollbar-thumb {
+  background: #ff7b00;
+  border-radius: 4px;
+}
+
+.service-display::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* ==== Responsive Design ==== */
 @media (max-width: 992px) {
   .services-layout {
     flex-direction: column;
   }
 
-  .main-content {
-    margin-left: 0;
-    padding: 30px 20px;
+  .service-filter-bar {
+    justify-content: center;
+    max-width: 100%;
+    margin: 20px auto;
   }
 
-  .services-hero h1 {
-    font-size: 2rem;
+  .service-filter-bar input {
+    width: 60%;
   }
 }
 
 @media (max-width: 600px) {
-  .services-hero h1 {
-    font-size: 1.8rem;
+  .service-filter-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .service-filter-bar input,
+  .service-filter-bar button {
+    width: 100%;
   }
 }
