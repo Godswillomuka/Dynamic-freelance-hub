@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import './Sidebar.css';
 
 
 const sidebarData = [
@@ -152,9 +153,16 @@ export default function Sidebar() {
           </div>
           <div className={`submenu ${openIndex === index ? "open" : ""}`}>
             {section.links.map((link, i) => (
-                <Link to={`/services/${link.replace(/\s+/g, "-").toLowerCase()}`} key={i}>
-                  {link}
-                </Link>
+              <NavLink
+                to={`/services/${link.replace(/\s+/g, "-").toLowerCase()}`}
+                key={i}
+                className={({ isActive }) =>
+                  isActive ? "active" : ""
+                }
+                end
+              >
+                {link}
+              </NavLink>
             ))}
           </div>
         </div>

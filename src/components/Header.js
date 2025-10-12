@@ -78,14 +78,13 @@ function Header() {
           <ul>
             <li><Link to="/" className="nav-link" onClick={closeMenu}>Home</Link></li>
             <li><Link to="/services" className="nav-link" onClick={closeMenu}>Services</Link></li>
-            <li><Link to="/products" className="nav-link" onClick={closeMenu}>Products</Link></li>
-            <li><Link to="/portfolio" className="nav-link" onClick={closeMenu}>Design Online</Link></li>
-            <li><Link to="/about" className="nav-link" onClick={closeMenu}>About</Link></li>
-            <li><Link to="/blog" className="nav-link" onClick={closeMenu}>Contact</Link></li>
+            <li><Link to="/portfolio" className="nav-link" onClick={closeMenu}>Portfolio</Link></li>
+            <li><Link to="/about" className="nav-link" onClick={closeMenu}>About Us</Link></li>
+            <li><Link to="/contact" className="nav-link" onClick={closeMenu}>Contact</Link></li>
           </ul>
           <div className="quote-btn-wrapper">
             <Link to="/get-quote" onClick={closeMenu}>
-              <button className="quote-btn">Quote Request</button>
+              <button className="quote-btn">Get Quote</button>
             </Link>
           </div>
         </nav>
