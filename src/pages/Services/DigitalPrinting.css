@@ -3,6 +3,7 @@
   color: #333;
   line-height: 1.6;
   overflow-x: hidden;
+  padding: 80px 0 32px;
 }
 
 /* HERO */
@@ -81,6 +82,30 @@
 }
 .diff-box:hover { transform: translateY(-8px); }
 .diff-box img { width: 100%; border-radius: 8px; margin-bottom: 15px; }
+
+/* Make digital printing section image stand out and look like a hero/feature image */
+.difference-grid .diff-box img {
+  width: 100%;
+  max-width: 320px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.13);
+  margin-bottom: 15px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background: #fff;
+}
+
+/* On mobile, make sure it fills the card but keeps aspect ratio */
+@media (max-width: 600px) {
+  .difference-grid .diff-box img {
+    max-width: 100vw;
+    height: 140px;
+    border-radius: 10px;
+  }
+}
 
 /* WHY CHOOSE US */
 .why-choose {
