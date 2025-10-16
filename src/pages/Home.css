@@ -807,6 +807,12 @@
     min-width: 90px;
     max-width: 140px;
   }
+  /* Force service/product cards to be visible on mobile */
+  .service-card,
+  .product-card {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
 
 /* --- Fix Card Flex Layout for Buttons and Prevent Overlap --- */

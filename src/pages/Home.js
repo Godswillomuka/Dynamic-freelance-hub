@@ -234,6 +234,8 @@ const products = [
   }
 ];
 
+const isMobile = window.innerWidth <= 576;
+
 const Home = () => {
 
   return (
@@ -318,7 +320,7 @@ const Home = () => {
       {/* --- Core Services Section --- */}
       <motion.section
         className="core-services-section"
-        initial="hidden"
+        initial={isMobile ? "show" : "hidden"}
         whileInView="show"
         viewport={{ once: true, amount: 0.3 }}
         variants={staggerContainer}
@@ -365,7 +367,7 @@ const Home = () => {
       {/* --- Popular Products Section --- */}
       <motion.section
         className="popular-products-section"
-        initial="hidden"
+        initial={isMobile ? "show" : "hidden"}
         whileInView="show"
         viewport={{ once: true, amount: 0.3 }}
         variants={staggerContainer}
