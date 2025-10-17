@@ -134,44 +134,60 @@ const sidebarData = [
 
 export default function Sidebar() {
   const [openIndex, setOpenIndex] = useState(null);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const toggleSection = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
   return (
-    <div className="sidebar">
-      <h2 className="sidebar-title">Our Services</h2>
-      {sidebarData.map((section, index) => (
-        <div key={index}>
-          <div
-            className={`menu-item ${openIndex === index ? "active" : ""}`}
-            onClick={() => toggleSection(index)}
-          >
-            {section.title}
-          </div>
-          <div className={`submenu ${openIndex === index ? "open" : ""}`}>
-            {section.links.map((link, i) => {
-              const slug = link
-                .replace(/[^a-zA-Z0-9\s]/g, "") 
-                .trim()
-                .replace(/\s+/g, "-") 
-                .toLowerCase();
+    <>
+      {/* Toggle button for mobile */}
+      <button
+        className="sidebar-toggle"
+        onClick={() => setSidebarOpen(!sidebarOpen)}
+        aria-label="Toggle sidebar"
+      >
+        &#9776;
+      </button>
 
-              return (
-                <NavLink
-                  to={`/services/${slug}`}
-                  key={i}
-                  className={({ isActive }) => (isActive ? "active" : "")}
-                  end
-                >
-                  {link}
-                </NavLink>
-              );
-            })}
+      {/* Sidebar */}
+      <div className={`sidebar ${sidebarOpen ? "open" : ""}`}>
+        <h2 className="sidebar-title">Our Services</h2>
+
+        {sidebarData.map((section, index) => (
+          <div key={index}>
+            <div
+              className={`menu-item ${openIndex === index ? "active" : ""}`}
+              onClick={() => toggleSection(index)}
+            >
+              {section.title}
+            </div>
+
+            <div className={`submenu ${openIndex === index ? "open" : ""}`}>
+              {section.links.map((link, i) => {
+                const slug = link
+                  .replace(/[^a-zA-Z0-9\s]/g, "")
+                  .trim()
+                  .replace(/\s+/g, "-")
+                  .toLowerCase();
+
+                return (
+                  <NavLink
+                    to={`/services/${slug}`}
+                    key={i}
+                    className={({ isActive }) => (isActive ? "active" : "")}
+                    end
+                    onClick={() => setSidebarOpen(false)} // ✅ Closes sidebar on link click
+                  >
+                    {link}
+                  </NavLink>
+                );
+              })}
+            </div>
           </div>
-        </div>
-      ))}
-    </div>
+        ))}
+      </div>
+    </>
   );
 }

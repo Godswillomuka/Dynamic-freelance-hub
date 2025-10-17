@@ -1,7 +1,5 @@
 import React from "react";
 import printingMachinesImg from "../../assets/service-design.png";
-import digitalPrintImg from "../../assets/service-branding.png";
-import offsetPrintImg from "../../assets/service-packaging.png";
 import print1Img from "../../assets/product-cap.png";
 import print2Img from "../../assets/product-bag.png";
 import print3Img from "../../assets/product-lanyard.png";
@@ -16,10 +14,13 @@ export default function DigitalOffsetPrinting() {
         <div className="hero-content">
           <h1>Precision Printing, Every Time</h1>
           <p>
-            Whether you need 50 business cards or 50,000 brochures, our digital and offset
+            Whether you need 50 business cards or 80,000 brochures, our digital and offset
             printing solutions bring your vision to life — with unmatched clarity, color, and care.
           </p>
           <button className="btn-primary">Request a Quote</button>
+        </div>
+        <div className="hero-image">
+          <img src={printingMachinesImg} alt="Digital printing machines" />
         </div>
       </section>
 
@@ -28,10 +29,10 @@ export default function DigitalOffsetPrinting() {
         <div className="about-text">
           <h2>Crafted for Every Print Need</h2>
           <p>
-            At <strong>YourPrint Studio</strong>, we combine modern digital printing with traditional
+            At <strong>Dynamic Freelance Hub</strong>, we combine modern digital printing with traditional
             offset expertise to offer flexible, high-quality solutions for every project size.
           </p>
-          <p>
+          <p>8u
             Our precision technology ensures true-to-life color reproduction, crisp details, and
             premium finishing that helps your brand stand out — from flyers and catalogs to luxury
             packaging.
@@ -51,16 +52,14 @@ export default function DigitalOffsetPrinting() {
         <h2>The Perfect Print, Tailored to You</h2>
         <div className="difference-grid">
           <div className="diff-box">
-            <img src={digitalPrintImg} alt="Digital printing" />
-            <h3>Digital Printing</h3>
+            <h3>🖨️ Digital Printing</h3>
             <p>
               Fast, efficient, and flexible — perfect for short runs, personalized marketing
               materials, and tight deadlines. Enjoy vibrant results without setup costs.
             </p>
           </div>
           <div className="diff-box">
-            <img src={offsetPrintImg} alt="Offset printing" />
-            <h3>Offset Printing</h3>
+            <h3>🧾  Offset Printing</h3>
             <p>
               Ideal for large quantities and color-critical projects. Offset printing ensures
               consistent, high-resolution quality that’s cost-effective at scale.
