@@ -5,6 +5,7 @@ import "./Service.css";
 import LogoDesign from "./Services/LogoDesign";
 import BrandIdentityDesign from "./Services/BrandIdentityDesign";
 import BusinessCardDesign from "./Services/BusinessCardDesign";
+import LetterheadDesign from "./Services/LetterheadDesign";
 
 /* --- Placeholder Component for Unbuilt Pages --- */
 function ComingSoon({ title }) {
@@ -141,6 +142,7 @@ const slugToComponent = {
   "logo-design": LogoDesign,
   "brand-identity-design": BrandIdentityDesign,
   "business-card-design": BusinessCardDesign,
+  "letterhead-design": LetterheadDesign,
   // add more overrides as needed:
   // "digital-printing": DigitalPrinting,
   // "large-format": LargeFormat,

@@ -1,0 +1,266 @@
+/* ==== Letterhead Design Page ==== */
+.letterhead-page {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  color: #000;
+  padding: 24px;
+  box-sizing: border-box;
+  margin-left: 280px; /* offset sidebar width */
+  transition: margin-left 0.3s ease;
+  min-height: 100vh;
+}
+
+/* HERO SECTION */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.hero-content h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.hero-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.btn-primary {
+  background-color: rgb(0, 159, 111);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: rgb(0, 143, 50);
+  transform: translateY(-2px);
+}
+
+.hero-image img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+/* ABOUT SECTION */
+.about {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.about-text h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.about-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.about-image img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+/* FEATURES / DIFFERENTIATORS */
+.features {
+  margin-bottom: 50px;
+}
+
+.features h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 24px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 24px;
+}
+
+.feature-box {
+  background: #f3f6f8;
+  border-radius: 8px;
+  padding: 16px;
+  transition: all 0.2s ease;
+}
+
+.feature-box:hover {
+  transform: translateY(-3px);
+}
+
+.feature-box h3 {
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.feature-box p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* GALLERY SECTION */
+.gallery {
+  margin-bottom: 50px;
+}
+
+.gallery h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  border-radius: 8px;
+  transition: transform 0.2s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.03);
+}
+
+/* PROCESS SECTION */
+.process {
+  margin-bottom: 50px;
+}
+
+.process h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 24px;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+.step {
+  background: #f3f6f8;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.step-number {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: rgb(0, 159, 111);
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.step h3 {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.step p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* CTA SECTION */
+.cta {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.cta h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.cta p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.btn-secondary {
+  background-color: rgb(0, 159, 111);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: rgb(0, 143, 50);
+  transform: translateY(-2px);
+}
+
+/* SCROLLBAR */
+.letterhead-page::-webkit-scrollbar {
+  width: 8px;
+}
+
+.letterhead-page::-webkit-scrollbar-thumb {
+  background-color: rgb(0, 159, 111);
+  border-radius: 4px;
+}
+
+.letterhead-page::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* ==== RESPONSIVE ==== */
+@media (max-width: 992px) {
+  .letterhead-page {
+    margin-left: 0;
+    padding: 16px;
+  }
+
+  .hero, .about {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-content h1,
+  .about-text h2,
+  .features h2,
+  .gallery h2,
+  .process h2,
+  .cta h2 {
+    font-size: 1.5rem;
+  }
+
+  .hero-content p,
+  .about-text p,
+  .feature-box p,
+  .gallery p,
+  .step p,
+  .cta p {
+    font-size: 0.95rem;
+  }
+}
