@@ -2,23 +2,27 @@
 .services-layout {
   display: flex;
   min-height: 100vh;
-  background: #f8fafc;
-  color: #333;
+  background: #f9fafb; /* Matches website background */
+  color: #1e293b; /* Primary text color */
+  font-family: "Poppins", Arial, sans-serif;
 }
 
 /* The right content section beside the sidebar */
 .service-display {
   flex: 1;
   padding: 32px 24px;
-  background: #fff;
+  background: #f8fafc; /* Slightly lighter for content */
   overflow-y: auto;
   box-sizing: border-box;
+  transition: background 0.3s ease, color 0.3s ease;
+  border-left: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 0 12px 12px 0;
 }
 
 /* ==== Search/Filter Bar ==== */
 .service-filter-bar {
   width: 100%;
-  max-width: 420px;
+  max-width: 480px;
   margin-bottom: 28px;
   display: flex;
   gap: 10px;
@@ -30,34 +34,35 @@
 .service-filter-bar input[type="text"] {
   flex: 1;
   padding: 10px 16px;
-  border-radius: 6px;
-  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1; /* neutral border */
   font-size: 1rem;
-  background: #f8fafc;
-  color: #333;
+  background: #f1f5f9; /* subtle light background */
+  color: #1e293b;
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 .service-filter-bar input[type="text"]:focus {
-  border-color: #ff7b00;
-  box-shadow: 0 0 0 2px rgba(255, 123, 0, 0.2);
+  border-color: #00ffc6; /* website primary accent */
+  box-shadow: 0 0 0 2px rgba(0, 255, 198, 0.2);
   outline: none;
 }
 
 .service-filter-bar button {
   padding: 10px 22px;
-  border-radius: 6px;
+  border-radius: 8px;
   border: none;
-  background: #ff7b00;
-  color: #fff;
+  background: #00ffc6; /* website primary accent */
+  color: #1e293b; /* dark text for contrast */
   font-weight: 600;
   font-size: 1rem;
   cursor: pointer;
-  transition: background 0.25s ease, transform 0.1s ease;
+  transition: background 0.25s ease, transform 0.1s ease, box-shadow 0.2s ease;
 }
 
 .service-filter-bar button:hover {
-  background: #e26d00;
+  background: #04bf9f;
+  box-shadow: 0 4px 12px rgba(0, 159, 111, 0.25);
 }
 
 .service-filter-bar button:active {
@@ -66,28 +71,31 @@
 
 /* ==== Error Message ==== */
 .service-display p[style*="color: red"] {
-  background: #fff6f5;
-  border: 1px solid #ffd5d0;
+  background: #ffeef0;
+  border: 1px solid #fda4af;
   padding: 10px 16px;
-  border-radius: 6px;
+  border-radius: 8px;
   color: #e11d48 !important;
+  font-weight: 500;
 }
 
 /* ==== Coming Soon Page ==== */
 .coming-soon {
   text-align: center;
-  padding: 60px 0;
-  color: #ff7b00;
+  padding: 80px 20px;
+  color: #00ffc6; /* website accent */
 }
 
 .coming-soon h2 {
   font-size: 2rem;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+  color: #1e293b;
 }
 
 .coming-soon p {
-  color: #555;
+  color: #475569;
   font-size: 1rem;
+  line-height: 1.6;
 }
 
 /* ==== Scrollbar Styling ==== */
@@ -96,18 +104,28 @@
 }
 
 .service-display::-webkit-scrollbar-thumb {
-  background: #ff7b00;
-  border-radius: 4px;
+  background: #00ffc6; /* primary accent */
+  border-radius: 6px;
+}
+
+.service-display::-webkit-scrollbar-thumb:hover {
+  background: #04bf9f;
 }
 
 .service-display::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #f1f5f9; /* matches content background */
+  border-radius: 6px;
 }
 
 /* ==== Responsive Design ==== */
 @media (max-width: 992px) {
   .services-layout {
     flex-direction: column;
+  }
+
+  .service-display {
+    border-left: none;
+    border-radius: 0 0 12px 12px;
   }
 
   .service-filter-bar {
@@ -131,5 +149,31 @@
   .service-filter-bar input,
   .service-filter-bar button {
     width: 100%;
+  }
+
+  .service-display {
+    padding: 20px 16px;
+  }
+
+  .coming-soon h2 {
+    font-size: 1.75rem;
+  }
+
+  .coming-soon p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .service-display {
+    padding: 16px 12px;
+  }
+
+  .coming-soon h2 {
+    font-size: 1.5rem;
+  }
+
+  .coming-soon p {
+    font-size: 0.9rem;
   }
 }

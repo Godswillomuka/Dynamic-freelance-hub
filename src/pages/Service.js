@@ -1,8 +1,8 @@
-import React from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Routes, Route, useParams, Navigate } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
-import DigitalOffsetPrinting from "./Services/DigitalPrinting";
 import "./Service.css";
+import LogoDesign from "./Services/LogoDesign"; // add real page imports here
 
 /* --- Placeholder Component for Unbuilt Pages --- */
 function ComingSoon({ title }) {
@@ -16,96 +16,114 @@ function ComingSoon({ title }) {
 
 /* --- All Services from Sidebar --- */
 const allServices = [
-  // Printing Solutions
-  "Digital & Offset Printing",
-  "Large Format Printing",
-  "Custom Packaging & Labels",
-  "Stationery Printing",
-  "Special Finishes",
-  "Security Printing",
-  "3D Printing",
-
   // Graphic & Creative Design
-  "Logo Design & Brand Identity",
-  "Corporate Branding Materials",
-  "Brand Strategy & Consultation",
-  "Packaging Design & Engineering",
-  "Motion Graphics & Video Branding",
-  "Social Media Content Design",
+  "Logo Design",
+  "Brand Identity Design",
+  "Business Card Design",
+  "Letterhead Design",
+  "Company Profile Design",
+  "Social Media Posters",
+  "Event Posters",
+  "Flyers & Brochure Design",
+  "Menu Design",
+  "Packaging & Label Design",
+  "Banner & Billboard Layout Design",
+  "Invitation Card Design",
+  "Certificate Design",
+  "T-Shirt Artwork Design",
+  "Magazine & Book Layout",
+  "Infographics Design",
+  "Website UI Layout (optional)",
 
-  // Corporate & Promotional Merchandise
-  "Custom Apparel",
+  // General & Digital Printing
+  "Business Cards",
+  "Flyers & Brochures",
+  "Posters (A3/A2/A1/A0)",
+  "Magazines & Books",
+  "Company Profiles",
+  "Stickers & Labels",
+  "Receipt Books (NCR)",
+  "Calendars",
+  "Notebooks & Diaries",
+  "Envelopes",
+  "Letterheads",
+  "Presentation Folders",
+  "ID Cards",
+  "Certificates",
+  "Menus",
+
+  // Large Format & Outdoor Printing
+  "PVC/Flex Banners",
+  "Roll-Up Banners",
+  "Pop-Up Banners",
+  "Backdrops",
+  "Billboards",
+  "Shop Signage",
+  "Window Graphics",
+  "Wall Murals",
+  "Vehicle Branding Stickers",
+  "Floor Graphics",
+
+  // Merchandise & Promotional Branding
+  "T-Shirts (DTF/Screen)",
+  "Hoodies",
+  "Caps",
+  "Mugs",
+  "Water Bottles",
+  "Keyholders",
+  "Lanyards",
   "Corporate Gifts",
-  "Tech Merchandise",
-  "Eco-Friendly Products",
-  "Custom Gift & Hamper Packaging",
-  "Seasonal Gift Bundles",
+  "Pens",
+  "Tote Bags",
+  "Badges & Buttons",
 
-  // Signage & Outdoor Advertising
-  "Indoor & Outdoor Signage",
-  "LED & Neon Signs",
-  "Billboards & Hoardings",
-  "Vehicle Branding & Fleet Graphics",
-  "Directional & Wayfinding Signage",
-  "Retail & POS Displays",
+  // Vehicle & Fleet Branding
+  "Full Vehicle Wraps",
+  "Partial Wraps",
+  "Reflective Stickers",
+  "Motorcycle Branding",
+  "Delivery Van Branding",
 
-  // Event Branding & Fabrication
+  // Corporate Signage & Office Branding
+  "Office Signage",
+  "3D Acrylic Signs",
+  "Lightbox Signs",
+  "Door Signs",
+  "Desk Nameplates",
+  "Wayfinding Signage",
+  "Safety Signage",
+  "Custom Wall Art",
+
+  // Event Branding & Printing Accessories
   "Stage & Venue Branding",
   "Exhibition Booth Design",
   "Event Collateral",
-  "Roadshow & Pop-Up Solutions",
-  "Custom Event Giveaways",
-  "Photo Booth & Interactive Installs",
+  "Pop-up/Roadshow Branding",
+  "Event Giveaways",
+  "Stands & Frames",
+  "Roll-up Mechanisms",
+  "Acrylic Holders",
+  "Lamination & Finishing",
+  "Mounting Boards",
+  "Lightbox Panels",
 
-  // Corporate & Office Branding
-  "Reception & Lobby Branding",
-  "Interior Graphics & Frosted Films",
-  "Door Plates & Office Signage",
-  "ID Solutions",
-  "Uniform Design & Embroidery",
-
-  // Digital & Website Solutions
-  "Website Design & Development",
-  "Hosting & Maintenance",
-  "SEO",
-  "Social Media Branding Kits",
-  "Digital Marketing Collateral",
-  "Analytics & Reports",
-
-  // Photography & Videography
-  "Product Photography",
-  "Corporate Headshots",
-  "Event Coverage",
-  "Promotional Videos",
-  "Drone & Aerial Photography",
-
-  // Packaging Solutions
+  // Packaging & Product Branding
   "Product Packaging Design",
-  "Eco-Friendly Options",
+  "Eco-Friendly Packaging Options",
   "Subscription Boxes",
   "Labels & Stickers",
   "Luxury Packaging",
+  "Custom Gift & Hamper Packaging",
+  "Seasonal Gift Bundles",
 
-  // Marketing & Advertising Support
-  "Campaign Concept & Strategy",
-  "Social Media Content Planning",
-  "Paid Ads Setup",
-  "Email Marketing Templates",
-  "Presentation & Pitch Decks",
-
-  // Specialty & Custom Printing
-  "Personalized Photo Gifts",
-  "Custom QR Code Printing",
-  "Holographic & Metallic Effects",
-  "Limited Edition Packaging",
-  "Small-Batch Giveaways",
-
-  // Consultation & Brand Management
-  "Brand Audits & Competitive Analysis",
-  "Rebranding Strategies",
-  "Budget Optimization",
-  "Training Workshops",
-  "Long-term Brand Management",
+  // Website Design & Coding
+  "Website Design & Development",
+  "Website Maintenance",
+  "SEO",
+  "Digital Marketing Collateral",
+  "Social Media Branding Kits",
+  "Product Mockups",
+  "Brand Strategy Consulting",
 ];
 
 /* --- Utility: Convert Service Name → Slug --- */
@@ -116,34 +134,49 @@ const slugify = (name) =>
     .replace(/\s+/g, "-")
     .toLowerCase();
 
+/* --- Map specific slugs to real page components --- */
+const slugToComponent = {
+  "logo-design": LogoDesign,
+  // add more overrides as needed:
+  // "digital-printing": DigitalPrinting,
+  // "large-format": LargeFormat,
+};
+
+/* --- Service Content Wrapper --- */
+function ServiceContent() {
+  const { serviceSlug } = useParams();
+  const [currentService, setCurrentService] = useState(null);
+
+  useEffect(() => {
+    if (serviceSlug) {
+      const service = allServices.find((s) => slugify(s) === serviceSlug);
+      setCurrentService(service || allServices[0]);
+    } else {
+      setCurrentService(allServices[0]);
+    }
+  }, [serviceSlug]);
+
+  if (!currentService) return <div>Loading...</div>;
+
+  // If the route slug maps to a real page component, render it
+  if (serviceSlug && slugToComponent[serviceSlug]) {
+    const Page = slugToComponent[serviceSlug];
+    return <Page />;
+  }
+
+  // Otherwise render ComingSoon with resolved title
+  return <ComingSoon title={currentService} />;
+}
+
 export default function ServicesPage() {
   return (
-    <div className="services-layout">
+    <div className="services-layout" style={{ display: "flex" }}>
       <Sidebar />
-
-      <div className="service-display">
-        {/* Service Routes */}
+      <div className="service-display" style={{ flex: 1, padding: "20px" }}>
         <Routes>
-          {/* Default Page */}
-          <Route index element={<DigitalOffsetPrinting />} />
-
-          {/* Dynamic Routes for All Services */}
-          {allServices.map((service, i) => {
-            const slug = slugify(service);
-            const element =
-              slug === "digital-offset-printing" ? (
-                <DigitalOffsetPrinting />
-              ) : (
-                <ComingSoon title={service} />
-              );
-            return <Route key={i} path={slug} element={element} />;
-          })}
-
-          {/* Fallback Redirect */}
-          <Route
-            path="*"
-            element={<Navigate to="digital-offset-printing" replace />}
-          />
+          <Route path="/" element={<ServiceContent />} />
+          <Route path=":serviceSlug" element={<ServiceContent />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </div>
     </div>
