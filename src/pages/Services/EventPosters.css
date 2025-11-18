@@ -1,0 +1,158 @@
+.event-posters-page {
+  margin-left: 280px; /* make room for sidebar */
+  padding: 32px;
+  background: #fff;
+  color: #000;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+.hero {
+  text-align: left;
+  margin-bottom: 60px;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.hero p {
+  font-size: 1rem;
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+.btn-primary {
+  padding: 12px 28px;
+  border-radius: 6px;
+  background-color: #0070f3;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 12px;
+  transition: background 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #005bb5;
+}
+
+.about,
+.difference,
+.gallery,
+.process,
+.cta {
+  margin-bottom: 60px;
+}
+
+.about h2,
+.difference h2,
+.gallery h2,
+.process h2,
+.cta h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.about p,
+.difference p,
+.gallery p,
+.process p,
+.cta p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.difference-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.diff-box {
+  border: 1px solid #e2e8f0;
+  padding: 16px;
+  border-radius: 6px;
+  background: #f9fafb;
+}
+
+.diff-box h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.step {
+  border-left: 4px solid #0070f3;
+  padding-left: 12px;
+}
+
+.step-number {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #0070f3;
+}
+
+.btn-secondary {
+  padding: 12px 28px;
+  border-radius: 6px;
+  background-color: #22c55e;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.btn-secondary:hover {
+  background-color: #16a34a;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .event-posters-page {
+    margin-left: 0;
+    padding: 20px;
+  }
+
+  .difference-grid,
+  .gallery-grid,
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .about h2,
+  .difference h2,
+  .gallery h2,
+  .process h2,
+  .cta h2 {
+    font-size: 1.75rem;
+  }
+}
