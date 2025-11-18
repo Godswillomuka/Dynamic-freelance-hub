@@ -2,7 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Routes, Route, useParams, Navigate } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
 import "./Service.css";
-import LogoDesign from "./Services/LogoDesign"; // add real page imports here
+import LogoDesign from "./Services/LogoDesign";
+import BrandIdentityDesign from "./Services/BrandIdentityDesign";
+import BusinessCardDesign from "./Services/BusinessCardDesign";
 
 /* --- Placeholder Component for Unbuilt Pages --- */
 function ComingSoon({ title }) {
@@ -137,6 +139,8 @@ const slugify = (name) =>
 /* --- Map specific slugs to real page components --- */
 const slugToComponent = {
   "logo-design": LogoDesign,
+  "brand-identity-design": BrandIdentityDesign,
+  "business-card-design": BusinessCardDesign,
   // add more overrides as needed:
   // "digital-printing": DigitalPrinting,
   // "large-format": LargeFormat,
