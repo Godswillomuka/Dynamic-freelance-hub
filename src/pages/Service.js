@@ -12,6 +12,7 @@ import EventPosters from "./Services/EventPosters";
 import FlyersBrochureDesign from "./Services/FlyersBrochureDesign";
 import MenuDesign from "./Services/MenuDesign";
 import PackagingLabelDesign from "./Services/PackagingLabelDesign"; 
+import BannerBillboardDesign from "./Services/BannerBillboardDesign"; 
 /* --- Placeholder Component for Unbuilt Pages --- */
 function ComingSoon({ title }) {
   return (
@@ -154,6 +155,7 @@ const slugToComponent = {
   "flyers-brochure-design": FlyersBrochureDesign,
   "menu-design": MenuDesign,
   "packaging-label-design": PackagingLabelDesign,
+  "banner-billboard-layout-design": BannerBillboardDesign,
   // add more overrides as needed:
   // "digital-printing": DigitalPrinting,
   // "large-format": LargeFormat,
