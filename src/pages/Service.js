@@ -13,6 +13,7 @@ import FlyersBrochureDesign from "./Services/FlyersBrochureDesign";
 import MenuDesign from "./Services/MenuDesign";
 import PackagingLabelDesign from "./Services/PackagingLabelDesign"; 
 import BannerBillboardDesign from "./Services/BannerBillboardDesign"; 
+import InvitationCardDesign from "./Services/InvitationCardDesign";
 /* --- Placeholder Component for Unbuilt Pages --- */
 function ComingSoon({ title }) {
   return (
@@ -156,9 +157,8 @@ const slugToComponent = {
   "menu-design": MenuDesign,
   "packaging-label-design": PackagingLabelDesign,
   "banner-billboard-layout-design": BannerBillboardDesign,
+  "invitation-card-design": InvitationCardDesign,
   // add more overrides as needed:
-  // "digital-printing": DigitalPrinting,
-  // "large-format": LargeFormat,
 };
 
 /* --- Service Content Wrapper --- */
