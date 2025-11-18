@@ -9,6 +9,7 @@ import LetterheadDesign from "./Services/LetterheadDesign";
 import CompanyProfileDesign from "./Services/CompanyProfileDesign";
 import SocialMediaPosters from "./Services/SocialMediaPosters";
 import EventPosters from "./Services/EventPosters";
+import FlyersBrochureDesign from "./Services/FlyersBrochureDesign";
 /* --- Placeholder Component for Unbuilt Pages --- */
 function ComingSoon({ title }) {
   return (
@@ -148,6 +149,7 @@ const slugToComponent = {
   "company-profile-design": CompanyProfileDesign,
   "social-media-posters": SocialMediaPosters,
   "event-posters": EventPosters,
+  "flyers-brochure-design": FlyersBrochureDesign,
   // add more overrides as needed:
   // "digital-printing": DigitalPrinting,
   // "large-format": LargeFormat,
