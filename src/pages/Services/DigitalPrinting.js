@@ -38,7 +38,7 @@ export default function DigitalOffsetPrinting() {
             packaging.
           </p>
           <p>
-            We don’t just print; we help you create experiences your clients can feel, touch, and
+            We don't just print; we help you create experiences your clients can feel, touch, and
             remember.
           </p>
         </div>
@@ -59,7 +59,7 @@ export default function DigitalOffsetPrinting() {
             </p>
           </div>
           <div className="diff-box">
-            <h3>🧾  Offset Printing</h3>
+            <h3>🧾 Offset Printing</h3>
             <p>
               Ideal for large quantities and color-critical projects. Offset printing ensures
               consistent, high-resolution quality that’s cost-effective at scale.
@@ -73,7 +73,7 @@ export default function DigitalOffsetPrinting() {
         <h2>Why Businesses Trust Us</h2>
         <div className="why-grid">
           <div className="why-item">
-            <h4>🌟 Premium Quality</h4>
+            <h4> Premium Quality</h4>
             <p>Every print goes through strict quality checks for flawless color and detail.</p>
           </div>
           <div className="why-item">
@@ -81,11 +81,11 @@ export default function DigitalOffsetPrinting() {
             <p>Our efficient process means you meet your deadlines without compromise.</p>
           </div>
           <div className="why-item">
-            <h4>🌿 Eco-Friendly Materials</h4>
+            <h4> Eco-Friendly Materials</h4>
             <p>We use sustainable papers and inks, keeping your brand green and responsible.</p>
           </div>
           <div className="why-item">
-            <h4>🤝 Expert Support</h4>
+            <h4> Expert Support</h4>
             <p>Our experts guide you from design to finishing for professional results.</p>
           </div>
         </div>
@@ -175,7 +175,7 @@ export default function DigitalOffsetPrinting() {
       <section className="cta">
         <h2>Ready to Print Something Beautiful?</h2>
         <p>
-          Let’s bring your ideas to life with vivid, professional-quality printing. Get in touch for
+          Let's bring your ideas to life with vivid, professional-quality printing. Get in touch for
           a free consultation today.
         </p>
         <button className="btn-secondary">Contact Us</button>

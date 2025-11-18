@@ -1,193 +1,247 @@
-import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import React, { useState, useRef, useEffect } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 import "./Sidebar.css";
 
 const sidebarData = [
   {
-    title: "Printing Solutions",
-    links: [
-      "Digital & Offset Printing",
-      "Large Format Printing",
-      "Custom Packaging & Labels",
-      "Stationery Printing",
-      "Special Finishes",
-      "Security Printing",
-      "3D Printing",
-    ],
-  },
-  {
     title: "Graphic & Creative Design",
     links: [
-      "Logo Design & Brand Identity",
-      "Corporate Branding Materials",
-      "Brand Strategy & Consultation",
-      "Packaging Design & Engineering",
-      "Motion Graphics & Video Branding",
-      "Social Media Content Design",
-    ],
+      "Logo Design",
+      "Brand Identity Design",
+      "Business Card Design",
+      "Letterhead Design",
+      "Company Profile Design",
+      "Social Media Posters",
+      "Event Posters",
+      "Flyers & Brochure Design",
+      "Menu Design",
+      "Packaging & Label Design",
+      "Banner & Billboard Layout Design",
+      "Invitation Card Design",
+      "Certificate Design",
+      "T-Shirt Artwork Design",
+      "Magazine & Book Layout",
+      "Infographics Design",
+      "Website UI Layout (optional)"
+    ]
   },
   {
-    title: "Corporate & Promotional Merchandise",
+    title: "General & Digital Printing",
     links: [
-      "Custom Apparel",
+      "Business Cards",
+      "Flyers & Brochures",
+      "Posters (A3/A2/A1/A0)",
+      "Magazines & Books",
+      "Company Profiles",
+      "Stickers & Labels",
+      "Receipt Books (NCR)",
+      "Calendars",
+      "Notebooks & Diaries",
+      "Envelopes",
+      "Letterheads",
+      "Presentation Folders",
+      "ID Cards",
+      "Certificates",
+      "Menus"
+    ]
+  },
+  {
+    title: "Large Format & Outdoor Printing",
+    links: [
+      "PVC/Flex Banners",
+      "Roll-Up Banners",
+      "Pop-Up Banners",
+      "Backdrops",
+      "Billboards",
+      "Shop Signage",
+      "Window Graphics",
+      "Wall Murals",
+      "Vehicle Branding Stickers",
+      "Floor Graphics"
+    ]
+  },
+  {
+    title: "Merchandise & Promotional Branding",
+    links: [
+      "T-Shirts (DTF/Screen)",
+      "Hoodies",
+      "Caps",
+      "Mugs",
+      "Water Bottles",
+      "Keyholders",
+      "Lanyards",
       "Corporate Gifts",
-      "Tech Merchandise",
-      "Eco-Friendly Products",
-      "Custom Gift & Hamper Packaging",
-      "Seasonal Gift Bundles",
-    ],
+      "Pens",
+      "Tote Bags",
+      "Badges & Buttons"
+    ]
   },
   {
-    title: "Signage & Outdoor Advertising",
+    title: "Vehicle & Fleet Branding",
     links: [
-      "Indoor & Outdoor Signage",
-      "LED & Neon Signs",
-      "Billboards & Hoardings",
-      "Vehicle Branding & Fleet Graphics",
-      "Directional & Wayfinding Signage",
-      "Retail & POS Displays",
-    ],
+      "Full Vehicle Wraps",
+      "Partial Wraps",
+      "Reflective Stickers",
+      "Motorcycle Branding",
+      "Delivery Van Branding"
+    ]
   },
   {
-    title: "Event Branding & Fabrication",
+    title: "Corporate Signage & Office Branding",
+    links: [
+      "Office Signage",
+      "3D Acrylic Signs",
+      "Lightbox Signs",
+      "Door Signs",
+      "Desk Nameplates",
+      "Wayfinding Signage",
+      "Safety Signage",
+      "Custom Wall Art"
+    ]
+  },
+  {
+    title: "Event Branding & Printing Accessories",
     links: [
       "Stage & Venue Branding",
       "Exhibition Booth Design",
       "Event Collateral",
-      "Roadshow & Pop-Up Solutions",
-      "Custom Event Giveaways",
-      "Photo Booth & Interactive Installs",
-    ],
+      "Pop-up/Roadshow Branding",
+      "Event Giveaways",
+      "Stands & Frames",
+      "Roll-up Mechanisms",
+      "Acrylic Holders",
+      "Lamination & Finishing",
+      "Mounting Boards",
+      "Lightbox Panels"
+    ]
   },
   {
-    title: "Corporate & Office Branding",
-    links: [
-      "Reception & Lobby Branding",
-      "Interior Graphics & Frosted Films",
-      "Door Plates & Office Signage",
-      "ID Solutions",
-      "Uniform Design & Embroidery",
-    ],
-  },
-  {
-    title: "Digital & Website Solutions",
-    links: [
-      "Website Design & Development",
-      "Hosting & Maintenance",
-      "SEO",
-      "Social Media Branding Kits",
-      "Digital Marketing Collateral",
-      "Analytics & Reports",
-    ],
-  },
-  {
-    title: "Photography & Videography",
-    links: [
-      "Product Photography",
-      "Corporate Headshots",
-      "Event Coverage",
-      "Promotional Videos",
-      "Drone & Aerial Photography",
-    ],
-  },
-  {
-    title: "Packaging Solutions",
+    title: "Packaging & Product Branding",
     links: [
       "Product Packaging Design",
-      "Eco-Friendly Options",
+      "Eco-Friendly Packaging Options",
       "Subscription Boxes",
       "Labels & Stickers",
       "Luxury Packaging",
-    ],
+      "Custom Gift & Hamper Packaging",
+      "Seasonal Gift Bundles"
+    ]
   },
   {
-    title: "Marketing & Advertising Support",
+    title: "Website Design & Coding",
     links: [
-      "Campaign Concept & Strategy",
-      "Social Media Content Planning",
-      "Paid Ads Setup",
-      "Email Marketing Templates",
-      "Presentation & Pitch Decks",
-    ],
-  },
-  {
-    title: "Specialty & Custom Printing",
-    links: [
-      "Personalized Photo Gifts",
-      "Custom QR Code Printing",
-      "Holographic & Metallic Effects",
-      "Limited Edition Packaging",
-      "Small-Batch Giveaways",
-    ],
-  },
-  {
-    title: "Consultation & Brand Management",
-    links: [
-      "Brand Audits & Competitive Analysis",
-      "Rebranding Strategies",
-      "Budget Optimization",
-      "Training Workshops",
-      "Long-term Brand Management",
-    ],
-  },
+      "Website Design & Development",
+      "Website Maintenance",
+      "SEO",
+      "Digital Marketing Collateral",
+      "Social Media Branding Kits",
+      "Product Mockups",
+      "Brand Strategy Consulting"
+    ]
+  }
 ];
+
 
 export default function Sidebar() {
   const [openIndex, setOpenIndex] = useState(null);
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const location = useLocation();
+  const sidebarRef = useRef(null);
+
+  // Close sidebar on click outside (mobile)
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
+        setSidebarOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   const toggleSection = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  const handleKeyDown = (event, index) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      toggleSection(index);
+    }
+  };
+
   return (
     <>
+      {/* Mobile overlay */}
+      {sidebarOpen && <div className="sidebar-overlay" onClick={() => setSidebarOpen(false)} />}
+
       {/* Toggle button for mobile */}
       <button
         className="sidebar-toggle"
         onClick={() => setSidebarOpen(!sidebarOpen)}
         aria-label="Toggle sidebar"
+        aria-expanded={sidebarOpen}
       >
         &#9776;
       </button>
 
       {/* Sidebar */}
-      <div className={`sidebar ${sidebarOpen ? "open" : ""}`}>
+      <nav
+        ref={sidebarRef}
+        className={`sidebar ${sidebarOpen ? "open" : ""}`}
+        role="menu"
+        aria-label="Sidebar Navigation"
+      >
         <h2 className="sidebar-title">Our Services</h2>
 
-        {sidebarData.map((section, index) => (
-          <div key={index}>
-            <div
-              className={`menu-item ${openIndex === index ? "active" : ""}`}
-              onClick={() => toggleSection(index)}
-            >
-              {section.title}
-            </div>
+        {sidebarData.map((section, index) => {
+          // Highlight parent if any child is active
+          const isActiveSection = section.links.some((link) =>
+            location.pathname.includes(
+              link.replace(/[^a-zA-Z0-9\s]/g, "").trim().replace(/\s+/g, "-").toLowerCase()
+            )
+          );
 
-            <div className={`submenu ${openIndex === index ? "open" : ""}`}>
-              {section.links.map((link, i) => {
-                const slug = link
-                  .replace(/[^a-zA-Z0-9\s]/g, "")
-                  .trim()
-                  .replace(/\s+/g, "-")
-                  .toLowerCase();
+          return (
+            <div key={index}>
+              <div
+                className={`menu-item ${openIndex === index || isActiveSection ? "active" : ""}`}
+                onClick={() => toggleSection(index)}
+                onKeyDown={(e) => handleKeyDown(e, index)}
+                tabIndex={0}
+                role="menuitem"
+                aria-expanded={openIndex === index}
+              >
+                {section.title}
+              </div>
 
-                return (
-                  <NavLink
-                    to={`/services/${slug}`}
-                    key={i}
-                    className={({ isActive }) => (isActive ? "active" : "")}
-                    end
-                    onClick={() => setSidebarOpen(false)} // ✅ Closes sidebar on link click
-                  >
-                    {link}
-                  </NavLink>
-                );
-              })}
+              <div className={`submenu ${openIndex === index ? "open" : ""}`}>
+                {section.links.map((link, i) => {
+                  const slug = link
+                    .replace(/[^a-zA-Z0-9\s]/g, "")
+                    .trim()
+                    .replace(/\s+/g, "-")
+                    .toLowerCase();
+
+                  return (
+                    <NavLink
+                      to={`/services/${slug}`}
+                      key={i}
+                      className={({ isActive }) => (isActive ? "active" : "")}
+                      end
+                      onClick={() => setSidebarOpen(false)}
+                      role="menuitem"
+                      tabIndex={0}
+                    >
+                      {link}
+                    </NavLink>
+                  );
+                })}
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
+          );
+        })}
+      </nav>
     </>
   );
 }
