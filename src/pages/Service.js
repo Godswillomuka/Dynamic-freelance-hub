@@ -14,6 +14,7 @@ import MenuDesign from "./Services/MenuDesign";
 import PackagingLabelDesign from "./Services/PackagingLabelDesign"; 
 import BannerBillboardDesign from "./Services/BannerBillboardDesign"; 
 import InvitationCardDesign from "./Services/InvitationCardDesign";
+import CertificateDesign from "./Services/CertificateDesign";
 /* --- Placeholder Component for Unbuilt Pages --- */
 function ComingSoon({ title }) {
   return (
@@ -158,6 +159,7 @@ const slugToComponent = {
   "packaging-label-design": PackagingLabelDesign,
   "banner-billboard-layout-design": BannerBillboardDesign,
   "invitation-card-design": InvitationCardDesign,
+  "certificate-design": CertificateDesign,
   // add more overrides as needed:
 };
 
