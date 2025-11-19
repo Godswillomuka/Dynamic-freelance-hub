@@ -69,9 +69,9 @@ const HeroClock = () => {
   const romanNumerals = ['XII','I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI'];
 
   return (
-    <div className="hero-clock-container">
-      <div className="hero-clock">
-        <div className="hero-clock-face">
+    <div className="home-hero-clock-container">
+      <div className="home-hero-clock">
+        <div className="home-hero-clock-face">
           {romanNumerals.map((numeral, index) => {
             const angle = (index * 30) * (Math.PI / 180);
             const radius = 42;
@@ -79,7 +79,7 @@ const HeroClock = () => {
             const y = 50 - radius * Math.cos(angle);
             return (
               <div
-                className="hero-clock-numeral"
+                className="home-hero-clock-numeral"
                 key={index}
                 style={{
                   position: 'absolute',
@@ -94,27 +94,27 @@ const HeroClock = () => {
           })}
           {/* Hour Hand */}
           <div
-            className="hero-clock-hand hero-clock-hour-hand"
+            className="home-hero-clock-hand home-hero-clock-hour-hand"
             style={{ transform: `rotate(${hourDegrees}deg)` }}
           ></div>
           {/* Minute Hand */}
           <div
-            className="hero-clock-hand hero-clock-minute-hand"
+            className="home-hero-clock-hand home-hero-clock-minute-hand"
             style={{ transform: `rotate(${minuteDegrees}deg)` }}
           ></div>
           {/* Second Hand */}
           <div
-            className="hero-clock-hand hero-clock-second-hand"
+            className="home-hero-clock-hand home-hero-clock-second-hand"
             style={{ transform: `rotate(${secondDegrees}deg)` }}
           ></div>
           {/* Center Dot */}
-          <div className="hero-clock-center"></div>
+          <div className="home-hero-clock-center"></div>
         </div>
       </div>
       {/* Combined Time and Date Display */}
-      <div className="hero-clock-time-date">
-        <div className="hero-clock-time">{timeString}</div>
-        <div className="hero-clock-date">{dateString}</div>
+      <div className="home-hero-clock-time-date">
+        <div className="home-hero-clock-time">{timeString}</div>
+        <div className="home-hero-clock-date">{dateString}</div>
       </div>
     </div>
   );
@@ -147,7 +147,7 @@ const services = [
   },
   {
     title: "Packaging & Labels",
-    desc: "Enhance your product with custom packaging and labels that reflect your brand’s quality and attract customers. Creative solutions for every industry.",
+    desc: "Enhance your product with custom packaging and labels that reflect your brand's quality and attract customers. Creative solutions for every industry.",
     img: packagingImg,
     link: "/services"
   },
@@ -242,29 +242,28 @@ const Home = () => {
     <>
     <main className="home-page">
       {/* --- Hero Section --- */}
-      <section className="hero-section">
-        <div className="hero-content-container">
+      <section className="home-hero-section">
+        <div className="home-hero-content-container">
           {/* Text Content on the Left */}
           <motion.div
-            className="hero-content-text"
+            className="home-hero-content-text"
             initial="hidden"
             animate="show"
             variants={staggerContainer}
           >
-            <motion.h1 className="hero-title" variants={fadeInUp}>
+            <motion.h1 className="home-hero-title" variants={fadeInUp}>
               Transform Your Brand with Premium Design & Print
             </motion.h1>
-            <motion.p className="hero-subtitle" variants={fadeInUp}>
+            <motion.p className="home-hero-subtitle" variants={fadeInUp}>
               From Dynamic Freelance Hub, we are a passionate team of designers, creators, and branding experts committed to helping businesses grow.
             </motion.p>
-            <motion.div className="hero-ctas" variants={fadeInUp}>
-              {/* Updated buttons using the new green color classes */}
-              <a href="/get-started" className="btn btn-primary-alt">
+            <motion.div className="home-hero-ctas" variants={fadeInUp}>
+              <a href="/get-started" className="home-btn home-btn-primary-alt">
                 Get Started
               </a>
               <a
                 href={`${process.env.PUBLIC_URL}/downloads/company_profile.pdf`}
-                className="btn btn-secondary-alt"
+                className="home-btn home-btn-secondary-alt"
                 download
               >
                 Download Company Profile
@@ -273,7 +272,7 @@ const Home = () => {
           </motion.div>
           {/* Live Clock on the Right */}
           <motion.div
-            className="hero-clock-wrapper"
+            className="home-hero-clock-wrapper"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
@@ -285,31 +284,31 @@ const Home = () => {
 
       {/* --- About Us Section --- */}
       <motion.section
-        className="about-us-section"
+        className="home-about-us-section"
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.3 }}
         variants={staggerContainer}
       >
-        <div className="section-container">
-          <div className="about-us-grid">
-            <motion.div className="about-us-image" variants={fadeInUp}>
+        <div className="home-section-container">
+          <div className="home-about-us-grid">
+            <motion.div className="home-about-us-image" variants={fadeInUp}>
               <img
                 src={aboutTeam}
                 alt="Our creative team collaborating"
-                className="team-image"
+                className="home-team-image"
               />
             </motion.div>
-            <motion.div className="about-us-text" variants={fadeInUp}>
-              <h2 className="section-title">Who We Are</h2>
-              <p className="section-description">
+            <motion.div className="home-about-us-text" variants={fadeInUp}>
+              <h2 className="home-section-title">Who We Are</h2>
+              <p className="home-section-description">
                 <strong>Dynamic Freelance Hub</strong> is more than just a printing service,we specialize in crafting compelling visual identities and producing high-quality printed materials that help businesses:
                   <li>Grow their visibility in competitive markets</li>
                   <li>Enhance credibility with professional, polished designs</li>
                   <li>Strengthen brand consistency across every platform</li>
-                  From business cards and branded merchandise to large-scale prints and corporate branding, we ensure every detail reflects your brand’s quality and professionalism.Using modern design tools and state-of-the-art printing, we deliver results that build trust, attract customers, and drive success.
+                  From business cards and branded merchandise to large-scale prints and corporate branding, we ensure every detail reflects your brand's quality and professionalism.Using modern design tools and state-of-the-art printing, we deliver results that build trust, attract customers, and drive success.
               </p>
-              <a href="/about" className="btn btn-primary-alt">
+              <a href="/about" className="home-btn home-btn-primary-alt">
                 Learn More
               </a>
             </motion.div>
@@ -319,19 +318,19 @@ const Home = () => {
 
       {/* --- Core Services Section --- */}
       <motion.section
-        className="core-services-section"
+        className="home-core-services-section"
         initial={isMobile ? "show" : "hidden"}
         whileInView="show"
         viewport={{ once: true, amount: 0.3 }}
         variants={staggerContainer}
       >
-        <div className="section-container">
-          <motion.h2 className="section-title" variants={fadeInUp}>Our Core Services</motion.h2>
-          <div className="services-grid">
+        <div className="home-section-container">
+          <motion.h2 className="home-section-title" variants={fadeInUp}>Our Core Services</motion.h2>
+          <div className="home-services-grid">
             {services.map((service, idx) => (
-              <motion.div className="service-card overlay-card" variants={fadeInUp} key={idx} style={{padding: 0, border: 'none', minHeight: '420px'}}>
+              <motion.div className="home-service-card home-overlay-card" variants={fadeInUp} key={idx} style={{padding: 0, border: 'none', minHeight: '420px'}}>
                 <div
-                  className="overlay-card-image"
+                  className="home-overlay-card-image"
                   style={{
                     backgroundImage: `url(${service.img})`,
                     width: '100%',
@@ -342,7 +341,7 @@ const Home = () => {
                   }}
                 >
                   <div
-                    className="overlay-card-content"
+                    className="home-overlay-card-content"
                     style={{
                       paddingLeft: 0,
                       paddingRight: 0,
@@ -352,11 +351,8 @@ const Home = () => {
                       alignItems: 'center'
                     }}
                   >
-                    <h3 className="service-title" style={{textAlign: 'center', width: '100%', marginBottom: 6}}>{service.title}</h3>
-                    <p className="service-description" style={{textAlign: 'center', width: '100%', marginTop: 0}}>{service.desc}</p>
-                    <a href={service.link} className="card-link">
-                      view more
-                    </a>
+                    <h3 className="home-service-title" style={{textAlign: 'center', width: '100%', marginBottom: 6}}>{service.title}</h3>
+                    <p className="home-service-description" style={{textAlign: 'center', width: '100%', marginTop: 0}}>{service.desc}</p>
                   </div>
                 </div>
               </motion.div>
@@ -364,21 +360,22 @@ const Home = () => {
           </div>
         </div>
       </motion.section>
+
       {/* --- Popular Products Section --- */}
       <motion.section
-        className="popular-products-section"
+        className="home-popular-products-section"
         initial={isMobile ? "show" : "hidden"}
         whileInView="show"
         viewport={{ once: true, amount: 0.3 }}
         variants={staggerContainer}
       >
-        <div className="section-container">
-          <motion.h2 className="section-title" variants={fadeInUp}>Popular Products</motion.h2>
-          <div className="products-grid even-products-grid">
+        <div className="home-section-container">
+          <motion.h2 className="home-section-title" variants={fadeInUp}>Popular Products</motion.h2>
+          <div className="home-products-grid home-even-products-grid">
             {products.map((product, idx) => (
-              <motion.div className="product-card overlay-card" variants={fadeInUp} key={idx} style={{padding: 0, border: 'none', minHeight: '320px'}}>
+              <motion.div className="home-product-card home-overlay-card" variants={fadeInUp} key={idx} style={{padding: 0, border: 'none', minHeight: '320px'}}>
                 <div
-                  className="overlay-card-image"
+                  className="home-overlay-card-image"
                   style={{
                     backgroundImage: `url(${product.img})`,
                     width: '100%',
@@ -389,7 +386,7 @@ const Home = () => {
                   }}
                 >
                   <div
-                    className="overlay-card-content"
+                    className="home-overlay-card-content"
                     style={{
                       paddingLeft: 0,
                       paddingRight: 0,
@@ -399,11 +396,8 @@ const Home = () => {
                       alignItems: 'center'
                     }}
                   >
-                    <h3 className="product-title" style={{textAlign: 'center', width: '100%', marginBottom: 6}}>{product.title}</h3>
-                    <p className="product-description" style={{textAlign: 'center', width: '100%', marginTop: 0}}>{product.desc}</p>
-                    <a href={product.link} className="card-link">
-                      view more
-                    </a>
+                    <h3 className="home-product-title" style={{textAlign: 'center', width: '100%', marginBottom: 6}}>{product.title}</h3>
+                    <p className="home-product-description" style={{textAlign: 'center', width: '100%', marginTop: 0}}>{product.desc}</p>
                   </div>
                 </div>
               </motion.div>
@@ -416,31 +410,31 @@ const Home = () => {
 
       {/* --- Why Choose Us Section --- */}
       <motion.section
-        className="why-choose-us-section"
+        className="home-why-choose-us-section"
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.3 }}
         variants={staggerContainer}
       >
-        <div className="section-container">
-          <motion.h2 className="section-title" variants={fadeInUp}>Why Choose Us</motion.h2>
-          <div className="reasons-grid">
-            <motion.div className="reason" variants={fadeInUp}>
-              <span className="checkmark">&#10003;</span>
+        <div className="home-section-container">
+          <motion.h2 className="home-section-title" variants={fadeInUp}>Why Choose Us</motion.h2>
+          <div className="home-reasons-grid">
+            <motion.div className="home-reason" variants={fadeInUp}>
+              <span className="home-checkmark">&#10003;</span>
               <div>
                 <h3>Premium Quality Guarantee</h3>
                 <p>We use top-tier materials and state-of-the-art equipment to ensure every product meets our high standards.</p>
               </div>
             </motion.div>
-            <motion.div className="reason" variants={fadeInUp}>
-              <span className="checkmark">&#10003;</span>
+            <motion.div className="home-reason" variants={fadeInUp}>
+              <span className="home-checkmark">&#10003;</span>
               <div>
                 <h3>Fast & Reliable Turnaround</h3>
                 <p>We understand deadlines. Our efficient processes deliver your projects quickly without compromising quality.</p>
               </div>
             </motion.div>
-            <motion.div className="reason" variants={fadeInUp}>
-              <span className="checkmark">&#10003;</span>
+            <motion.div className="home-reason" variants={fadeInUp}>
+              <span className="home-checkmark">&#10003;</span>
               <div>
                 <h3>Expert Consultation</h3>
                 <p>Get expert guidance tailored to your specific needs. We're here to help you make the best choices for your brand.</p>

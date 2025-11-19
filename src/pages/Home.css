@@ -5,25 +5,25 @@
   background-color: #fff;
 }
 
-.section-container {
+.home-section-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
 /* --- Common Section Titles --- */
-.section-title {
+.home-section-title {
   font-size: 2.5rem;
   font-weight: 800;
   text-align: center;
   margin-bottom: 50px;
   color: #1a202c;
   line-height: 1.2;
-  position: relative; /* For potential pseudo-elements */
+  position: relative;
 }
 
 /* --- Buttons - General Styles --- */
-.btn {
+.home-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -38,12 +38,11 @@
   text-decoration: none;
   min-width: 180px;
   box-sizing: border-box;
-  position: relative; /* For icon positioning */
-  overflow: hidden; /* Contain potential pseudo-elements */
+  position: relative;
+  overflow: hidden;
 }
 
-/* Micro-interaction for buttons */
-.btn::after {
+.home-btn::after {
   content: "";
   position: absolute;
   top: 0;
@@ -53,44 +52,43 @@
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
   transition: left 0.5s;
 }
-.btn:hover::after {
+.home-btn:hover::after {
   left: 100%;
 }
 
 /* --- PRIMARY BUTTON (Using Brand Green) --- */
-.btn-primary-alt {
+.home-btn-primary-alt {
   background-color: #009f6f;
   color: white;
   border: none;
   box-shadow: 0 4px 6px rgba(0, 159, 111, 0.2);
 }
 
-.btn-primary-alt:hover,
-.btn-primary-alt:focus {
+.home-btn-primary-alt:hover,
+.home-btn-primary-alt:focus {
   background-color: #007a55;
   transform: translateY(-3px);
-  box-shadow: 0 7px 14px rgba(0, 159, 111, 0.4); /* Slightly stronger shadow */
+  box-shadow: 0 7px 14px rgba(0, 159, 111, 0.4);
   color: white;
 }
 
 /* --- SECONDARY BUTTON (Outline variant using Brand Green) --- */
-.btn-secondary-alt {
+.home-btn-secondary-alt {
   background-color: transparent;
   color: #009f6f;
   border: 2px solid #009f6f;
 }
 
-.btn-secondary-alt:hover,
-.btn-secondary-alt:focus {
+.home-btn-secondary-alt:hover,
+.home-btn-secondary-alt:focus {
   background-color: rgba(0, 159, 111, 0.1);
   color: #007a55;
   transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* --- Hero Section --- */
-/* (Hero styles remain the same, including clock) */
-.hero-section {
+.home-hero-section {
   padding: 100px 0;
   background:  linear-gradient(97deg, rgb(5, 21, 39) 11.18%, rgb(7, 25, 69) 98.67%);
   color: white;
@@ -98,7 +96,7 @@
   overflow: hidden;
 }
 
-.hero-content-container {
+.home-hero-content-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -110,7 +108,7 @@
   z-index: 2;
 }
 
-.hero-content-text {
+.home-hero-content-text {
   flex: 1;
   max-width: 600px;
   display: flex;
@@ -118,7 +116,7 @@
   gap: 20px;
 }
 
-.hero-title {
+.home-hero-title {
   font-size: 3rem;
   font-weight: 800;
   line-height: 1.2;
@@ -127,7 +125,7 @@
   order: 1;
 }
 
-.hero-subtitle {
+.home-hero-subtitle {
   font-size: 1.2rem;
   line-height: 1.6;
   color: #cbd5e0;
@@ -135,7 +133,7 @@
   order: 2;
 }
 
-.hero-ctas {
+.home-hero-ctas {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
@@ -143,7 +141,7 @@
   margin-top: 10px;
 }
 
-.hero-clock-wrapper {
+.home-hero-clock-wrapper {
   flex: 1;
   display: flex;
   justify-content: center;
@@ -151,17 +149,16 @@
   order: 2;
   width: 100%;
   margin: 15px 0;
-  
 }
 
-.hero-clock-container {
+.home-hero-clock-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
 }
 
-.hero-clock {
+.home-hero-clock {
   width: 250px;
   height: 250px;
   position: relative;
@@ -174,14 +171,14 @@
   border: 8px solid #007a55;
 }
 
-.hero-clock-face {
+.home-hero-clock-face {
   position: relative;
   width: 95%;
   height: 95%;
   border-radius: 50%;
 }
 
-.hero-clock-face::before {
+.home-hero-clock-face::before {
   content: "";
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
@@ -191,7 +188,7 @@
   z-index: 1;
 }
 
-.hero-clock-numeral {
+.home-hero-clock-numeral {
   font-size: 1.2rem;
   font-weight: bold;
   color: #cbd5e0;
@@ -207,38 +204,36 @@
   pointer-events: none;
 }
 
-.hero-clock-hand {
+.home-hero-clock-hand {
   position: absolute;
   bottom: 50%;
   left: 50%;
   transform-origin: bottom center;
   border-radius: 10px;
   z-index: 3;
-  /* Add smooth transition for hand movement */
-  transition: transform 0.1s linear; /* Second hand will override this */
+  transition: transform 0.1s linear;
 }
 
-.hero-clock-hour-hand {
+.home-hero-clock-hour-hand {
   width: 6px;
   height: 22%;
   background-color: #cbd5e0;
 }
 
-.hero-clock-minute-hand {
+.home-hero-clock-minute-hand {
   width: 4px;
   height: 32%;
   background-color: #94a3b8;
 }
 
-.hero-clock-second-hand {
+.home-hero-clock-second-hand {
   width: 2px;
   height: 38%;
   background-color: #009f6f;
-  /* Faster transition for second hand for smooth ticking */
-  transition: transform 0.1s steps(1); /* Creates a ticking effect */
+  transition: transform 0.1s steps(1);
 }
 
-.hero-clock-center {
+.home-hero-clock-center {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -252,7 +247,7 @@
   box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }
 
-.hero-clock-time-date {
+.home-hero-clock-time-date {
   text-align: center;
   padding: 12px 20px;
   border-radius: 10px;
@@ -268,28 +263,28 @@
   margin: 0 auto;
 }
 
-.hero-clock-time {
+.home-hero-clock-time {
   font-size: 1.4rem;
   font-weight: 700;
   margin-bottom: 5px;
   letter-spacing: 1px;
 }
 
-.hero-clock-date {
+.home-hero-clock-date {
   font-size: 1rem;
   font-weight: 500;
   opacity: 0.95;
 }
 
 /* --- About Us Section --- */
-.about-us-section {
+.home-about-us-section {
   padding: 100px 0;
   background-color: #fff;
-  position: relative; /* For potential background elements */
-  overflow: hidden; /* Contain pseudo-elements */
+  position: relative;
+  overflow: hidden;
 }
 
-.about-us-grid {
+.home-about-us-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 50px;
@@ -298,7 +293,7 @@
   z-index: 1;
 }
 
-.team-image {
+.home-team-image {
   width: 100%;
   max-width: 500px;
   height: auto;
@@ -308,18 +303,18 @@
   transition: transform 0.5s ease, box-shadow 0.3s ease;
 }
 
-.team-image:hover {
+.home-team-image:hover {
   transform: scale(1.02);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 }
 
-.about-us-text {
+.home-about-us-text {
   width: 100%;
   padding-left: 0;
   padding-right: 0;
 }
 
-.about-us-text .section-title {
+.home-about-us-text .home-section-title {
   text-align: left;
   margin-bottom: 20px;
   display: flex;
@@ -327,12 +322,12 @@
   gap: 10px;
 }
 
-.about-us-text .section-title::before {
+.home-about-us-text .home-section-title::before {
   content: "👥";
   font-size: 1.5rem;
 }
 
-.section-description {
+.home-section-description {
   font-size: 1.1rem;
   line-height: 1.7;
   margin-bottom: 20px;
@@ -345,12 +340,11 @@
   padding-right: 0;
 }
 
-.section-description strong {
+.home-section-description strong {
   color: #000000;
 }
 
-/* Style for the bullet list */
-.section-description ul {
+.home-section-description ul {
   list-style: none;
   padding-left: 0;
   margin-left: 0;
@@ -358,7 +352,7 @@
   width: 100%;
 }
 
-.section-description ul li {
+.home-section-description ul li {
   position: relative;
   padding-left: 28px;
   margin-bottom: 12px;
@@ -370,7 +364,7 @@
   margin-right: 0;
 }
 
-.section-description ul li::before {
+.home-section-description ul li::before {
   content: "✔";
   position: absolute;
   left: 0;
@@ -379,37 +373,29 @@
   font-weight: bold;
 }
 
-.about-us-text .btn-primary-alt:hover {
+.home-about-us-text .home-btn-primary-alt:hover {
   box-shadow: 0 7px 18px rgba(0, 159, 111, 0.5);
 }
 
-
 /* --- Core Services Section --- */
-.core-services-section {
+.home-core-services-section {
   padding: 100px 0;
-  background-color: #f8fafc; /* Very light background */
+  background-color: #f8fafc;
   position: relative;
   overflow: hidden;
 }
 
-/* Optional subtle gradient background */
-/* .core-services-section {
-  background: linear-gradient(to bottom, #ffffff 0%, #f8fafc 100%);
-} */
-
-.services-grid {
+.home-services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
-   /* Subtle texture */
 }
 
-.service-card {
+.home-service-card {
   background-color: #fff;
   border-radius: 12px;
   padding: 35px 25px;
   text-align: center;
-  /* Enhanced transition with scaling */
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), transform 0.3s ease;
   display: flex;
   flex-direction: column;
@@ -417,24 +403,23 @@
   height: 100%;
   border: 1px solid #e2e8f0;
   position: relative;
-  overflow: hidden; /* Contain potential pseudo-elements */
-  /* Add a subtle initial state for entrance */
+  overflow: hidden;
   opacity: 0;
   transform: translateY(20px);
 }
-/* Animate card entrance (handled by framer-motion, but CSS provides initial state) */
-.service-card.animate-in {
+
+.home-service-card.animate-in {
     opacity: 1;
     transform: translateY(0);
 }
 
-.service-card:hover {
-  transform: translateY(-10px) scale(1.02); /* Add slight scale */
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 15px 15px -5px rgba(0, 0, 0, 0.08); /* Enhanced shadow */
+.home-service-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 15px 15px -5px rgba(0, 0, 0, 0.08);
   border-color: #cbd5e0;
 }
 
-.service-icon {
+.home-service-icon {
   font-size: 2.5rem;
   margin-bottom: 25px;
   color: #009f6f;
@@ -446,65 +431,53 @@
   background-color: rgba(0, 159, 111, 0.1);
   border-radius: 50%;
   padding: 15px;
-  transition: all 0.3s ease; /* Transition for icon effects */
+  transition: all 0.3s ease;
   position: relative;
-  z-index: 2; /* Above potential background effects */
+  z-index: 2;
 }
 
-/* Animate icon on card hover */
-.service-card:hover .service-icon {
-    transform: scale(1.1) rotate(5deg); /* Scale and slight rotation */
-    background-color: rgba(0, 159, 111, 0.15); /* Slightly darker bg */
-    /* Optional: Add a subtle pulse effect */
-    /* animation: iconPulse 1s infinite; */
+.home-service-card:hover .home-service-icon {
+    transform: scale(1.1) rotate(5deg);
+    background-color: rgba(0, 159, 111, 0.15);
 }
 
-/* @keyframes iconPulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-  100% { transform: scale(1); }
-} */
-
-.service-title {
+.home-service-title {
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 15px;
   color: #1a202c;
-  transition: color 0.3s ease; /* Transition for title color */
+  transition: color 0.3s ease;
 }
 
-/* Optional: Change title color on hover */
-.service-card:hover .service-title {
+.home-service-card:hover .home-service-title {
     color: #009f6f;
 }
 
-.service-description {
+.home-service-description {
   font-size: 1rem;
   color: #4a5568;
   line-height: 1.6;
   flex-grow: 1;
 }
 
-
 /* --- Popular Products Section --- */
-.popular-products-section {
+.home-popular-products-section {
   padding: 100px 0;
   background-color: #fff;
   position: relative;
   overflow: hidden;
 }
 
-.products-grid {
+.home-products-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 30px;
 }
 
-.product-card {
+.home-product-card {
   background-color: #fff;
   border-radius: 12px;
   overflow: hidden;
-  /* Enhanced transition */
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), transform 0.3s ease;
   text-align: center;
   display: flex;
@@ -512,28 +485,25 @@
   height: 100%;
   border: 1px solid #e2e8f0;
   position: relative;
-  /* Add a subtle initial state for entrance */
   opacity: 0;
   transform: translateY(20px);
 }
-/* Animate card entrance */
-.product-card.animate-in {
+
+.home-product-card.animate-in {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* Enhanced hover effect */
-.product-card:hover {
-  transform: translateY(-10px) scale(1.03) rotate(1deg); /* Add scale and slight rotation */
+.home-product-card:hover {
+  transform: translateY(-10px) scale(1.03) rotate(1deg);
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 15px 15px -5px rgba(0, 0, 0, 0.08);
-  border-color: #009f6f; /* Change border color to brand green */
+  border-color: #009f6f;
 }
 
 /* Overlay Card Styles for Services & Products */
-.overlay-card {
+.home-overlay-card {
   position: relative;
-
-  min-height: 600px; /* Increased height for service cards only */
+  min-height: 600px;
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 8px 24px rgba(0,0,0,0.07);
@@ -545,10 +515,10 @@
   padding: 0;
 }
 
-.overlay-card-image {
+.home-overlay-card-image {
   width: 100% !important;
   height: 100% !important;
-  min-height: 600px; /* Match card min-height */
+  min-height: 600px;
   margin: 0 !important;
   border-radius: 16px 16px 0 0;
   background-size: cover;
@@ -560,15 +530,12 @@
   justify-content: flex-end;
 }
 
-.overlay-card-content {
+.home-overlay-card-content {
   position: absolute;
   left: 0;
   bottom: 0;
   width: 100%;
-  /* Set the overlay to cover exactly half the card height */
-  height: 50%; /* Back to exactly half for better balance */
-  min-height: unset;
-  max-height: none; /* Remove scroll, let content fit */
+  height: 50%;
   overflow-y: visible;
   background: rgba(255,255,255,0.92);
   -webkit-backdrop-filter: blur(0.5px);
@@ -577,30 +544,30 @@
   z-index: 2;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center content horizontally */
+  align-items: center;
   justify-content: center;
   text-align: center;
 }
 
-.overlay-card-content h3,
-.overlay-card-content .service-title,
-.overlay-card-content .product-title {
+.home-overlay-card-content h3,
+.home-overlay-card-content .home-service-title,
+.home-overlay-card-content .home-product-title {
   font-size: 1.08rem;
   width: 100%;
   text-align: center;
-  margin-bottom: 6px; /* Reduce gap below title */
+  margin-bottom: 6px;
 }
 
-.overlay-card-content p,
-.overlay-card-content .service-description,
-.overlay-card-content .product-description {
+.home-overlay-card-content p,
+.home-overlay-card-content .home-service-description,
+.home-overlay-card-content .home-product-description {
   font-size: 0.97rem;
   width: 100%;
   text-align: center;
-  margin-top: 0; /* Remove gap above paragraph */
+  margin-top: 0;
 }
 
-.overlay-card .btn {
+.home-overlay-card .home-btn {
   font-size: 0.97rem;
   padding: 7px 16px;
   margin-top: 10px;
@@ -608,17 +575,15 @@
   align-self: center;
 }
 
-/* Remove button styles from card links */
-.overlay-card .btn,
-.product-card .btn,
-.service-card .btn {
+.home-overlay-card .home-btn,
+.home-product-card .home-btn,
+.home-service-card .home-btn {
   display: none !important;
 }
 
-/* Card link style for service/product cards */
-.overlay-card .card-link,
-.product-card .card-link,
-.service-card .card-link {
+.home-overlay-card .home-card-link,
+.home-product-card .home-card-link,
+.home-service-card .home-card-link {
   display: inline-block;
   font-size: 0.97rem;
   padding: 0;
@@ -626,68 +591,63 @@
   border: none;
   background: none;
   color: #009f6f;
-  text-decoration: none; /* Remove underline */
+  text-decoration: none;
   font-weight: 600;
   transition: color 0.2s;
   align-self: center;
   cursor: pointer;
 }
 
-.overlay-card .card-link:hover,
-.product-card .card-link:hover,
-.service-card .card-link:hover {
+.home-overlay-card .home-card-link:hover,
+.home-product-card .home-card-link:hover,
+.home-service-card .home-card-link:hover {
   color: #007a55;
   background: none;
   border: none;
-  text-decoration: none; /* No underline on hover */
+  text-decoration: none;
 }
 
 /* --- Why Choose Us Section --- */
-.why-choose-us-section {
+.home-why-choose-us-section {
   padding: 100px 0;
-  background-color: #f8fafc; /* Light background */
+  background-color: #f8fafc;
   position: relative;
   overflow: hidden;
 }
 
-.reasons-grid {
+.home-reasons-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
 }
 
-.reason {
+.home-reason {
   display: flex;
   align-items: flex-start;
   gap: 15px;
   padding: 25px;
   border-radius: 12px;
   background-color: #fff;
-  /* Enhanced transition */
   transition: all 0.3s ease, transform 0.3s ease;
   border: 1px solid #e2e8f0;
   position: relative;
   overflow: hidden;
-  /* Add a subtle initial state for entrance */
   opacity: 0;
   transform: translateX(-20px);
 }
-/* Animate reason entrance */
-.reason.animate-in {
+
+.home-reason.animate-in {
     opacity: 1;
     transform: translateX(0);
 }
 
-/* Enhanced hover effect */
-.reason:hover {
-    transform: translateY(-5px) scale(1.01); /* Lift and slight scale */
+.home-reason:hover {
+    transform: translateY(-5px) scale(1.01);
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 6px 8px -2px rgba(0, 0, 0, 0.08);
     border-color: #cbd5e0;
-    /* Optional: Slight background color change */
-    /* background-color: #f9fafb; */
 }
 
-.checkmark {
+.home-checkmark {
   font-size: 1.8rem;
   color: #009f6f;
   font-weight: bold;
@@ -701,49 +661,41 @@
   align-items: center;
   justify-content: center;
   padding: 5px;
-  transition: all 0.3s ease; /* Transition for checkmark */
+  transition: all 0.3s ease;
 }
 
-/* Animate checkmark on hover */
-.reason:hover .checkmark {
-    transform: scale(1.15); /* Scale up */
-    background-color: rgba(0, 159, 111, 0.2); /* Darker background */
-    box-shadow: 0 4px 8px rgba(0, 159, 111, 0.2); /* Add shadow */
-    /* Optional: Color change */
-    /* color: #ffffff; */
-    /* background-color: #009f6f; */
+.home-reason:hover .home-checkmark {
+    transform: scale(1.15);
+    background-color: rgba(0, 159, 111, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 159, 111, 0.2);
 }
 
-.reason h3 {
+.home-reason h3 {
   font-size: 1.4rem;
   font-weight: 700;
   margin-bottom: 12px;
   color: #1a202c;
-  transition: color 0.3s ease; /* Transition for title */
+  transition: color 0.3s ease;
 }
 
-/* Optional: Change title color on hover */
-.reason:hover h3 {
+.home-reason:hover h3 {
     color: #007a55;
 }
 
-.reason p {
+.home-reason p {
   font-size: 1rem;
   color: #4a5568;
   line-height: 1.6;
   margin: 0;
-  transition: transform 0.3s ease; /* Transition for description */
+  transition: transform 0.3s ease;
 }
 
-/* Optional: Subtle shift for description on hover */
-.reason:hover p {
-    transform: translateX(3px); /* Small shift */
+.home-reason:hover p {
+    transform: translateX(3px);
 }
 
-
-/* --- Service/Product Card Button Fixes (Refined) --- */
-.service-card .btn,
-.product-card .btn {
+.home-service-card .home-btn,
+.home-product-card .home-btn {
   margin-top: 14px;
   width: auto;
   min-width: 120px;
@@ -755,7 +707,6 @@
   border-radius: 6px;
   font-weight: 500;
   letter-spacing: 0.01em;
-  /* Make button less prominent */
   box-shadow: none;
   background-color: #f8fafc;
   color: #009f6f;
@@ -763,27 +714,27 @@
   transition: background 0.2s, color 0.2s, border 0.2s;
 }
 
-.service-card .btn:hover,
-.product-card .btn:hover {
+.home-service-card .home-btn:hover,
+.home-product-card .home-btn:hover {
   background-color: #009f6f;
   color: #fff;
   border: 1px solid #007a55;
 }
 
 @media (max-width: 992px) {
-  .services-grid,
-  .products-grid {
+  .home-services-grid,
+  .home-products-grid {
     grid-template-columns: 1fr;
     gap: 18px;
   }
-  .service-card,
-  .product-card {
+  .home-service-card,
+  .home-product-card {
     padding: 16px 6px;
     min-width: 0;
     max-width: 100%;
   }
-  .service-card .btn,
-  .product-card .btn {
+  .home-service-card .home-btn,
+  .home-product-card .home-btn {
     width: auto;
     max-width: 90vw;
     font-size: 0.97rem;
@@ -793,31 +744,29 @@
 }
 
 @media (max-width: 576px) {
-  .service-card,
-  .product-card {
+  .home-service-card,
+  .home-product-card {
     padding: 10px 2px;
     min-width: 0;
     max-width: 100%;
   }
-  .service-card .btn,
-  .product-card .btn {
+  .home-service-card .home-btn,
+  .home-product-card .home-btn {
     font-size: 0.95rem;
     padding: 7px 10px;
     margin-top: 8px;
     min-width: 90px;
     max-width: 140px;
   }
-  /* Force service/product cards to be visible on mobile */
-  .service-card,
-  .product-card {
+  .home-service-card,
+  .home-product-card {
     opacity: 1 !important;
     transform: none !important;
   }
 }
 
-/* --- Fix Card Flex Layout for Buttons and Prevent Overlap --- */
-.service-card,
-.product-card {
+.home-service-card,
+.home-product-card {
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -827,14 +776,13 @@
   box-sizing: border-box;
 }
 
-.service-card .btn,
-.product-card .btn {
+.home-service-card .home-btn,
+.home-product-card .home-btn {
   margin-bottom: 0;
 }
 
-/* --- Card Content Alignment Fixes for Responsiveness --- */
-.service-card,
-.product-card {
+.home-service-card,
+.home-product-card {
   align-items: flex-start;
   text-align: left;
   padding-left: 25px;
@@ -842,301 +790,291 @@
 }
 
 @media (max-width: 992px) {
-  .service-card,
-  .product-card {
+  .home-service-card,
+  .home-product-card {
     padding-left: 14px;
     padding-right: 14px;
   }
 }
 
 @media (max-width: 576px) {
-  .service-card,
-  .product-card {
+  .home-service-card,
+  .home-product-card {
     padding-left: 8px;
     padding-right: 8px;
   }
 }
 
-/* Ensure text elements inside cards align to left and fill width */
-.service-title,
-.product-title,
-.service-description,
-.product-description,
-.product-card h3,
-.product-card p {
+.home-service-title,
+.home-product-title,
+.home-service-description,
+.home-product-description,
+.home-product-card h3,
+.home-product-card p {
   text-align: left;
   width: 100%;
   margin-left: 0;
   margin-right: 0;
-  /* Remove any inherited center alignment */
 }
 
-/* Ensure button is centered on mobile if desired */
 @media (max-width: 576px) {
-  .service-card .btn,
-  .product-card .btn {
+  .home-service-card .home-btn,
+  .home-product-card .home-btn {
     align-self: center;
     margin-left: auto;
     margin-right: auto;
   }
 }
 
-/* --- Ensure Card Content Doesn't Overflow --- */
-.service-description,
-.product-description {
+.home-service-description,
+.home-product-description {
   flex-grow: 1;
   margin-bottom: 0;
   min-width: 0;
   word-break: break-word;
 }
 
-/* --- Fix for Button Overlap/Overflow --- */
-.service-card .btn:last-child,
-.product-card .btn:last-child {
+.home-service-card .home-btn:last-child,
+.home-product-card .home-btn:last-child {
   margin-bottom: 0;
 }
 
-/* --- Prevent Card Overlap on Mobile --- */
-.services-grid,
-.products-grid {
+.home-services-grid,
+.home-products-grid {
   width: 100%;
   box-sizing: border-box;
 }
 
 @media (max-width: 576px) {
-  .services-grid,
-  .products-grid {
+  .home-services-grid,
+  .home-products-grid {
     gap: 12px;
   }
-  .service-card,
-  .product-card {
+  .home-service-card,
+  .home-product-card {
     margin-bottom: 0;
     min-width: 0;
     max-width: 100%;
   }
 }
 
-/* --- Responsive Design --- */
 @media (max-width: 1200px) {
-  .hero-title {
+  .home-hero-title {
     font-size: 2.7rem;
   }
-  .section-title {
+  .home-section-title {
     font-size: 2.3rem;
   }
 }
 
 @media (max-width: 992px) {
-  .hero-content-container {
+  .home-hero-content-container {
     flex-direction: column;
     text-align: center;
     gap: 25px;
   }
 
-  .hero-content-text {
+  .home-hero-content-text {
     align-items: center;
     max-width: 100%;
   }
 
-  .hero-clock-wrapper {
+  .home-hero-clock-wrapper {
     order: 2;
     display: flex;
     margin: 20px 0;
   }
 
-  .hero-subtitle {
+  .home-hero-subtitle {
     order: 3;
     max-width: 100%;
   }
 
-  .hero-ctas {
+  .home-hero-ctas {
     order: 4;
     justify-content: center;
     margin-top: 10px;
   }
 
-  .hero-clock {
+  .home-hero-clock {
     width: 200px;
     height: 200px;
   }
-  .hero-clock-numeral {
+  .home-hero-clock-numeral {
     font-size: 1rem;
     width: 20px;
     height: 20px;
   }
-  .hero-clock-time-date {
+  .home-hero-clock-time-date {
     padding: 10px 15px;
     max-width: 200px;
   }
-  .hero-clock-time {
+  .home-hero-clock-time {
     font-size: 1.2rem;
   }
-  .hero-clock-date {
+  .home-hero-clock-date {
     font-size: 0.9rem;
   }
-  .about-us-grid {
+  .home-about-us-grid {
     grid-template-columns: 1fr;
     gap: 30px;
     text-align: center;
   }
-  .about-us-text .section-title {
+  .home-about-us-text .home-section-title {
     text-align: center;
   }
-  .team-image {
+  .home-team-image {
     max-width: 100%;
     margin: 0 auto;
   }
-  .services-grid {
+  .home-services-grid {
     grid-template-columns: 1fr 1fr;
   }
-  .products-grid {
+  .home-products-grid {
     grid-template-columns: 1fr 1fr;
   }
-  .reasons-grid {
+  .home-reasons-grid {
     grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 768px) {
-  .hero-section {
+  .home-hero-section {
     padding: 70px 0;
   }
-  .hero-title {
+  .home-hero-title {
     font-size: 2.2rem;
   }
-  .hero-subtitle {
+  .home-hero-subtitle {
     font-size: 1.1rem;
   }
-  .section-title {
+  .home-section-title {
     font-size: 2rem;
     margin-bottom: 30px;
   }
-  .section-container {
+  .home-section-container {
     padding: 0 15px;
   }
-  .about-us-section,
-  .core-services-section,
-  .popular-products-section,
-  .why-choose-us-section {
+  .home-about-us-section,
+  .home-core-services-section,
+  .home-popular-products-section,
+  .home-why-choose-us-section {
     padding: 70px 0;
   }
-  .services-grid,
-  .products-grid {
+  .home-services-grid,
+  .home-products-grid {
     grid-template-columns: 1fr;
   }
-  .btn {
+  .home-btn {
     width: 100%;
     max-width: 300px;
     margin: 0 auto;
   }
-  .hero-ctas {
+  .home-hero-ctas {
     flex-direction: column;
     align-items: center;
     gap: 15px;
   }
-  .service-card,
-  .product-card,
-  .reason {
+  .home-service-card,
+  .home-product-card,
+  .home-reason {
     padding: 25px 20px;
   }
-  .hero-clock {
+  .home-hero-clock {
     width: 180px;
     height: 180px;
   }
-  .hero-clock-numeral {
+  .home-hero-clock-numeral {
     font-size: 0.9rem;
     width: 18px;
     height: 18px;
   }
-  .hero_clock_hand {
+  .home-hero-clock-hand {
     border-radius: 5px;
   }
-  .hero-clock-hour-hand {
+  .home-hero-clock-hour-hand {
     width: 5px;
   }
-  .hero-clock-minute-hand {
+  .home-hero-clock-minute-hand {
     width: 3px;
   }
-  .hero-clock-second-hand {
+  .home-hero-clock-second-hand {
     width: 1px;
   }
-  .hero-clock-center {
+  .home-hero-clock-center {
     width: 10px;
     height: 10px;
   }
-  .hero-clock-time-date {
+  .home-hero-clock-time-date {
     padding: 8px 12px;
     max-width: 180px;
   }
-  .hero-clock-time {
+  .home-hero-clock-time {
     font-size: 1.1rem;
   }
-  .hero-clock-date {
+  .home-hero-clock-date {
     font-size: 0.85rem;
   }
 }
 
 @media (max-width: 576px) {
-  .hero-title {
+  .home-hero-title {
     font-size: 2rem;
   }
-  .hero-subtitle {
+  .home-hero-subtitle {
     font-size: 1rem;
   }
-  .section-title {
+  .home-section-title {
     font-size: 1.8rem;
   }
-  .service-title,
-  .product-card h3,
-  .reason h3 {
+  .home-service-title,
+  .home-product-card h3,
+  .home-reason h3 {
     font-size: 1.2rem;
   }
-  .service-description,
-  .product-card p,
-  .reason p {
+  .home-service-description,
+  .home-product-card p,
+  .home-reason p {
     font-size: 0.95rem;
   }
-  .hero-clock {
+  .home-hero-clock {
     width: 150px;
     height: 150px;
   }
-  .hero-clock-numeral {
+  .home-hero-clock-numeral {
     font-size: 0.8rem;
     width: 16px;
     height: 16px;
   }
-  /* Further adjust hands and center for small screens if needed */
 }
 
-.about-us-grid {
-  /* ...existing code... */
+.home-about-us-grid {
   align-items: flex-start;
 }
 
-.about-us-text {
+.home-about-us-text {
   width: 100%;
   padding-left: 0;
   padding-right: 0;
 }
 
-.section-description {
+.home-section-description {
   text-align: left;
   width: 100%;
   margin-left: 0;
   margin-right: 0;
   padding-left: 0;
   padding-right: 0;
-  /* Remove any inherited center alignment */
 }
 
-.section-description ul {
+.home-section-description ul {
   padding-left: 0;
   margin-left: 0;
   margin-right: 0;
   width: 100%;
 }
 
-.section-description ul li {
+.home-section-description ul li {
   padding-left: 28px;
   margin-bottom: 12px;
   font-size: 1rem;
@@ -1147,30 +1085,30 @@
   margin-right: 0;
 }
 
-.section-description ul li::before {
+.home-section-description ul li::before {
   left: 0;
 }
 
 @media (max-width: 992px) {
-  .about-us-grid {
+  .home-about-us-grid {
     grid-template-columns: 1fr;
     gap: 30px;
     text-align: left;
     align-items: flex-start;
   }
-  .about-us-text {
+  .home-about-us-text {
     text-align: left;
     align-items: flex-start;
     padding-left: 0;
     padding-right: 0;
   }
-  .about-us_text .section-title {
+  .home-about-us-text .home-section-title {
     text-align: left;
     justify-content: flex-start;
   }
-  .section-description,
-  .section-description ul,
-  .section-description ul li {
+  .home-section-description,
+  .home-section-description ul,
+  .home-section-description ul li {
     text-align: left;
     margin-left: 0;
     margin-right: 0;
@@ -1180,84 +1118,80 @@
 }
 
 @media (max-width: 576px) {
-  .about-us-section {
+  .home-about-us-section {
     padding: 40px 0;
   }
-  .about-us-grid {
+  .home-about-us-grid {
     gap: 18px;
   }
-  .about-us-text {
+  .home-about-us-text {
     padding-left: 0;
     padding-right: 0;
   }
-  .section-description {
+  .home-section-description {
     font-size: 0.98rem;
     padding-left: 0;
     padding-right: 0;
   }
-  .section-description ul {
+  .home-section-description ul {
     padding-left: 0;
     margin-left: 0;
     margin-right: 0;
   }
-  .section-description ul li {
+  .home-section-description ul li {
     font-size: 0.97rem;
     padding-left: 24px;
   }
 }
 
-/* Make product grid always 4 columns on large screens, 3 on tablets, 2 on small tablets, 1 on mobile */
-.even-products-grid {
+.home-even-products-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
 }
 
 @media (max-width: 1200px) {
-  .even-products-grid {
+  .home-even-products-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 22px;
   }
 }
 
 @media (max-width: 900px) {
-  .even-products-grid {
+  .home-even-products-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
   }
 }
 
 @media (max-width: 600px) {
-  .even-products-grid {
+  .home-even-products-grid {
     grid-template-columns: 1fr;
     gap: 10px;
   }
 }
 
-/* --- Service Card Height Consistency --- */
-.overlay-card,
-.service-card.overlay-card {
-  min-height: 420px; /* Reduced height for service cards */
-}
-
-.overlay-card-image {
+.home-overlay-card,
+.home-service-card.home-overlay-card {
   min-height: 420px;
 }
 
-/* Restore product card height to original for products */
-.product-card.overlay-card,
-.product_card .overlay-card-image {
-  min-height: 320px !important;
+.home-overlay-card-image {
+  min-height: 420px;
 }
-.product-card .overlay-card-image {
+
+.home-product-card.home-overlay-card,
+.home-product-card .home-overlay-card-image {
   min-height: 320px !important;
 }
 
-/* Force overlay content to scroll if too tall, so button is always visible */
-.overlay-card-content {
+.home-product-card .home-overlay-card-image {
+  min-height: 320px !important;
+}
+
+.home-overlay-card-content {
   height: 50%;
   min-height: unset;
-  max-height: none; /* Remove scroll, let content fit */
+  max-height: none;
   overflow-y: visible;
-  /* ...existing code... */
 }

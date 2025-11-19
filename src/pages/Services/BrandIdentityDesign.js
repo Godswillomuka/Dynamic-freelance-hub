@@ -37,7 +37,6 @@ export default function BrandIdentityDesign() {
           </p>
         </div>
         <div className="about-images">
-          <img src="https://images.unsplash.com/photo-1557683316-973673baf926" alt="Brand guidelines" />
           <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" alt="Corporate branding" />
         </div>
       </section>
