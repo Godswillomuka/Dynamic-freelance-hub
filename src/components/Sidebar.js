@@ -40,7 +40,7 @@ const sidebarData = [
       "Envelopes",
       "Letterheads",
       "Presentation Folders",
-      "ID Cards",
+      "Staff ID Cards",
       "Certificates",
       "Menus"
     ]
@@ -83,7 +83,8 @@ const sidebarData = [
       "Partial Wraps",
       "Reflective Stickers",
       "Motorcycle Branding",
-      "Delivery Van Branding"
+      "Delivery Van Branding",
+      "Roadshow Trucks"
     ]
   },
   {
@@ -95,8 +96,8 @@ const sidebarData = [
       "Door Signs",
       "Desk Nameplates",
       "Wayfinding Signage",
-      "Safety Signage",
-      "Custom Wall Art"
+      "Safety Signage"
+      
     ]
   },
   {
@@ -113,18 +114,6 @@ const sidebarData = [
       "Lamination & Finishing",
       "Mounting Boards",
       "Lightbox Panels"
-    ]
-  },
-  {
-    title: "Packaging & Product Branding",
-    links: [
-      "Product Packaging Design",
-      "Eco-Friendly Packaging Options",
-      "Subscription Boxes",
-      "Labels & Stickers",
-      "Luxury Packaging",
-      "Custom Gift & Hamper Packaging",
-      "Seasonal Gift Bundles"
     ]
   },
   {

@@ -36,7 +36,7 @@ export default function Contact() {
             />
             <div>
               <h4>Phone</h4>
-              <p>+254 712 345 678</p>
+              <p>+254 746 808 099 </p>
             </div>
           </div>
 
@@ -47,7 +47,7 @@ export default function Contact() {
             />
             <div>
               <h4>Email</h4>
-              <p>support@dynamicfreelancehub.com</p>
+              <p>freelancehub3@gmail.com</p>
             </div>
           </div>
 

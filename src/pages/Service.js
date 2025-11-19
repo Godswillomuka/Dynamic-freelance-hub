@@ -61,7 +61,7 @@ const allServices = [
   "Envelopes",
   "Letterheads",
   "Presentation Folders",
-  "ID Cards",
+  "Staff ID Cards",
   "Certificates",
   "Menus",
 
@@ -96,6 +96,7 @@ const allServices = [
   "Reflective Stickers",
   "Motorcycle Branding",
   "Delivery Van Branding",
+  "Roadshow Trucks",
 
   // Corporate Signage & Office Branding
   "Office Signage",
@@ -105,7 +106,7 @@ const allServices = [
   "Desk Nameplates",
   "Wayfinding Signage",
   "Safety Signage",
-  "Custom Wall Art",
+
 
   // Event Branding & Printing Accessories
   "Stage & Venue Branding",
@@ -119,16 +120,7 @@ const allServices = [
   "Lamination & Finishing",
   "Mounting Boards",
   "Lightbox Panels",
-
-  // Packaging & Product Branding
-  "Product Packaging Design",
-  "Eco-Friendly Packaging Options",
-  "Subscription Boxes",
-  "Labels & Stickers",
-  "Luxury Packaging",
-  "Custom Gift & Hamper Packaging",
-  "Seasonal Gift Bundles",
-
+  
   // Website Design & Coding
   "Website Design & Development",
   "Website Maintenance",
