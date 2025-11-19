@@ -17,7 +17,7 @@ export default function LogoDesign() {
         </div>
         <div className="hero-image">
           <img
-            src="https://images.unsplash.com/photo-1581091870621-91f8a4607d16?auto=format&fit=crop&w=800&q=80"
+            src=".home/zilla/development/dynamic-freelance-hub/src/assets/logoexample.png"
             alt="Logo design concept"
           />
         </div>
