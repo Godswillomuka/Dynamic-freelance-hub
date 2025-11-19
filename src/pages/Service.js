@@ -16,6 +16,7 @@ import InvitationCardDesign from "./Services/InvitationCardDesign";
 import CertificateDesign from "./Services/CertificateDesign";
 import TShirtArtworkDesign from "./Services/TShirtArtworkDesign";
 import MagazineBookLayout from "./Services/MagazineBookLayout";
+import InfographicsDesign from "./Services/InfographicsDesign";
 import "./Service.css";
 /* --- Placeholder Component for Unbuilt Pages --- */
 function ComingSoon({ title }) {
@@ -164,6 +165,7 @@ const slugToComponent = {
   "certificate-design": CertificateDesign,
   [slugify("T-Shirt Artwork Design")]: TShirtArtworkDesign,
   "magazine-book-layout": MagazineBookLayout,
+  "infographics-design": InfographicsDesign,
   // add more overrides as needed:
 };
 
