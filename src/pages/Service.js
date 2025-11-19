@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Routes, Route, useParams, Navigate } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
-import "./Service.css";
 import LogoDesign from "./Services/LogoDesign";
 import BrandIdentityDesign from "./Services/BrandIdentityDesign";
 import BusinessCardDesign from "./Services/BusinessCardDesign";
@@ -15,6 +14,8 @@ import PackagingLabelDesign from "./Services/PackagingLabelDesign";
 import BannerBillboardDesign from "./Services/BannerBillboardDesign"; 
 import InvitationCardDesign from "./Services/InvitationCardDesign";
 import CertificateDesign from "./Services/CertificateDesign";
+import TShirtArtworkDesign from "./Services/TShirtArtworkDesign";
+import "./Service.css";
 /* --- Placeholder Component for Unbuilt Pages --- */
 function ComingSoon({ title }) {
   return (
@@ -160,6 +161,7 @@ const slugToComponent = {
   "banner-billboard-layout-design": BannerBillboardDesign,
   "invitation-card-design": InvitationCardDesign,
   "certificate-design": CertificateDesign,
+  [slugify("T-Shirt Artwork Design")]: TShirtArtworkDesign,
   // add more overrides as needed:
 };
 
