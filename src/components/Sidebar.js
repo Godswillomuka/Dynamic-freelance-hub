@@ -80,11 +80,13 @@ const sidebarData = [
     title: "Vehicle & Fleet Branding",
     links: [
       "Full Vehicle Wraps",
+      "Racing $ Safarally cars",
       "Partial Wraps",
       "Reflective Stickers",
       "Motorcycle Branding",
       "Delivery Van Branding",
       "Roadshow Trucks"
+      
     ]
   },
   {
