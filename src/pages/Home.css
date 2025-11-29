@@ -1,14 +1,120 @@
-.home-page {
-  font-family: 'Poppins', sans-serif;
-  overflow-x: hidden;
-  color: #333;
-  background-color: #fff;
+:root {
+  --max-width: 1200px; /* maximum width for containers */
+  --section-gutter: 20px; /* default horizontal gutter for sections */
 }
 
-.home-section-container {
-  max-width: 1200px;
+/* --- GLOBAL STYLES --- */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  background-color: #fff;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+  color: inherit;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+  color: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #007a55;
+}
+
+/* --- SECTION CONTAINER --- */
+.section-container {
+  max-width: var(--max-width, 1200px);
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 var(--section-gutter);
+  box-sizing: border-box;
+}
+
+/* Page-specific safety: keep a little inner padding even where page CSS tried to remove it */
+.quote-page .section-container,
+.quote-page .quote-section-container,
+.contact-page .section-container,
+.contact-page .contact-section-container,
+.portfolio-page .section-container,
+.portfolio-page .gallery-grid,
+.printing-page .section-container,
+.ui-layout-page .section-container {
+  padding-left: max(12px, calc(var(--section-gutter) / 2));
+  padding-right: max(12px, calc(var(--section-gutter) / 2));
+  box-sizing: border-box;
+}
+
+/* Mobile: reduce gutter but keep space (do NOT set to 0) */
+@media (max-width: 768px) {
+  :root {
+    --section-gutter: 12px;
+  }
+  .section-container {
+    padding: 0 var(--section-gutter);
+  }
+  /* Ensure full-width grids stack and center */
+  .portfolio-page .gallery-grid,
+  .contact-page .contact-grid,
+  .quote-page .quote-section-container {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+    padding-left: var(--section-gutter);
+    padding-right: var(--section-gutter);
+  }
+
+  /* Keep images constrained and centered */
+  .section-container img,
+  .portfolio-page .gallery-grid img,
+  .quote-hero-image img,
+  .contact-page img,
+  .portfolio-page .portfolio-fullview img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Prevent accidental horizontal overflow */
+  body, html, .section-container {
+    overflow-x: hidden;
+  }
+}
+
+/* Small devices further tightening but preserve small gutter */
+@media (max-width: 420px) {
+  :root {
+    --section-gutter: 10px;
+  }
+  .section-container {
+    padding: 0 var(--section-gutter);
+  }
+  .quote-hero-content,
+  .quote-hero-text,
+  .quote-hero-image {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+/* --- HOME PAGE SPECIFIC STYLES --- */
+.home-page {
+  /* Background and text color for the home page */
+  background-color: #f8fafc;
+  color: #333;
 }
 
 /* --- Common Section Titles --- */
@@ -1048,150 +1154,91 @@
   }
 }
 
-.home-about-us-grid {
-  align-items: flex-start;
-}
+/* Mobile-specific layout fixes for quote, contact and portfolio pages */
+@media (max-width: 768px) {
+  /* Tighten section container padding so content aligns to left edge nicely */
+  .section-container {
+    padding: 0 12px;
+  }
 
-.home-about-us-text {
-  width: 100%;
-  padding-left: 0;
-  padding-right: 0;
-}
+  /* Generic safe image rules so images never overflow and are centered */
+  .section-container img,
+  .quote-hero-image img,
+  .portfolio-page img,
+  .contact-page img,
+  .gallery-item img,
+  .quote-page .quote-hero-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
 
-.home-section-description {
-  text-align: left;
-  width: 100%;
-  margin-left: 0;
-  margin-right: 0;
-  padding-left: 0;
-  padding-right: 0;
-}
-
-.home-section-description ul {
-  padding-left: 0;
-  margin-left: 0;
-  margin-right: 0;
-  width: 100%;
-}
-
-.home-section-description ul li {
-  padding-left: 28px;
-  margin-bottom: 12px;
-  font-size: 1rem;
-  line-height: 1.5;
-  color: #2d3748;
-  text-align: left;
-  margin-left: 0;
-  margin-right: 0;
-}
-
-.home-section-description ul li::before {
-  left: 0;
-}
-
-@media (max-width: 992px) {
-  .home-about-us-grid {
+  /* Quote page: stack form and sidebar vertically and remove large top gaps */
+  .quote-page .quote-section-container,
+  .quote-page .quote-form-wrapper,
+  .quote-page .quote-sidebar {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0;
+  }
+  .quote-page .quote-section-container {
+    display: grid;
     grid-template-columns: 1fr;
-    gap: 30px;
-    text-align: left;
-    align-items: flex-start;
+    gap: 20px;
   }
-  .home-about-us-text {
-    text-align: left;
-    align-items: flex-start;
+  .quote-page .quote-form-wrapper { order: 1; }
+  .quote-page .quote-sidebar { order: 2; }
+
+  /* Contact page: ensure contact grid becomes single column and avoids right overlap */
+  .contact-page .contact-section-container,
+  .contact-page .contact-grid {
+    width: 100%;
     padding-left: 0;
     padding-right: 0;
+    box-sizing: border-box;
   }
-  .home-about-us-text .home-section-title {
-    text-align: left;
-    justify-content: flex-start;
-  }
-  .home-section-description,
-  .home-section-description ul,
-  .home-section-description ul li {
-    text-align: left;
-    margin-left: 0;
-    margin-right: 0;
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-@media (max-width: 576px) {
-  .home-about-us-section {
-    padding: 40px 0;
-  }
-  .home-about-us-grid {
-    gap: 18px;
-  }
-  .home-about-us-text {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  .home-section-description {
-    font-size: 0.98rem;
-    padding-left: 0;
-    padding-right: 0;
-  }
-  .home-section-description ul {
-    padding-left: 0;
-    margin-left: 0;
-    margin-right: 0;
-  }
-  .home-section-description ul li {
-    font-size: 0.97rem;
-    padding-left: 24px;
-  }
-}
-
-.home-even-products-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
-}
-
-@media (max-width: 1200px) {
-  .home-even-products-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
-  }
-}
-
-@media (max-width: 900px) {
-  .home-even-products-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .contact-page .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 16px;
   }
-}
 
-@media (max-width: 600px) {
-  .home-even-products-grid {
+  /* Portfolio: ensure gallery centers and images don't push to the right */
+  .portfolio-page .portfolio-section-container,
+  .portfolio-page .gallery-grid {
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .portfolio-page .gallery-grid {
+    display: grid;
     grid-template-columns: 1fr;
-    gap: 10px;
+    gap: 12px;
+  }
+
+  /* If you have a fullscreen image view/modal ensure it's centered */
+  .portfolio-page .portfolio-fullview,
+  .portfolio-page .image-modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+  }
+
+  /* Prevent horizontal overflow from long elements */
+  body, .section-container, .quote-page, .contact-page, .portfolio-page {
+    overflow-x: hidden;
   }
 }
 
-.home-overlay-card,
-.home-service-card.home-overlay-card {
-  min-height: 420px;
-}
-
-.home-overlay-card-image {
-  min-height: 420px;
-}
-
-.home-product-card.home-overlay-card,
-.home-product-card .home-overlay-card-image {
-  min-height: 320px !important;
-}
-
-.home-product-card .home-overlay-card-image {
-  min-height: 320px !important;
-}
-
-.home-overlay-card-content {
-  height: 50%;
-  min-height: unset;
-  max-height: none;
-  overflow-y: visible;
+/* Small devices further tightening */
+@media (max-width: 420px) {
+  .section-container { padding: 0 10px; }
+  .sidebar-toggle { right: 12px; bottom: 12px; } /* keep toggle off the header area */
+  /* Reduce spacing inside form sections slightly to avoid long vertical scroll */
+  .quote-page .form-section { padding-top: 8px; padding-bottom: 12px; }
 }
