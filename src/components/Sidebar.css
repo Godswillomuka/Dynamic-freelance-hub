@@ -252,11 +252,14 @@
     height: calc(100vh - 55px);
   }
 
+  /* Changed: keep toggle anchored bottom-right instead of top-left */
   .sidebar-toggle {
-    top: 70px;
+    bottom: 14px;
+    right: 12px;
+    left: auto;
+    top: auto;
     padding: 8px 12px;
     font-size: 1.2rem;
-    left: 12px;
   }
 }
 
@@ -281,9 +284,12 @@
     height: calc(100vh - 50px);
   }
 
+  /* Changed: bottom-right anchor */
   .sidebar-toggle {
-    top: 65px;
-    left: 10px;
+    bottom: 16px;
+    right: 12px;
+    left: auto;
+    top: auto;
     padding: 7px 10px;
     font-size: 1.1rem;
   }
@@ -305,9 +311,12 @@
     height: calc(100vh - 50px);
   }
 
+  /* Changed: bottom-right anchor */
   .sidebar-toggle {
-    top: 65px;
-    left: 8px;
+    bottom: 16px;
+    right: 10px;
+    left: auto;
+    top: auto;
   }
 }
 
@@ -327,9 +336,12 @@
     height: calc(100vh - 48px);
   }
 
+  /* Changed: bottom-right anchor */
   .sidebar-toggle {
-    top: 63px;
-    left: 6px;
+    bottom: 14px;
+    right: 8px;
+    left: auto;
+    top: auto;
     padding: 6px 9px;
     font-size: 1rem;
   }
