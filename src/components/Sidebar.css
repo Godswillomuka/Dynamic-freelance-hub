@@ -1,20 +1,15 @@
-body {
-  margin: 0;
-  font-family: "Poppins", Arial, sans-serif;
-}
-
 /* Sidebar */
 .sidebar {
   width: 280px;
-  background: rgb(5, 21, 39); /* matches header primary dark */
+  background: rgb(5, 21, 39);
   color: #ffffff;
-  height: calc(100vh - 60px);
+  height: calc(100vh - 80px);
   overflow-y: auto;
   position: fixed;
-  top: 60px;
+  top: 80px;
   left: 0;
   padding: 10px 0;
-  z-index: 900;
+  z-index: 9950; /* sidebar below toggle but above most content */
   box-sizing: border-box;
   border-right: 1px solid rgba(255, 255, 255, 0.15);
   transition: left 0.3s ease, background 0.3s ease;
@@ -23,12 +18,12 @@ body {
 /* Sidebar overlay (mobile) */
 .sidebar-overlay {
   position: fixed;
-  top: 60px;
+  top: 80px;
   left: 0;
   width: 100vw;
-  height: calc(100vh - 60px);
+  height: calc(100vh - 80px);
   background: rgba(0, 0, 0, 0.4);
-  z-index: 899;
+  z-index: 9940; /* keep overlay z-index below toggle (toggle will be hidden when sidebar open) */
 }
 
 /* Sidebar title */
@@ -51,8 +46,8 @@ body {
 
 .menu-item:hover,
 .menu-item:focus {
-  background: rgb(7, 25, 69); /* darker secondary blue */
-  color: rgb(0, 159, 111); /* website accent green */
+  background: rgb(7, 25, 69);
+  color: rgb(0, 159, 111);
   outline: none;
 }
 
@@ -67,7 +62,7 @@ body {
 .submenu {
   max-height: 0;
   overflow: hidden;
-  background: rgb(0, 21, 39); /* slightly darker for contrast */
+  background: rgb(0, 21, 39);
   transition: max-height 0.3s ease;
 }
 
@@ -79,14 +74,14 @@ body {
   display: block;
   padding: 8px 40px;
   text-decoration: none;
-  color: rgb(200, 221, 215); /* light text from website */
+  color: rgb(200, 221, 215);
   font-size: 0.9rem;
   transition: background 0.25s ease, color 0.25s ease, transform 0.2s ease;
 }
 
 .submenu a:hover,
 .submenu a:focus {
-  background: rgb(5, 21, 39); /* matches main sidebar background */
+  background: rgb(5, 21, 39);
   color: rgb(0, 159, 111);
   transform: translateX(3px);
   outline: none;
@@ -101,11 +96,11 @@ body {
 .main-content {
   margin-left: 280px;
   padding: 20px;
-  min-height: calc(100vh - 60px);
+  min-height: calc(100vh - 80px);
   box-sizing: border-box;
   transition: margin-left 0.3s ease;
   overflow-x: auto;
-  background: #f9fafb; /* keep content light */
+  background: #f9fafb;
 }
 
 /* Scrollbar */
@@ -124,8 +119,15 @@ body {
 
 /* Responsive */
 @media (max-width: 900px) {
-  .sidebar { width: 240px; }
-  .main-content { margin-left: 240px; }
+  .sidebar { 
+    width: 240px; 
+    height: calc(100vh - 70px);
+    top: 70px;
+  }
+  .main-content { 
+    margin-left: 240px; 
+    min-height: calc(100vh - 70px);
+  }
 }
 
 @media (max-width: 700px) {
@@ -133,8 +135,10 @@ body {
     width: 80vw;
     max-width: 320px;
     left: -80vw;
-    top: 60px;
+    top: 70px;
+    height: calc(100vh - 70px);
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.15);
+    transition: left 0.3s ease;
   }
 
   .sidebar.open {
@@ -143,33 +147,197 @@ body {
 
   .main-content {
     margin-left: 0;
-    margin-top: 60px;
+    margin-top: 70px;
     padding: 16px;
+    min-height: calc(100vh - 70px);
+  }
+
+  /* Sidebar toggle button (floating, bottom-right) — high z-index to avoid header overlap */
+  .sidebar-toggle {
+    display: flex;
+    position: fixed;
+    bottom: 28px;
+    right: 18px;
+    z-index: 10050; /* very high so it sits above headers and overlays */
+    background: rgb(0, 159, 111);
+    color: white;
+    border: none;
+    border-radius: 999px;
+    padding: 10px 16px;
+    font-size: 0.98rem;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s;
+  }
+
+  /* subtle attention animation (optional, can remove) */
+  .sidebar-toggle::after {
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.12);
+    margin-left: 6px;
+    animation: pulse 2.6s infinite;
+  }
+  @keyframes pulse {
+    0% { transform: scale(1); opacity: 0.9; }
+    50% { transform: scale(1.06); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.9; }
+  }
+
+  /* Hide the floating toggle while sidebar is open using body class set by JS */
+  body.sidebar-open .sidebar-toggle {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: scale(0.98);
+  }
+
+  .sidebar-overlay {
+    top: 70px;
+    height: calc(100vh - 70px);
+    z-index: 9940;
+    position: fixed;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.35);
+  }
+
+  .sidebar {
+    z-index: 9950;
+  }
+}
+
+@media (max-width: 600px) {
+  .sidebar {
+    top: 60px;
+    height: calc(100vh - 60px);
+  }
+
+  .main-content {
+    margin-top: 60px;
+    min-height: calc(100vh - 60px);
+  }
+
+  .sidebar-overlay {
+    top: 60px;
+    height: calc(100vh - 60px);
   }
 
   .sidebar-toggle {
-    display: block;
-    position: fixed;
-    top: 16px;
-    left: 16px;
-    z-index: 1001;
-    background: rgb(5, 21, 39);
-    color: rgb(0, 159, 111);
-    border: none;
-    border-radius: 6px;
+    bottom: 24px;
+    right: 16px;
     padding: 8px 12px;
-    font-size: 1.5rem;
-    cursor: pointer;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
-    transition: background 0.3s ease;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    top: 55px;
+    height: calc(100vh - 55px);
   }
 
-  .sidebar-toggle:hover {
-    background: rgb(7, 25, 69);
+  .main-content {
+    margin-top: 55px;
+    min-height: calc(100vh - 55px);
+  }
+
+  .sidebar-overlay {
+    top: 55px;
+    height: calc(100vh - 55px);
+  }
+
+  .sidebar-toggle {
+    top: 70px;
+    padding: 8px 12px;
+    font-size: 1.2rem;
+    left: 12px;
   }
 }
 
 @media (max-width: 400px) {
-  .sidebar { width: 100vw; left: -100vw; }
-  .sidebar.open { left: 0; }
+  .sidebar { 
+    width: 100vw; 
+    left: -100vw; 
+    top: 50px;
+    height: calc(100vh - 50px);
+  }
+  .sidebar.open { 
+    left: 0; 
+  }
+
+  .main-content {
+    margin-top: 50px;
+    min-height: calc(100vh - 50px);
+  }
+
+  .sidebar-overlay {
+    top: 50px;
+    height: calc(100vh - 50px);
+  }
+
+  .sidebar-toggle {
+    top: 65px;
+    left: 10px;
+    padding: 7px 10px;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .sidebar {
+    top: 50px;
+    height: calc(100vh - 50px);
+  }
+
+  .main-content {
+    margin-top: 50px;
+    min-height: calc(100vh - 50px);
+  }
+
+  .sidebar-overlay {
+    top: 50px;
+    height: calc(100vh - 50px);
+  }
+
+  .sidebar-toggle {
+    top: 65px;
+    left: 8px;
+  }
+}
+
+@media (max-width: 320px) {
+  .sidebar {
+    top: 48px;
+    height: calc(100vh - 48px);
+  }
+
+  .main-content {
+    margin-top: 48px;
+    min-height: calc(100vh - 48px);
+  }
+
+  .sidebar-overlay {
+    top: 48px;
+    height: calc(100vh - 48px);
+  }
+
+  .sidebar-toggle {
+    top: 63px;
+    left: 6px;
+    padding: 6px 9px;
+    font-size: 1rem;
+  }
+}
+
+/* Ensure the toggle button is only visible on mobile */
+@media (min-width: 701px) {
+  .sidebar-toggle {
+    display: none !important;
+  }
 }

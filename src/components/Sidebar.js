@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import "./Sidebar.css";
 
@@ -132,107 +132,98 @@ const sidebarData = [
   }
 ];
 
-
 export default function Sidebar() {
   const [openIndex, setOpenIndex] = useState(null);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const location = useLocation();
   const sidebarRef = useRef(null);
 
-  // Close sidebar on click outside (mobile)
+  // add/remove body class so CSS can hide toggle while sidebar is open
+  useEffect(() => {
+    document.body.classList.toggle("sidebar-open", sidebarOpen);
+    return () => document.body.classList.remove("sidebar-open");
+  }, [sidebarOpen]);
+
+  // close sidebar on route change (header nav, etc.)
+  useEffect(() => {
+    setSidebarOpen(false);
+    // also collapse open sections for clarity
+    setOpenIndex(null);
+  }, [location]);
+
+  // click outside to close (mobile)
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
+      if (sidebarOpen && sidebarRef.current && !sidebarRef.current.contains(event.target)) {
         setSidebarOpen(false);
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
+  }, [sidebarOpen]);
 
   const toggleSection = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
-  const handleKeyDown = (event, index) => {
-    if (event.key === "Enter" || event.key === " ") {
-      event.preventDefault();
-      toggleSection(index);
-    }
-  };
-
   return (
     <>
-      {/* Mobile overlay */}
-      {sidebarOpen && <div className="sidebar-overlay" onClick={() => setSidebarOpen(false)} />}
-
-      {/* Toggle button for mobile */}
-      <button
-        className="sidebar-toggle"
-        onClick={() => setSidebarOpen(!sidebarOpen)}
-        aria-label="Toggle sidebar"
-        aria-expanded={sidebarOpen}
-      >
-        &#9776;
-      </button>
-
       {/* Sidebar */}
-      <nav
-        ref={sidebarRef}
-        className={`sidebar ${sidebarOpen ? "open" : ""}`}
-        role="menu"
-        aria-label="Sidebar Navigation"
-      >
+      <div className={`sidebar ${sidebarOpen ? "open" : ""}`} ref={sidebarRef}>
         <h2 className="sidebar-title">Our Services</h2>
 
-        {sidebarData.map((section, index) => {
-          // Highlight parent if any child is active
-          const isActiveSection = section.links.some((link) =>
-            location.pathname.includes(
-              link.replace(/[^a-zA-Z0-9\s]/g, "").trim().replace(/\s+/g, "-").toLowerCase()
-            )
-          );
-
-          return (
-            <div key={index}>
-              <div
-                className={`menu-item ${openIndex === index || isActiveSection ? "active" : ""}`}
-                onClick={() => toggleSection(index)}
-                onKeyDown={(e) => handleKeyDown(e, index)}
-                tabIndex={0}
-                role="menuitem"
-                aria-expanded={openIndex === index}
-              >
-                {section.title}
-              </div>
-
-              <div className={`submenu ${openIndex === index ? "open" : ""}`}>
-                {section.links.map((link, i) => {
-                  const slug = link
-                    .replace(/[^a-zA-Z0-9\s]/g, "")
-                    .trim()
-                    .replace(/\s+/g, "-")
-                    .toLowerCase();
-
-                  return (
-                    <NavLink
-                      to={`/services/${slug}`}
-                      key={i}
-                      className={({ isActive }) => (isActive ? "active" : "")}
-                      end
-                      onClick={() => setSidebarOpen(false)}
-                      role="menuitem"
-                      tabIndex={0}
-                    >
-                      {link}
-                    </NavLink>
-                  );
-                })}
-              </div>
+        {sidebarData.map((section, index) => (
+          <div key={index}>
+            <div
+              className={`menu-item ${openIndex === index ? "active" : ""}`}
+              onClick={() => toggleSection(index)}
+            >
+              {section.title}
             </div>
-          );
-        })}
-      </nav>
+
+            <div className={`submenu ${openIndex === index ? "open" : ""}`}>
+              {section.links.map((link, i) => {
+                const slug = link
+                  .replace(/[^a-zA-Z0-9\s]/g, "")
+                  .trim()
+                  .replace(/\s+/g, "-")
+                  .toLowerCase();
+
+                return (
+                  <NavLink
+                    to={`/services/${slug}`}
+                    key={i}
+                    className={({ isActive }) => (isActive ? "active" : "")}
+                    end
+                    onClick={() => setSidebarOpen(false)}
+                  >
+                    {link}
+                  </NavLink>
+                );
+              })}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Overlay appears only on mobile when sidebar is open */}
+      {sidebarOpen && (
+        <div
+          className="sidebar-overlay"
+          onClick={() => setSidebarOpen(false)}
+          aria-hidden="true"
+        />
+      )}
+
+      {/* Toggle button for mobile (floating, bottom-right) */}
+      <button
+        className="sidebar-toggle"
+        onClick={() => setSidebarOpen((s) => !s)}
+        aria-label="Toggle sidebar"
+      >
+        <span style={{ fontSize: "1.1rem", marginRight: 8 }}>☰</span>
+        <span style={{ fontSize: "0.95rem", fontWeight: 600 }}>Services</span>
+      </button>
     </>
   );
 }
