@@ -335,7 +335,78 @@
   }
 }
 
-/* Ensure the toggle button is only visible on mobile */
+/* Override: compact, fixed-position mobile toggle (keeps bottom-right and small) */
+@media (max-width: 700px) {
+  .sidebar-toggle {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 18px;      /* fixed to bottom-right */
+    right: 18px;
+    z-index: 10050;    /* stay above header/overlay */
+    background: rgb(0, 159, 111);
+    color: white;
+    border: none;
+    border-radius: 999px;
+    padding: 8px 10px; /* reduced padding to avoid wide button */
+    min-width: 44px;   /* minimum touch target */
+    height: 44px;      /* consistent square button */
+    max-width: 140px;  /* prevent stretching */
+    font-size: 0.95rem;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+    gap: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: transform 0.18s ease, opacity 0.18s ease;
+  }
+
+  /* keep inner label short; if label too long it will be ellipsized */
+  .sidebar-toggle span {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1;
+  }
+
+  /* remove the small pulse dot so the button looks simpler and smaller */
+  .sidebar-toggle::after {
+    display: none;
+  }
+
+  /* keep toggle hidden while sidebar open (existing behavior) */
+  body.sidebar-open .sidebar-toggle {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: scale(0.98);
+  }
+}
+
+/* Ensure other media rules that previously used top/left do not override the compact bottom-right placement */
+@media (max-width: 600px) {
+  .sidebar-toggle {
+    bottom: 16px;
+    right: 14px;
+    padding: 7px 9px;
+    min-width: 42px;
+    height: 42px;
+    font-size: 0.92rem;
+  }
+}
+@media (max-width: 480px) {
+  .sidebar-toggle {
+    bottom: 14px;
+    right: 12px;
+    padding: 7px 8px;
+    min-width: 40px;
+    height: 40px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Ensure toggle is hidden on larger screens */
 @media (min-width: 701px) {
   .sidebar-toggle {
     display: none !important;
