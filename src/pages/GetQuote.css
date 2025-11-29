@@ -7,6 +7,34 @@
   padding: 0;
 }
 
+/* Prevent horizontal overflow for this page */
+.quote-page {
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+/* Ensure section container doesn't allow children to overflow */
+.quote-section-container {
+  box-sizing: border-box;
+  max-width: 1200px;
+  width: 100%;
+  overflow: visible;
+}
+
+.quote-section-container {
+  display: grid;
+  /* Use minmax(0, 1fr) to allow columns to shrink and avoid overflow */
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+/* Ensure direct children of the section container can shrink */
+.quote-section-container > * {
+  min-width: 0;
+  box-sizing: border-box;
+}
+
 .quote-section-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -131,12 +159,40 @@
   align-items: start;
 }
 
+/* Make the two-column form grid shrink safely */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr)); /* was: 1fr 1fr */
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
 .quote-form-wrapper {
   background: white;
   border-radius: 16px;
   padding: 40px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.07);
   border: 1px solid #e2e8f0;
+}
+
+/* Make the form wrapper fully responsive and never wider than viewport */
+.quote-form-wrapper {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+/* Ensure all form controls are constrained and use border-box */
+.quote-form-wrapper input,
+.quote-form-wrapper select,
+.quote-form-wrapper textarea,
+.quote-form-wrapper .file-input,
+.quote-form-wrapper .form-control {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
 }
 
 .quote-form-header {
@@ -234,7 +290,7 @@
 
 .form-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr)); /* was: 1fr 1fr */
   gap: 20px;
   margin-bottom: 20px;
 }
@@ -266,6 +322,21 @@
   transition: all 0.3s ease;
   font-family: 'Poppins', sans-serif;
   background: white;
+}
+
+/* Allow grid and form groups to shrink instead of forcing overflow */
+.form-grid,
+.form-row,
+.form-columns,
+.form-group,
+.checkbox-grid,
+.quote-benefits,
+.quote-hero-content,
+.quote-hero-image,
+.quote-form-wrapper,
+.quote-sidebar {
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 .form-group input:focus,
@@ -323,18 +394,17 @@
 .file-preview {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  background: #f0fff4;
-  border: 1px solid #9ae6b4;
-  border-radius: 6px;
-  padding: 8px 12px;
-  margin-top: 8px;
-  font-size: 0.9rem;
+  gap: 12px;
+  flex-wrap: wrap; /* changed from nowrap */
+  min-width: 0;
 }
 
 .file-preview span {
-  color: #22543d;
-  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%; /* allow full shrink */
+  box-sizing: border-box;
 }
 
 .remove-file-btn {
@@ -370,6 +440,12 @@
   cursor: pointer;
   transition: all 0.3s ease;
   font-weight: 500;
+}
+
+/* Minor: prevent long checkbox labels from forcing width */
+.checkbox-label {
+  min-width: 0;
+  white-space: normal;
 }
 
 .checkbox-label:hover {

@@ -1195,3 +1195,255 @@
   max-height: none;
   overflow-y: visible;
 }
+
+/* --- Mobile overflow / responsive fixes --- */
+/* Prevent accidental horizontal scroll on small devices */
+html, body {
+  overflow-x: hidden;
+}
+
+/* Ensure all elements use border-box sizing to avoid unexpected widths */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Make media responsive and prevent them from forcing layout width */
+img, picture, video, iframe, embed, object {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Allow flex/grid children to shrink instead of forcing overflow */
+.home-hero-content-container,
+.home-hero-content-text,
+.home-about-us-grid,
+.home-services-grid,
+.home-products-grid,
+.home-reasons-grid,
+.home-section-container,
+.home-section-description,
+.section-container,
+.main-content,
+.service-display,
+.reasons-grid,
+.services-grid,
+.products-grid,
+.gallery-grid,
+.process-grid,
+.testimonials-grid {
+  min-width: 0;
+}
+
+/* Constrain possible lightbox / large image viewers to viewport width */
+.portfolio-lightbox img,
+.modal img,
+.fullscreen-image,
+.view-large-image,
+.gallery-item img {
+  max-width: 100vw !important;
+  width: auto !important;
+  height: auto !important;
+  display: block;
+}
+
+/* Prevent any element using 100vw from exceeding due to scrollbar/offset */
+@media (max-width: 900px) {
+  /* Force page sections to respect container padding instead of using full-viewport width */
+  .home-section-container,
+  .section-container,
+  .home-section-container,
+  .printing-page,
+  .logo-page,
+  .ui-layout-page,
+  .about-page,
+  .portfolio-page,
+  .contact-page,
+  .get-quote-page {
+    padding-left: 16px;
+    padding-right: 16px;
+    overflow-wrap: break-word;
+  }
+
+  /* If any element was explicitly set to width:100vw, reset to 100% so it stays inside container */
+  [style*="width:100vw"],
+  .force-100vw,
+  .full-viewport {
+    width: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+  }
+}
+
+/* Small screens: tighten any oversized paddings/margins that cause overflow */
+@media (max-width: 600px) {
+  .home-hero-section,
+  .home-about-us-section,
+  .home-core-services-section,
+  .home-popular-products-section,
+  .home-why-choose-us-section {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  /* Ensure horizontal transforms (translateX etc.) can't push content out */
+  .home-service-card,
+  .home-product-card,
+  .home-reason,
+  .home-team-image,
+  .home-hero-clock {
+    max-width: 100%;
+    overflow: hidden;
+  }
+}
+
+/* Contact form responsive fixes */
+.contact-page,
+.contact-page .contact-form,
+.contact-page .contact-form form {
+  padding-left: 16px;
+  padding-right: 16px;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Make form grid/rows shrinkable and responsive */
+.contact-page .form-grid,
+.contact-page .form-row,
+.contact-page .form-columns,
+.contact-page .form-group {
+  min-width: 0; /* allow children to shrink */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Ensure all form controls fit container */
+.contact-page input[type="text"],
+.contact-page input[type="email"],
+.contact-page input[type="tel"],
+.contact-page input[type="number"],
+.contact-page textarea,
+.contact-page select,
+.contact-page .form-control {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box;
+  display: block;
+}
+
+/* Constrain images/embeds/maps inside contact page */
+.contact-page img,
+.contact-page iframe,
+.contact-page .map,
+.contact-page .embed {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Typical two-column form → stack on small screens */
+@media (min-width: 769px) {
+  .contact-page .form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+}
+@media (max-width: 768px) {
+  .contact-page .form-grid {
+    display: block;
+  }
+  .contact-page .form-grid > * {
+    margin-bottom: 12px;
+  }
+}
+
+/* Prevent any forced 100vw elements from causing horizontal scroll inside contact page */
+.contact-page [style*="width:100vw"],
+.contact-page .force-100vw,
+.contact-page .full-viewport {
+  width: 100% !important;
+  left: 0 !important;
+  right: 0 !important;
+}
+
+/* Get Quote page responsive fixes */
+.get-quote-page,
+.get-quote-page .quote-form,
+.get-quote-page .quote-form form {
+  padding-left: 16px;
+  padding-right: 16px;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Make form grid/rows shrinkable and responsive */
+.get-quote-page .form-grid,
+.get-quote-page .form-row,
+.get-quote-page .form-columns,
+.get-quote-page .form-group {
+  min-width: 0; /* allow children to shrink */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Ensure all form controls fit container */
+.get-quote-page input[type="text"],
+.get-quote-page input[type="email"],
+.get-quote-page input[type="tel"],
+.get-quote-page input[type="number"],
+.get-quote-page textarea,
+.get-quote-page select,
+.get-quote-page .form-control,
+.get-quote-page .file-input,
+.get-quote-page .attachment-preview {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box;
+  display: block;
+}
+
+/* Constrain attachment previews, images and embeds inside get-quote page */
+.get-quote-page img,
+.get-quote-page iframe,
+.get-quote-page .attachment-preview img,
+.get-quote-page .map,
+.get-quote-page .embed,
+.get-quote-page .lightbox img {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Stack two-column form on small screens */
+@media (min-width: 769px) {
+  .get-quote-page .form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+}
+@media (max-width: 768px) {
+  .get-quote-page .form-grid {
+    display: block;
+  }
+  .get-quote-page .form-grid > * {
+    margin-bottom: 12px;
+  }
+}
+
+/* Prevent any forced 100vw elements from causing horizontal scroll inside get-quote page */
+.get-quote-page [style*="width:100vw"],
+.get-quote-page .force-100vw,
+.get-quote-page .full-viewport {
+  width: 100% !important;
+  left: 0 !important;
+  right: 0 !important;
+  box-sizing: border-box;
+}
+
+/* If you still see overflow during testing, temporarily enable outlines to locate offending element:
+   .get-quote-page * { outline: 1px solid rgba(255,0,0,0.08); } */
