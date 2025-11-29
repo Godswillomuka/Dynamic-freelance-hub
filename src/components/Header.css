@@ -218,12 +218,9 @@
     transform: translateY(-10px);
     transition: opacity 0.3s ease, transform 0.3s ease;
     overflow-y: auto;
-    /* Modern scroll behavior */
-    scrollbar-width: thin;
-    scrollbar-color: rgba(0, 159, 111, 0.5) transparent;
   }
 
-  /* Custom scrollbar for Webkit browsers */
+  /* Custom scrollbar for Webkit browsers (Chrome, Safari, Edge, etc.) */
   .nav-links::-webkit-scrollbar {
     width: 6px;
   }

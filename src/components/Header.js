@@ -43,11 +43,6 @@ function Header() {
     setMenuOpen(false);
   };
 
-  const handleQuoteClick = () => {
-    closeMenu();
-    // You can add any additional logic here if needed
-  };
-
   return (
     <header className="header">
       <div className="header-container">
