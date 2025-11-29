@@ -258,7 +258,7 @@ const Home = () => {
               From Dynamic Freelance Hub, we are a passionate team of designers, creators, and branding experts committed to helping businesses grow.
             </motion.p>
             <motion.div className="home-hero-ctas" variants={fadeInUp}>
-              <a href="/get-started" className="home-btn home-btn-primary-alt">
+              <a href="/get-quote" className="home-btn home-btn-primary-alt">
                 Get Started
               </a>
               <a

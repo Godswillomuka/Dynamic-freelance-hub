@@ -43,6 +43,11 @@ function Header() {
     setMenuOpen(false);
   };
 
+  const handleQuoteClick = () => {
+    closeMenu();
+    // You can add any additional logic here if needed
+  };
+
   return (
     <header className="header">
       <div className="header-container">
@@ -83,7 +88,7 @@ function Header() {
             <li><Link to="/contact" className="nav-link" onClick={closeMenu}>Contact</Link></li>
           </ul>
           <div className="quote-btn-wrapper">
-            <Link to="/get-quote" onClick={closeMenu}>
+            <Link to="/get-quote" onClick={closeMenu} className="quote-link">
               <button className="quote-btn">Get Quote</button>
             </Link>
           </div>

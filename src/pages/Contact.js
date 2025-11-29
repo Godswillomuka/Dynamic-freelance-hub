@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebookF, faInstagram, faTwitter, faTiktok, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 import "./Contact.css";
 
 export default function Contact() {
@@ -108,11 +110,27 @@ export default function Contact() {
               <div className="contact-social">
                 <h3>Follow Our Journey</h3>
                 <p>Stay updated with our latest projects and insights</p>
-                <div className="contact-social-icons">
-                  <a href="#" className="social-icon">📘</a>
-                  <a href="#" className="social-icon">🐦</a>
-                  <a href="#" className="social-icon">💼</a>
-                  <a href="#" className="social-icon">📷</a>
+                <div className="social-links-container">
+                  <a href="https://facebook.com" aria-label="Facebook" className="social-link">
+                    <FontAwesomeIcon icon={faFacebookF} />
+                    <span className="social-name">Facebook</span>
+                  </a>
+                  <a href="https://instagram.com" aria-label="Instagram" className="social-link">
+                    <FontAwesomeIcon icon={faInstagram} />
+                    <span className="social-name">Instagram</span>
+                  </a>
+                  <a href="https://twitter.com" aria-label="Twitter" className="social-link">
+                    <FontAwesomeIcon icon={faTwitter} />
+                    <span className="social-name">Twitter</span>
+                  </a>
+                  <a href="https://tiktok.com" aria-label="TikTok" className="social-link">
+                    <FontAwesomeIcon icon={faTiktok} />
+                    <span className="social-name">TikTok</span>
+                  </a>
+                  <a href="https://linkedin.com" aria-label="LinkedIn" className="social-link">
+                    <FontAwesomeIcon icon={faLinkedinIn} />
+                    <span className="social-name">LinkedIn</span>
+                  </a>
                 </div>
               </div>
             </div>
