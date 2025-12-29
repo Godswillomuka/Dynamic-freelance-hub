@@ -8,6 +8,16 @@ function Header() {
   const navRef = useRef(null);
   const hamburgerRef = useRef(null);
 
+  // debug: log mount and menuOpen changes
+  useEffect(() => {
+    console.debug("Header mounted");
+    return () => console.debug("Header unmounted");
+  }, []);
+
+  useEffect(() => {
+    console.debug("Header menuOpen changed", menuOpen);
+  }, [menuOpen]);
+
   useEffect(() => {
     const handleScroll = () => {
       const header = document.querySelector(".header");
@@ -77,7 +87,7 @@ function Header() {
         >
           <ul>
             <li><Link to="/" className="nav-link" onClick={closeMenu}>Home</Link></li>
-            <li><Link to="/services/logo-design" className="nav-link" onClick={closeMenu}>Services</Link></li>
+            <li><Link to="/services" className="nav-link" onClick={closeMenu}>Services</Link></li>
             <li><Link to="/portfolio" className="nav-link" onClick={closeMenu}>Portfolio</Link></li>
             <li><Link to="/about" className="nav-link" onClick={closeMenu}>About Us</Link></li>
             <li><Link to="/contact" className="nav-link" onClick={closeMenu}>Contact</Link></li>

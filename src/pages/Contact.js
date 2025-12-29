@@ -146,7 +146,7 @@ export default function Contact() {
               
               <form className="contact-form" onSubmit={handleSubmit}>
                 <div className="contact-form-group">
-                  <label>Full Name *</label>
+                  <label>Full Name</label>
                   <input 
                     type="text" 
                     name="name"
@@ -158,7 +158,7 @@ export default function Contact() {
                 </div>
 
                 <div className="contact-form-group">
-                  <label>Email Address *</label>
+                  <label>Email Address</label>
                   <input 
                     type="email" 
                     name="email"
@@ -181,7 +181,7 @@ export default function Contact() {
                 </div>
 
                 <div className="contact-form-group">
-                  <label>Subject *</label>
+                  <label>Subject</label>
                   <input 
                     type="text" 
                     name="subject"
@@ -193,7 +193,7 @@ export default function Contact() {
                 </div>
 
                 <div className="contact-form-group">
-                  <label>Your Message *</label>
+                  <label>Your Message</label>
                   <textarea 
                     name="message"
                     value={formData.message}

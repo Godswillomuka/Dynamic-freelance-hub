@@ -1,9 +1,9 @@
 // src/components/Home/Home.js
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import TrustedBrands from '../components/TrustedBrands';
-import Reviews from '../components/Review';
-import WhatsApp from '../components/WhatsApp';
+import TrustedBrands from '../TrustedBrands';
+import Reviews from '../Review';
+import WhatsApp from '../WhatsApp';
 
 // images 
 import aboutTeam from '../assets/about-team.png';
@@ -25,7 +25,7 @@ import notebookImg from '../assets/product-notebook.png';
 import lanyardImg from '../assets/product-lanyard.png';
 import deskcalender from '../assets/deskcalender.png' 
 import giftvoucher from '../assets/giftvoucher.png' 
-import Footer from '../components/Footer'; 
+import Footer from '../Footer'; 
 import './Home.css';
 
 

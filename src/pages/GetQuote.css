@@ -58,7 +58,7 @@
 /* HERO SECTION */
 .quote-hero {
   padding: 100px 0;
-  background: linear-gradient(97deg, rgb(5, 21, 39) 11.18%, rgb(7, 25, 69) 98.67%);
+  background: linear-gradient(97deg, var(--header-start) 11.18%, var(--header-end) 98.67%);
   color: white;
   position: relative;
   overflow: hidden;
@@ -108,7 +108,7 @@
   background: rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  -webkit-backdrop-filter: blur();
+  -webkit-backdrop-filter: blur(10px); /* fixed: provide a value */
   backdrop-filter: blur(10px);
 }
 
@@ -170,7 +170,7 @@
 .quote-form-wrapper {
   background: white;
   border-radius: 16px;
-  padding: 40px;
+  padding: calc(var(--page-padding) * 2);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.07);
   border: 1px solid #e2e8f0;
 }
@@ -220,7 +220,7 @@
 
 .progress-fill {
   height: 100%;
-  background: linear-gradient(90deg, #009f6f, #00c853);
+  background: linear-gradient(90deg, var(--brand), #00c853);
   border-radius: 4px;
   transition: width 0.5s ease;
 }
@@ -563,9 +563,10 @@
 .sidebar-card {
   background: white;
   border-radius: 16px;
-  padding: 25px;
+  padding: calc(var(--page-padding));
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
   border: 1px solid #e2e8f0;
+  color: var(--text);
 }
 
 .sidebar-card h3 {

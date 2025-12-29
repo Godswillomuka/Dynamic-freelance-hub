@@ -63,21 +63,30 @@
 
 /* === Desktop Styles (Default) === */
 .header {
-  background: linear-gradient(97deg, rgb(5, 21, 39) 11.18%, rgb(7, 25, 69) 98.67%);
-  position: sticky;
+  /* CHANGED: Use fixed positioning to ensure header stays at top */
+  position: fixed;
   top: 0;
-  z-index: 100;
-  transition: padding 0.3s ease, box-shadow 0.3s ease;
-  height: 80px; /* Increased height */
+  left: 0;
+  right: 0;
+  z-index: 1000; /* High z-index to stay above content */
+  height: 80px;
   display: flex;
   align-items: center;
+  transition: all 0.3s ease;
+  /* Force solid background */
+  background: linear-gradient(97deg, rgb(5, 21, 39) 11%, rgb(7, 25, 69) 99%) !important;
+}
+
+/* Add padding to body to prevent content from being hidden behind fixed header */
+body {
+  padding-top: 80px; /* Match header height */
 }
 
 .header-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 40px; /* Removed vertical padding since height is set */
+  padding: 0 40px;
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
@@ -92,7 +101,7 @@
 }
 
 .logo img {
-  height: 50px; /* Increased logo size */
+  height: 50px;
   width: auto;
 }
 
@@ -103,26 +112,26 @@
 }
 
 .logo-main {
-  font-size: 1.4rem; /* Slightly larger */
+  font-size: 1.4rem;
   font-weight: bold;
   color: white;
 }
 
 .logo-sub {
-  font-size: 0.85rem; /* Slightly larger */
+  font-size: 0.85rem;
   color: rgb(0, 159, 111);
 }
 
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 80px; /* Reduced gap to fit better */
+  gap: 80px;
 }
 
 .nav-links ul {
   display: flex;
   list-style: none;
-  gap: 40px; /* Reduced gap */
+  gap: 40px;
   margin: 0;
   padding: 0;
 }
@@ -132,7 +141,7 @@
   font-weight: 500;
   color: white;
   text-decoration: none;
-  padding: 8px 12px; /* Increased padding */
+  padding: 8px 12px;
   transition: color 0.3s ease;
   position: relative;
 }
@@ -159,7 +168,7 @@
 .quote-btn {
   background-color: rgb(0, 159, 111);
   color: white;
-  padding: 12px 24px; /* Increased padding */
+  padding: 12px 24px;
   border-radius: 12px;
   font-weight: 600;
   border: none;
@@ -192,7 +201,12 @@
 /* === Tablet - 900px and below === */
 @media (max-width: 900px) {
   .header {
-    height: 70px; /* Slightly reduced height on tablet */
+    height: 70px;
+  }
+  
+  /* Update body padding for tablet */
+  body {
+    padding-top: 70px;
   }
   
   .hamburger {
@@ -201,10 +215,10 @@
 
   .nav-links {
     position: fixed;
-    top: 70px; /* Match header height */
+    top: 70px;
     left: 0;
     width: 100%;
-    height: calc(100vh - 70px); /* Full height minus header */
+    height: calc(100vh - 70px);
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
@@ -213,14 +227,13 @@
     padding: 30px 0 20px 0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    z-index: 100;
+    z-index: 999;
     opacity: 0;
     transform: translateY(-10px);
     transition: opacity 0.3s ease, transform 0.3s ease;
     overflow-y: auto;
   }
 
-  /* Custom scrollbar for Webkit browsers (Chrome, Safari, Edge, etc.) */
   .nav-links::-webkit-scrollbar {
     width: 6px;
   }
@@ -263,8 +276,8 @@
 
   .nav-link {
     width: 100%;
-    padding: 20px 0; /* Increased padding for better touch */
-    font-size: 18px; /* Larger font for mobile */
+    padding: 20px 0;
+    font-size: 18px;
     position: relative;
     transition: all 0.3s ease;
     margin: 0;
@@ -272,15 +285,13 @@
     align-items: center;
     box-sizing: border-box;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    min-height: 60px; /* Better touch target */
+    min-height: 60px;
   }
 
-  /* Remove border for last link */
   .nav-links li:last-child .nav-link {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
 
-  /* Hover effect for single line */
   .nav-links li:hover .nav-link {
     border-bottom-color: rgb(0, 159, 111);
     color: rgb(0, 159, 111);
@@ -288,7 +299,6 @@
     padding-left: 15px;
   }
 
-  /* Mobile hover/focus effects */
   .nav-link:hover,
   .nav-link:focus {
     background-color: rgba(0, 159, 111, 0.1);
@@ -296,27 +306,25 @@
     padding-left: 15px;
   }
 
-  /* Active state for touch devices */
   .nav-link:active {
     background-color: rgba(0, 159, 111, 0.2);
     transition: background-color 0.1s ease;
   }
 
-  /* Quote button - full width with proper bounds */
   .quote-btn-wrapper {
     width: 100%;
     padding: 0 20px;
     max-width: 1200px;
-    margin: 20px auto 0 auto; /* Increased top margin */
+    margin: 20px auto 0 auto;
     box-sizing: border-box;
   }
 
   .quote-btn {
     width: 100%;
     margin: 0;
-    padding: 18px; /* Increased padding */
+    padding: 18px;
     text-align: center;
-    font-size: 18px; /* Larger font */
+    font-size: 18px;
     background-color: rgb(0, 159, 111);
     color: white;
     border-radius: 12px;
@@ -325,7 +333,7 @@
     cursor: pointer;
     transition: all 0.3s ease;
     box-sizing: border-box;
-    min-height: 56px; /* Better touch target */
+    min-height: 56px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -348,6 +356,10 @@
 @media (max-width: 768px) {
   .header {
     height: 65px;
+  }
+  
+  body {
+    padding-top: 65px;
   }
   
   .header-container {
@@ -406,6 +418,10 @@
 @media (max-width: 600px) {
   .header {
     height: 60px;
+  }
+  
+  body {
+    padding-top: 60px;
   }
   
   .header-container {
@@ -469,6 +485,10 @@
 @media (max-width: 480px) {
   .header {
     height: 55px;
+  }
+  
+  body {
+    padding-top: 55px;
   }
   
   .header-container {
@@ -535,6 +555,10 @@
     height: 50px;
   }
   
+  body {
+    padding-top: 50px;
+  }
+  
   .header-container {
     padding: 0 8px;
   }
@@ -599,6 +623,10 @@
     height: 48px;
   }
   
+  body {
+    padding-top: 48px;
+  }
+  
   .header-container {
     padding: 0 6px;
   }
@@ -648,19 +676,16 @@
 
 /* === Improved Mobile Navigation Experience === */
 @media (max-width: 900px) {
-  /* Better touch targets with consistent min-height */
   .nav-link {
     min-height: 50px;
     display: flex;
     align-items: center;
   }
   
-  /* Smooth scrolling for modern browsers */
   .nav-links {
     scroll-behavior: smooth;
   }
   
-  /* Prevent body scroll when menu is open */
   body.menu-open {
     overflow: hidden;
   }
