@@ -1,27 +1,44 @@
 /* src/components/Sidebar.css */
 
+/* --- Base Sidebar Logic --- */
 .sidebar {
   position: fixed;
   background: linear-gradient(135deg, rgb(5, 21, 39) 0%, rgb(7, 25, 69) 100%);
   color: white;
-  z-index: 1000;
+  z-index: 2000; /* Increased to stay above standard page elements */
   display: flex;
   flex-direction: column;
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* --- Desktop Layout --- */
 @media (min-width: 993px) {
   .sidebar {
-    top: 100px; /* Adjust based on your header height */
-    right: calc((100vw - 1200px) / 2 + 20px);
-    width: 300px;
-    height: calc(100vh - 140px);
-    border-radius: 16px;
+    top: 110px; 
+    right: calc((100vw - 1200px) / 2 + 20px); 
+    width: 320px;
+    height: calc(100vh - 150px);
+    border-radius: 20px;
     padding: 25px;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    overflow-y: auto;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px) scale(0.98);
+  }
+
+  .sidebar.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+  }
+
+  .sidebar-toggle {
+    top: 110px; 
+    right: calc((100vw - 1200px) / 2 + 20px);
+    bottom: auto;
   }
 }
 
@@ -31,21 +48,39 @@
     top: 0;
     right: 0;
     width: 280px;
-    height: 100vh;
-    padding: 60px 20px 20px;
+    height: 100dvh;
+    padding: 70px 20px 30px;
+    border-radius: 0;
     transform: translateX(100%);
   }
-  .sidebar.open { transform: translateX(0); }
+  
+  .sidebar.open {
+    transform: translateX(0);
+  }
+  
+  .sidebar-toggle {
+    top: 120px; /* Adjusted to be visible below typical mobile headers */
+    right: 20px;
+    bottom: auto;
+  }
 }
 
+/* --- THE FIX: Hide button when ANY mobile menu/header is open --- */
+/* This assumes your header adds a class to the body, or use your Sidebar logic */
+body.sidebar-open .sidebar-toggle,
+body.nav-open .sidebar-toggle { 
+  display: none !important; 
+}
+
+/* --- Content Styling --- */
 .sidebar-title {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 800;
   margin-bottom: 25px;
-  color: white;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
+  flex-shrink: 0;
 }
 
 .sidebar-title::before {
@@ -56,109 +91,80 @@
   border-radius: 2px;
 }
 
-/* --- Menu Items --- */
 .menu-item {
   padding: 14px 18px;
   margin-bottom: 8px;
   background: rgba(255, 255, 255, 0.05);
-  border-radius: 10px;
+  border-radius: 12px;
   cursor: pointer;
   font-weight: 600;
-  font-size: 0.95rem;
-  transition: all 0.2s ease;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid transparent;
+  transition: 0.3s;
 }
 
-.menu-item:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(0, 159, 111, 0.4);
-}
+.menu-item:hover { background: rgba(255, 255, 255, 0.12); }
+.menu-item.active { background: #009f6f; }
 
-.menu-item.active {
-  background: #009f6f;
-  color: white;
-  box-shadow: 0 4px 12px rgba(0, 159, 111, 0.3);
-}
-
-/* --- Submenu Links --- */
 .submenu {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease;
+  transition: max-height 0.4s ease-out;
   display: flex;
   flex-direction: column;
-  padding-left: 10px;
-  margin-bottom: 0;
 }
 
-.submenu.open {
-  max-height: 600px;
-  margin-bottom: 15px;
-  margin-top: 5px;
-}
+.submenu.open { max-height: 1000px; margin-bottom: 15px; margin-top: 5px; }
 
 .submenu a {
   padding: 10px 15px;
   color: #cbd5e0;
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   border-left: 2px solid rgba(255,255,255,0.1);
-  transition: 0.2s;
+  display: block;
 }
 
-.submenu a:hover,
-.submenu a.active {
-  color: #009f6f;
-  border-left-color: #009f6f;
-  background: rgba(0, 159, 111, 0.05);
-}
+.submenu a.active { color: #009f6f; border-left-color: #009f6f; }
 
-/* --- Toggle Button --- */
+/* --- Controls --- */
 .sidebar-toggle {
   position: fixed;
-  bottom: 25px;
-  right: 25px;
   background: #009f6f;
   color: white;
   border: none;
-  padding: 14px 22px;
+  padding: 12px 20px;
   border-radius: 50px;
   font-weight: 700;
   box-shadow: 0 8px 20px rgba(0, 159, 111, 0.4);
-  z-index: 1100;
+  z-index: 999; /* Lowered slightly so Header can sit on top */
   cursor: pointer;
   display: flex;
   align-items: center;
+  gap: 8px;
 }
-
-@media (min-width: 993px) { .sidebar-toggle { display: none; } }
 
 .sidebar-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.6);
-  -webkit-backdrop-filter: blur(4px);
-  backdrop-filter: blur(4px);
-  z-index: 999;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(2px);
+  z-index: 1900;
 }
 
 .close-sidebar {
   position: absolute;
-  top: 20px;
-  right: 20px;
-  background: none;
+  top: 15px;
+  right: 15px;
+  background: rgba(255, 255, 255, 0.1);
   border: none;
   color: white;
-  font-size: 1.5rem;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
   cursor: pointer;
-}
-
-/* Scrollbar Customization */
-.sidebar::-webkit-scrollbar { width: 5px; }
-.sidebar::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

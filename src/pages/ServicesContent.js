@@ -1,35 +1,52 @@
-// src/pages/ServicesContent.js
+import heroImage from "../assets/services/logo-design/hero.jpg";
+import about1 from "../assets/services/logo-design/about1.jpg";
+import about2 from "../assets/services/logo-design/about2.jpg";
+import about3 from "../assets/services/logo-design/about3.jpg";
+// import process1 from "../assets/services/logo-design/process1.jpg";
+// import process2 from "../assets/services/logo-design/process2.jpg";
+// import process3 from "../assets/services/logo-design/process3.jpg";
+// import process4 from "../assets/services/logo-design/process4.jpg";
+import portfolio1 from "../assets/services/logo-design/portfolio1.jpg";
+import portfolio2 from "../assets/services/logo-design/portfolio2.jpg";
+import portfolio3 from "../assets/services/logo-design/portfolio3.jpg";
+import portfolio4 from "../assets/services/logo-design/portfolio4.jpg";
+import geometric from "../assets/icons/geometric.png";
+import analysis from "../assets/icons/analysis.png";
+import accessibility from "../assets/icons/accessibility.png";
+import files from "../assets/icons/files.png";
+import crossMedia from "../assets/icons/cross-media.png";
+
 export const ServicesContent = {
   // ==================== CREATIVE GRAPHIC DESIGN (7 services) ====================
   "logo-design": {
     title: "Logo Design",
     heroIntro: "Your logo is your brand's signature—we engineer visual marks that encode your identity, values, and market position into a singular, memorable symbol that performs across all mediums.",
-    heroImage: "/assets/services/logo-design/hero.jpg",
+    heroImage: heroImage,
     about: [
-      { text: "We approach logo design as systematic visual engineering, not arbitrary aesthetics. Each mark is constructed using geometric precision, optical correction, and strategic semantic layering.", image: "/assets/services/logo-design/about1.jpg" },
-      { text: "Our process combines competitive market analysis with mathematical design principles (golden ratio, grid systems, optical weight distribution) to create logos that feel intuitively correct.", image: "/assets/services/logo-design/about2.jpg" },
-      { text: "Every logo undergoes scalability stress-testing—from 16px favicons to 10-foot signage—ensuring perfect legibility and impact at any resolution or application context.", image: "/assets/services/logo-design/about3.jpg" }
+      { text: "We approach logo design as systematic visual engineering, not arbitrary aesthetics. Each mark is constructed using geometric precision, optical correction, and strategic semantic layering.", image: about1 },
+      { text: "Our process combines competitive market analysis with mathematical design principles (golden ratio, grid systems, optical weight distribution) to create logos that feel intuitively correct.", image: about2 },
+      { text: "Every logo undergoes scalability stress-testing—from 16px favicons to 10-foot signage—ensuring perfect legibility and impact at any resolution or application context.", image: about3 }
     ],
     whyChoose: [
-      { title: "Architectural Design Process", description: "Logos built on geometric frameworks and systematic grid structures, not subjective design choices.", icon: "/assets/icons/geometric.svg" },
-      { title: "Competitive DNA Analysis", description: "Strategic positioning based on visual audits of your industry landscape and competitor analysis.", icon: "/assets/icons/analysis.svg" },
-      { title: "Universal Accessibility", description: "Color contrast optimization and legibility compliance across all user abilities and viewing conditions.", icon: "/assets/icons/accessibility.svg" },
-      { title: "Future-Proof File Architecture", description: "Comprehensive delivery: vector masters, responsive variants, animation specs, and cross-platform implementations.", icon: "/assets/icons/files.svg" },
-      { title: "Cross-Media Validation", description: "Stress-tested across 24+ application scenarios including print, digital, embroidery, etching, and environmental signage.", icon: "/assets/icons/cross-media.svg" }
+      { title: "Architectural Design Process", description: "Logos built on geometric frameworks and systematic grid structures, not subjective design choices.", icon: geometric },
+      { title: "Competitive DNA Analysis", description: "Strategic positioning based on visual audits of your industry landscape and competitor analysis.", icon: analysis },
+      { title: "Universal Accessibility", description: "Color contrast optimization and legibility compliance across all user abilities and viewing conditions.", icon: accessibility },
+      { title: "Future-Proof File Architecture", description: "Comprehensive delivery: vector masters, responsive variants, animation specs, and cross-platform implementations.", icon: files },
+      { title: "Cross-Media Validation", description: "Stress-tested across 24+ application scenarios including print, digital, embroidery, etching, and environmental signage.", icon: crossMedia }
     ],
     process: [
-      { step: 1, title: "Brand Deconstruction & Audit", text: "Competitive visual analysis, semantic differential mapping, and brand attribute workshops to establish strategic design parameters.", image: "/assets/services/logo-design/process1.jpg" },
-      { step: 2, title: "Geometric Architecture", text: "Engineering visual frameworks using mathematical relationships, grid systems, and proportional harmony principles.", image: "/assets/services/logo-design/process2.jpg" },
-      { step: 3, title: "Multi-Variant Prototyping", text: "Developing parallel logo ecosystems including primary marks, responsive variants, monograms, and contextual adaptations.", image: "/assets/services/logo-design/process3.jpg" },
-      { step: 4, title: "Technical Implementation", text: "Delivering comprehensive file systems with vector masters, pixel-optimized raster sets, and cross-platform implementation guides.", image: "/assets/services/logo-design/process4.jpg" }
+      { step: 1, title: "Brand Deconstruction & Audit", text: "Competitive visual analysis, semantic differential mapping, and brand attribute workshops to establish strategic design parameters."},
+      { step: 2, title: "Geometric Architecture", text: "Engineering visual frameworks using mathematical relationships, grid systems, and proportional harmony principles."},
+      { step: 3, title: "Multi-Variant Prototyping", text: "Developing parallel logo ecosystems including primary marks, responsive variants, monograms, and contextual adaptations."},
+      { step: 4, title: "Technical Implementation", text: "Delivering comprehensive file systems with vector masters, pixel-optimized raster sets, and cross-platform implementation guides."}
     ],
     gallery: {
       title: "Logo Design Portfolio",
       images: [
-        { src: "/assets/services/logo-design/portfolio1.jpg", alt: "Corporate logo design for financial institution", caption: "Financial Sector Identity" },
-        { src: "/assets/services/logo-design/portfolio2.jpg", alt: "Modern tech startup logo with responsive variations", caption: "Tech Startup System" },
-        { src: "/assets/services/logo-design/portfolio3.jpg", alt: "Restaurant branding with custom typography", caption: "Hospitality Brand Mark" },
-        { src: "/assets/services/logo-design/portfolio4.jpg", alt: "Healthcare logo with accessibility-focused design", caption: "Healthcare Accessibility" }
+        { src: portfolio1, alt: "Corporate logo design for financial institution", caption: "Financial Sector Identity" },
+        { src: portfolio2, alt: "Modern tech startup logo with responsive variations", caption: "Tech Startup System" },
+        { src: portfolio3, alt: "Restaurant branding with custom typography", caption: "Hospitality Brand Mark" },
+        { src: portfolio4, alt: "Healthcare logo with accessibility-focused design", caption: "Healthcare Accessibility" }
       ]
     }
   },

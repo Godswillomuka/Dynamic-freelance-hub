@@ -5,123 +5,49 @@ import "./Sidebar.css";
 const generateSlug = (text) => {
   return text
     .toLowerCase()
-    .replace(/&/g, "") // Remove "&" entirely (not "-and-")
-    .replace(/[^a-z0-9\s]/g, "") // Remove special characters
+    .replace(/&/g, "")
+    .replace(/[^a-z0-9\s]/g, "")
     .trim()
     .replace(/\s+/g, "-")
-    .replace(/-+/g, "-"); // Replace multiple dashes with single dash
+    .replace(/-+/g, "-");
 };
 
 const sidebarData = [
   {
     title: "Creative Graphic Design",
-    links: [
-      "Logo Design",
-      "Brand Identity Design",
-      "Marketing Materials Design",
-      "Social Media Graphics",
-      "Infographics Design",
-      "Event Posters",
-      "Product Mockups",
-    ],
+    links: ["Logo Design", "Brand Identity Design", "Marketing Materials Design", "Social Media Graphics", "Infographics Design", "Event Posters", "Product Mockups"],
   },
   {
     title: "Vehicle & Fleet Branding",
-    links: [
-      "Full Vehicle Wraps",
-      "Partial Vehicle Wraps",
-      "Roadshow Trucks Branding",
-      "Delivery Van Branding",
-      "Motorcycle Branding",
-      "Racing & Safari Rally Cars",
-      "Reflective Vehicle Stickers",
-    ],
+    links: ["Full Vehicle Wraps", "Partial Vehicle Wraps", "Roadshow Trucks Branding", "Delivery Van Branding", "Motorcycle Branding", "Racing & Safari Rally Cars", "Reflective Vehicle Stickers"],
   },
   {
     title: "Custom Merchandise & Apparel",
-    links: [
-      "T-Shirts Printing",
-      "Hoodies Printing",
-      "Caps Branding",
-      "Corporate Gifts",
-      "Promotional Products",
-      "Tote Bags Printing",
-      "Mugs & Water Bottles Printing",
-    ],
+    links: ["T-Shirts Printing", "Hoodies Printing", "Caps Branding", "Corporate Gifts", "Promotional Products", "Tote Bags Printing", "Mugs & Water Bottles Printing"],
   },
   {
     title: "Business Identity & Stationery",
-    links: [
-      "Business Cards",
-      "Letterheads",
-      "Envelopes",
-      "Presentation Folders",
-      "Company Profiles",
-      "Staff ID Cards",
-      "Business Stationery Sets",
-    ],
+    links: ["Business Cards", "Letterheads", "Envelopes", "Presentation Folders", "Company Profiles", "Staff ID Cards", "Business Stationery Sets"],
   },
   {
     title: "Signage & Large Format Displays",
-    links: [
-      "PVC Flex Banners",
-      "Roll-Up Banners",
-      "Pop-Up Banners",
-      "Backdrops",
-      "Billboards",
-      "Shop Signage",
-      "Window Graphics",
-      "Wall Murals",
-      "Floor Graphics",
-      "Exhibition Stands",
-    ],
+    links: ["PVC Flex Banners", "Roll-Up Banners", "Pop-Up Banners", "Backdrops", "Billboards", "Shop Signage", "Window Graphics", "Wall Murals", "Floor Graphics", "Exhibition Stands"],
   },
   {
     title: "Product Packaging & Labels",
-    links: [
-      "Packaging Design",
-      "Product Labels",
-      "Custom Boxes",
-      "Stickers & Decals",
-      "Adhesive Solutions",
-      "Shelf Display Packaging",
-    ],
+    links: ["Packaging Design", "Product Labels", "Custom Boxes", "Stickers & Decals", "Adhesive Solutions", "Shelf Display Packaging"],
   },
   {
     title: "Marketing & Promotional Print",
-    links: [
-      "Flyers & Brochures",
-      "Posters",
-      "Calendars",
-      "Menus",
-      "Receipt Books",
-      "Notebooks & Diaries",
-      "Promotional Booklets",
-    ],
+    links: ["Flyers & Brochures", "Posters", "Calendars", "Menus", "Receipt Books", "Notebooks & Diaries", "Promotional Booklets"],
   },
   {
     title: "Corporate Branding & Strategy",
-    links: [
-      "Brand Strategy Consulting",
-      "Corporate Identity Design",
-      "Brand Guidelines",
-      "Wayfinding Signage",
-      "Office Branding",
-      "Safety Signage",
-      "Corporate Communication Materials",
-    ],
+    links: ["Brand Strategy Consulting", "Corporate Identity Design", "Brand Guidelines", "Wayfinding Signage", "Office Branding", "Safety Signage", "Corporate Communication Materials"],
   },
   {
     title: "Web Design & Software Engineering",
-    links: [
-      "Website Design & Development",
-      "Website UI Layout",
-      "Website Maintenance",
-      "Search Engine Optimization",
-      "Digital Marketing Collateral",
-      "Web Applications",
-      "Responsive Website Design",
-    ],
+    links: ["Website Design & Development", "Website UI Layout", "Website Maintenance", "Search Engine Optimization", "Digital Marketing Collateral", "Web Applications", "Responsive Website Design"],
   },
 ];
 
@@ -131,26 +57,15 @@ export default function Sidebar() {
   const location = useLocation();
   const sidebarRef = useRef(null);
 
-  // add/remove body class so CSS can hide toggle while sidebar is open
-  useEffect(() => {
-    document.body.classList.toggle("sidebar-open", sidebarOpen);
-    return () => document.body.classList.remove("sidebar-open");
-  }, [sidebarOpen]);
-
-  // close sidebar on route change (header nav, etc.)
+  // Close when navigating
   useEffect(() => {
     setSidebarOpen(false);
-    setOpenIndex(null);
   }, [location]);
 
-  // click outside to close (mobile)
+  // Handle outside clicks
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (
-        sidebarOpen &&
-        sidebarRef.current &&
-        !sidebarRef.current.contains(event.target)
-      ) {
+      if (sidebarOpen && sidebarRef.current && !sidebarRef.current.contains(event.target)) {
         setSidebarOpen(false);
       }
     };
@@ -158,84 +73,49 @@ export default function Sidebar() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [sidebarOpen]);
 
-  const toggleSection = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
-
-  const handleNavClick = (slug) => {
-    setSidebarOpen(false);
-    console.log("Sidebar navigating to:", slug);
-    if (process.env.NODE_ENV !== "production")
-      console.info("Navigate to:", slug);
-  };
-
   return (
     <>
-      {/* Sidebar */}
-      <div className={`sidebar ${sidebarOpen ? "open" : ""}`} ref={sidebarRef}>
-        {/* close button for mobile */}
-        <button
-          className="close-sidebar"
-          aria-label="Close services"
-          onClick={() => setSidebarOpen(false)}
-        >
-          ✕
-        </button>
+      {sidebarOpen && (
+        <div className="sidebar-overlay" onClick={() => setSidebarOpen(false)} />
+      )}
 
-        <h2 className="sidebar-title sidebar-logo">Our Services</h2>
-
-        {sidebarData.map((section, index) => (
-          <div key={index}>
-            <div
-              className={`menu-item ${openIndex === index ? "active" : ""}`}
-              onClick={() => toggleSection(index)}
-            >
-              {section.title}
-            </div>
-
-            <div className={`submenu ${openIndex === index ? "open" : ""}`}>
-              {section.links.map((link, i) => {
-                const slug = generateSlug(link);
-
-                console.log(`Link: "${link}" -> Generated Slug: "${slug}"`);
-
-                return (
+      <aside className={`sidebar ${sidebarOpen ? "open" : ""}`} ref={sidebarRef}>
+        <button className="close-sidebar" onClick={() => setSidebarOpen(false)}>✕</button>
+        <h2 className="sidebar-title">Our Services</h2>
+        <nav className="sidebar-nav-container">
+          {sidebarData.map((section, index) => (
+            <div key={index}>
+              <div
+                className={`menu-item ${openIndex === index ? "active" : ""}`}
+                onClick={() => setOpenIndex(openIndex === index ? null : index)}
+              >
+                <span>{section.title}</span>
+                <span style={{ fontSize: '0.7rem' }}>{openIndex === index ? "▲" : "▼"}</span>
+              </div>
+              <div className={`submenu ${openIndex === index ? "open" : ""}`}>
+                {section.links.map((link, i) => (
                   <NavLink
-                    to={`/services/${slug}`}
+                    to={`/services/${generateSlug(link)}`}
                     key={i}
-                    className={({ isActive }) =>
-                      isActive ? "active" : ""
-                    }
-                    end
-                    onClick={() => handleNavClick(slug)}
+                    className={({ isActive }) => (isActive ? "active" : "")}
+                    onClick={() => setSidebarOpen(false)}
                   >
                     {link}
                   </NavLink>
-                );
-              })}
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </nav>
+      </aside>
 
-      {/* Overlay appears only on mobile when sidebar is open */}
-      {sidebarOpen && (
-        <div
-          className="sidebar-overlay"
-          onClick={() => setSidebarOpen(false)}
-          aria-hidden="true"
-        />
+      {/* Floating Toggle Button at the TOP */}
+      {!sidebarOpen && (
+        <button className="sidebar-toggle" onClick={() => setSidebarOpen(true)}>
+          <span style={{ fontSize: '1.2rem' }}>☰</span>
+          <span>Our Services</span>
+        </button>
       )}
-
-      {/* Toggle button for mobile (floating, bottom-right) */}
-      <button
-        className="sidebar-toggle"
-        onClick={() => setSidebarOpen((s) => !s)}
-        aria-label="Toggle sidebar"
-      >
-        <span style={{ fontSize: "1.1rem", marginRight: 8 }}>☰</span>
-        <span style={{ fontSize: "0.95rem", fontWeight: 600 }}>Services</span>
-      </button>
     </>
   );
 }
