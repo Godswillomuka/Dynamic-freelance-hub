@@ -320,7 +320,7 @@ export default function GetQuote() {
         </div>
       </section>
 
-      {/* QUOTE FORM */}
+      {/* QUOTE FORM SECTION */}
       <section className="quote-form-section">
         <div className="quote-section-container">
           <div className="quote-form-wrapper">
@@ -514,7 +514,7 @@ export default function GetQuote() {
                           onChange={handleChange}
                         />
                         <span className="checkmark"></span>
-                        {service}
+                        <span className="checkbox-text">{service}</span>
                       </label>
                     ))}
                   </div>
@@ -708,9 +708,9 @@ export default function GetQuote() {
         </div>
       </section>
 
-      {/* CTA SECTION */}
+      {/* CTA SECTION - NOW OUTSIDE THE FORM SECTION */}
       <section className="quote-cta">
-        <div className="quote-section-container">
+        <div className="quote-cta-container">
           <div className="quote-cta-content">
             <h2 className="quote-section-title">Still Have Questions?</h2>
             <p className="quote-section-description">

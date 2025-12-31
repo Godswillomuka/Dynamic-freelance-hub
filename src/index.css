@@ -11,3 +11,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+:root {
+  --header-height: 80px;
+  --sidebar-width: 280px;
+  --container-max-width: 1200px;
+  --header-start: #1a1a1a;
+  --header-end: #2d2d2d;
+  --brand: #667eea;
+}

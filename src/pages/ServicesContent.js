@@ -1,5 +1,5 @@
-// src/pages/servicesContent.js
-export const servicesContent = {
+// src/pages/ServicesContent.js
+export const ServicesContent = {
   // ==================== CREATIVE GRAPHIC DESIGN (7 services) ====================
   "logo-design": {
     title: "Logo Design",
@@ -2157,7 +2157,7 @@ export const servicesContent = {
 
 // Helper function to get all services for navigation
 export const getAllServices = () => {
-  return Object.entries(servicesContent).map(([slug, service]) => ({
+  return Object.entries(ServicesContent).map(([slug, service]) => ({
     slug,
     title: service.title,
     category: getCategoryFromSlug(slug)
@@ -2166,7 +2166,6 @@ export const getAllServices = () => {
 
 // Helper function to determine category from slug
 const getCategoryFromSlug = (slug) => {
-  // You can map slugs to categories based on your sidebar structure
   const categoryMap = {
     // Creative Graphic Design
     'logo-design': 'Creative Graphic Design',
@@ -2254,3 +2253,4 @@ const getCategoryFromSlug = (slug) => {
   
   return categoryMap[slug] || 'General Services';
 };
+

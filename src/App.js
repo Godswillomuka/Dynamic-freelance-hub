@@ -7,6 +7,7 @@ import Portfolio from "./pages/Portfolio";
 import AboutUs from "./pages/About";
 import Contact from "./pages/Contact";
 import GetQuote from "./pages/GetQuote";
+import './styles/Variables.css';
 
 function App() {
   // debug: confirm App is rendering and show current path/env
@@ -18,6 +19,7 @@ function App() {
       <main className="main-content">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/services" element={<Service />} />
           <Route path="/services/:slug" element={<Service />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/about" element={<AboutUs />} />
