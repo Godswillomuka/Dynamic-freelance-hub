@@ -2,19 +2,25 @@ import heroImage from "../assets/services/logo-design/hero.jpg";
 import about1 from "../assets/services/logo-design/about1.jpg";
 import about2 from "../assets/services/logo-design/about2.jpg";
 import about3 from "../assets/services/logo-design/about3.jpg";
-// import process1 from "../assets/services/logo-design/process1.jpg";
-// import process2 from "../assets/services/logo-design/process2.jpg";
-// import process3 from "../assets/services/logo-design/process3.jpg";
-// import process4 from "../assets/services/logo-design/process4.jpg";
 import portfolio1 from "../assets/services/logo-design/portfolio1.jpg";
 import portfolio2 from "../assets/services/logo-design/portfolio2.jpg";
 import portfolio3 from "../assets/services/logo-design/portfolio3.jpg";
 import portfolio4 from "../assets/services/logo-design/portfolio4.jpg";
+import heroimg from "../assets/services/brand-identity/hero.jpg";
+import aboutimg1 from "../assets/services/brand-identity/about1.jpg";
+import aboutimg2 from "../assets/services/brand-identity/about2.jpg";
+import aboutimg3 from "../assets/services/brand-identity/about3.jpg";
+import aboutimg4 from "../assets/services/logo-design/portfolio1.jpg";
 import geometric from "../assets/icons/geometric.png";
 import analysis from "../assets/icons/analysis.png";
 import accessibility from "../assets/icons/accessibility.png";
 import files from "../assets/icons/files.png";
 import crossMedia from "../assets/icons/cross-media.png";
+import visualSystem from "../assets/icons/visual-system.png";
+import consistency from "../assets/icons/consistency.png";
+import colorPsychology from "../assets/icons/color-psychology.png";
+import flexibility from "../assets/icons/flexibility.png";
+import documentation from "../assets/icons/documentation.png";
 
 export const ServicesContent = {
   // ==================== CREATIVE GRAPHIC DESIGN (7 services) ====================
@@ -54,32 +60,32 @@ export const ServicesContent = {
   "brand-identity-design": {
     title: "Brand Identity Design",
     heroIntro: "Transform your business into a cohesive visual system. We architect comprehensive brand identities that communicate consistently across every touchpoint, from stationery to digital ecosystems.",
-    heroImage: "/assets/services/brand-identity/hero.jpg",
+    heroImage: heroimg,
     about: [
-      { text: "Brand identity is more than a logo—it's a visual language system comprising typography, color, imagery, and composition rules that work in harmony.", image: "/assets/services/brand-identity/about1.jpg" },
-      { text: "We develop adaptive identity systems that maintain consistency while allowing flexibility for different contexts, audiences, and communication needs.", image: "/assets/services/brand-identity/about2.jpg" },
-      { text: "Our approach integrates psychological color theory, typographic hierarchies, and visual rhythm to create identities that resonate emotionally while communicating clearly.", image: "/assets/services/brand-identity/about3.jpg" }
+      { text: "Brand identity is more than a logo—it's a visual language system comprising typography, color, imagery, and composition rules that work in harmony.", image: aboutimg1 },
+      { text: "We develop adaptive identity systems that maintain consistency while allowing flexibility for different contexts, audiences, and communication needs.", image: aboutimg2 },
+      { text: "Our approach integrates psychological color theory, typographic hierarchies, and visual rhythm to create identities that resonate emotionally while communicating clearly.", image: aboutimg3 }
     ],
     whyChoose: [
-      { title: "Systematic Visual Language", description: "Cohesive design systems with clear rules for typography, color, spacing, and imagery application.", icon: "/assets/icons/visual-system.svg" },
-      { title: "Cross-Channel Consistency", description: "Identities engineered to perform equally across print, digital, environmental, and experiential touchpoints.", icon: "/assets/icons/consistency.svg" },
-      { title: "Strategic Color Psychology", description: "Color palettes scientifically selected for emotional impact, cultural relevance, and competitive differentiation.", icon: "/assets/icons/color-psychology.svg" },
-      { title: "Future-Forward Flexibility", description: "Design systems built to evolve with your brand while maintaining core visual recognition.", icon: "/assets/icons/flexibility.svg" },
-      { title: "Comprehensive Documentation", description: "Detailed brand guidelines covering usage rules, dos/don'ts, implementation examples, and digital asset management.", icon: "/assets/icons/documentation.svg" }
+      { title: "Systematic Visual Language", description: "Cohesive design systems with clear rules for typography, color, spacing, and imagery application.", icon: visualSystem },
+      { title: "Cross-Channel Consistency", description: "Identities engineered to perform equally across print, digital, environmental, and experiential touchpoints.", icon: consistency },
+      { title: "Strategic Color Psychology", description: "Color palettes scientifically selected for emotional impact, cultural relevance, and competitive differentiation.", icon: colorPsychology },
+      { title: "Future-Forward Flexibility", description: "Design systems built to evolve with your brand while maintaining core visual recognition.", icon: flexibility },
+      { title: "Comprehensive Documentation", description: "Detailed brand guidelines covering usage rules, dos/don'ts, implementation examples, and digital asset management.", icon: documentation }
     ],
     process: [
-      { step: 1, title: "Brand Foundation Analysis", text: "Audit existing assets, define brand archetypes, and establish visual positioning strategy.", image: "/assets/services/brand-identity/process1.jpg" },
-      { step: 2, title: "Visual Language Development", text: "Create typographic systems, color palettes, photographic styles, and graphic element libraries.", image: "/assets/services/brand-identity/process2.jpg" },
-      { step: 3, title: "Application Prototyping", text: "Test identity across core applications (digital, print, environmental) and refine based on performance.", image: "/assets/services/brand-identity/process3.jpg" },
-      { step: 4, title: "System Documentation", text: "Develop comprehensive brand guidelines with implementation rules, templates, and asset management systems.", image: "/assets/services/brand-identity/process4.jpg" }
+      { step: 1, title: "Brand Foundation Analysis", text: "Audit existing assets, define brand archetypes, and establish visual positioning strategy." },
+      { step: 2, title: "Visual Language Development", text: "Create typographic systems, color palettes, photographic styles, and graphic element libraries."  },
+      { step: 3, title: "Application Prototyping", text: "Test identity across core applications (digital, print, environmental) and refine based on performance."},
+      { step: 4, title: "System Documentation", text: "Develop comprehensive brand guidelines with implementation rules, templates, and asset management systems." }
     ],
     gallery: {
       title: "Brand Identity Systems",
       images: [
-        { src: "/assets/services/brand-identity/portfolio1.jpg", alt: "Complete corporate identity system", caption: "Corporate Identity Suite" },
-        { src: "/assets/services/brand-identity/portfolio2.jpg", alt: "Startup branding with flexible visual language", caption: "Startup Visual Language" },
-        { src: "/assets/services/brand-identity/portfolio3.jpg", alt: "Retail brand identity with environmental applications", caption: "Retail Environment System" },
-        { src: "/assets/services/brand-identity/portfolio4.jpg", alt: "Educational institution branding", caption: "Educational Brand System" }
+        { src: aboutimg1, alt: "Complete corporate identity system", caption: "Corporate Identity Suite" },
+        { src: aboutimg2, alt: "Startup branding with flexible visual language", caption: "Startup Visual Language" },
+        { src: aboutimg3, alt: "Retail brand identity with environmental applications", caption: "Retail Environment System" },
+        { src: aboutimg4, alt: "Educational institution branding", caption: "Educational Brand System" }
       ]
     }
   },
