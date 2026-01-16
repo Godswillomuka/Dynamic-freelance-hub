@@ -57,7 +57,7 @@
 .hero-image img {
   width: 100%;
   height: 380px;
-  object-fit: cover;
+  object-fit: fill;
   display: block;
 }
 
@@ -114,7 +114,7 @@
 .about-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: fill;
   transition: transform 0.5s ease;
 }
 
@@ -263,7 +263,7 @@
 .step-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: fill;
   display: block;
   transition: transform 0.5s ease;
 }
@@ -308,7 +308,7 @@
 .gallery-image-container img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Fills container completely */
+  object-fit: fill; /* Fills container completely */
   display: block;
   transition: transform 0.5s ease;
 }
