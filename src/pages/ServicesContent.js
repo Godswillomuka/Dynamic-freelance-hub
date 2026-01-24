@@ -123,73 +123,7 @@ export const ServicesContent = {
     }
   },
 
-  "social-media-graphics": {
-    title: "Social Media Graphics",
-    heroIntro: "Algorithm-optimized visual content that stops the scroll. We design social media graphics engineered for platform-specific engagement, shareability, and brand consistency across all channels.",
-    heroImage: "/assets/services/social-media/hero.jpg",
-    about: [
-      { text: "Social media graphics must perform within specific platform constraints while standing out in crowded feeds. We design for each platform's unique requirements and user behaviors.", image: "/assets/services/social-media/about1.jpg" },
-      { text: "Our graphics combine platform best practices with psychological principles to maximize engagement, clicks, and shares.", image: "/assets/services/social-media/about2.jpg" },
-      { text: "We create cohesive visual systems that maintain brand identity while adapting to different content types—educational, promotional, entertaining, or conversational.", image: "/assets/services/social-media/about3.jpg" }
-    ],
-    whyChoose: [
-      { title: "Platform-Specific Optimization", description: "Designs engineered for each platform's specs, user behavior, and content consumption patterns.", icon: "/assets/icons/platform.svg" },
-      { title: "Engagement Psychology", description: "Graphics crafted using attention-grabbing principles, emotional triggers, and shareability factors.", icon: "/assets/icons/engagement.svg" },
-      { title: "Consistent Brand Voice", description: "Maintain brand identity across diverse content types while adapting to platform-specific requirements.", icon: "/assets/icons/brand-voice.svg" },
-      { title: "Animation & Motion Expertise", description: "Create engaging animated content optimized for social media algorithms and mobile viewing.", icon: "/assets/icons/animation.svg" },
-      { title: "Content Strategy Integration", description: "Graphics designed as part of comprehensive content calendars and campaign strategies.", icon: "/assets/icons/content-strategy.svg" }
-    ],
-    process: [
-      { step: 1, title: "Platform & Audience Analysis", text: "Audit platform requirements, competitor content, and target audience behavior patterns.", image: "/assets/services/social-media/process1.jpg" },
-      { step: 2, title: "Content Strategy Alignment", text: "Develop visual approach aligned with content calendar, campaign goals, and posting frequency.", image: "/assets/services/social-media/process2.jpg" },
-      { step: 3, title: "Template System Creation", text: "Build reusable templates for different content types while maintaining brand consistency.", image: "/assets/services/social-media/process3.jpg" },
-      { step: 4, title: "Performance Optimization", text: "Test variations, analyze engagement metrics, and refine designs based on performance data.", image: "/assets/services/social-media/process4.jpg" }
-    ],
-    gallery: {
-      title: "Social Media Graphics Portfolio",
-      images: [
-        { src: "/assets/services/social-media/portfolio1.jpg", alt: "Instagram carousel with engaging content", caption: "Instagram Carousel" },
-        { src: "/assets/services/social-media/portfolio2.jpg", alt: "Facebook ad graphics with high conversion", caption: "Facebook Ads" },
-        { src: "/assets/services/social-media/portfolio3.jpg", alt: "LinkedIn professional content graphics", caption: "LinkedIn Professional" },
-        { src: "/assets/services/social-media/portfolio4.jpg", alt: "Animated stories for Instagram and Facebook", caption: "Animated Stories" }
-      ]
-    }
-  },
-
-  "infographics-design": {
-    title: "Infographics Design",
-    heroIntro: "Transform complex data into compelling visual narratives. We design infographics that make information accessible, memorable, and shareable through strategic visualization and clear storytelling.",
-    heroImage: "/assets/services/infographics/hero.jpg",
-    about: [
-      { text: "Infographics are visual explanations that simplify complexity. We use data visualization principles, hierarchy, and visual metaphors to make information instantly understandable.", image: "/assets/services/infographics/about1.jpg" },
-      { text: "Our designs balance aesthetic appeal with functional clarity, ensuring the message is communicated effectively while being visually engaging.", image: "/assets/services/infographics/about2.jpg" },
-      { text: "We specialize in creating infographics optimized for different contexts—detailed reports, social media snippets, presentations, and interactive web content.", image: "/assets/services/infographics/about3.jpg" }
-    ],
-    whyChoose: [
-      { title: "Data Visualization Expertise", description: "Apply proven principles of information design, chart selection, and data hierarchy for maximum clarity.", icon: "/assets/icons/data-viz.svg" },
-      { title: "Audience-Centric Design", description: "Tailor complexity, terminology, and visual style to match your specific audience's knowledge level and interests.", icon: "/assets/icons/audience-centric.svg" },
-      { title: "Multi-Format Optimization", description: "Create versions optimized for different contexts—detailed PDFs, social media snippets, presentation slides, and interactive web versions.", icon: "/assets/icons/multi-format.svg" },
-      { title: "Storytelling Approach", description: "Structure information as compelling narratives that guide viewers through logical progressions and key insights.", icon: "/assets/icons/storytelling.svg" },
-      { title: "Brand Integration", description: "Incorporate brand elements while prioritizing data clarity and visual accessibility.", icon: "/assets/icons/brand-integration.svg" }
-    ],
-    process: [
-      { step: 1, title: "Data Analysis & Structure", text: "Analyze source material, identify key insights, and structure information flow and hierarchy.", image: "/assets/services/infographics/process1.jpg" },
-      { step: 2, title: "Visual Strategy Development", text: "Select appropriate chart types, visual metaphors, and information architecture approach.", image: "/assets/services/infographics/process2.jpg" },
-      { step: 3, title: "Narrative Design", text: "Create visual storytelling flow that guides viewers through information in logical, engaging sequence.", image: "/assets/services/infographics/process3.jpg" },
-      { step: 4, title: "Accessibility Optimization", text: "Ensure color contrast, typographic hierarchy, and information density meet accessibility standards.", image: "/assets/services/infographics/process4.jpg" }
-    ],
-    gallery: {
-      title: "Infographics Portfolio",
-      images: [
-        { src: "/assets/services/infographics/portfolio1.jpg", alt: "Statistical infographic with clear data visualization", caption: "Statistical Report" },
-        { src: "/assets/services/infographics/portfolio2.jpg", alt: "Process flow infographic explaining complex workflows", caption: "Process Flow" },
-        { src: "/assets/services/infographics/portfolio3.jpg", alt: "Timeline infographic showing historical progression", caption: "Historical Timeline" },
-        { src: "/assets/services/infographics/portfolio4.jpg", alt: "Comparison infographic highlighting differences", caption: "Comparison Analysis" }
-      ]
-    }
-  },
-
-  "event-posters": {
+    "event-posters": {
     title: "Event Posters",
     heroIntro: "Capture attention and drive attendance with posters that command notice. We design event graphics that stop people in their tracks and communicate essential information with immediate impact.",
     heroImage: "/assets/services/event-posters/hero.jpg",
@@ -222,38 +156,7 @@ export const ServicesContent = {
     }
   },
 
-  "product-mockups": {
-    title: "Product Mockups",
-    heroIntro: "Bring products to life before production with photorealistic 3D mockups. We create compelling visual presentations that showcase products in realistic contexts to drive pre-launch interest and sales.",
-    heroImage: "/assets/services/product-mockups/hero.jpg",
-    about: [
-      { text: "Product mockups bridge the gap between concept and reality. We create realistic representations that help stakeholders visualize final products and make informed decisions.", image: "/assets/services/product-mockups/about1.jpg" },
-      { text: "Our mockups consider materials, lighting, context, and scale to create convincing representations that accurately convey product quality and features.", image: "/assets/services/product-mockups/about2.jpg" },
-      { text: "We specialize in creating mockup systems that can be easily adapted for different products, variations, and marketing applications.", image: "/assets/services/product-mockups/about3.jpg" }
-    ],
-    whyChoose: [
-      { title: "Photorealistic 3D Rendering", description: "High-quality renders that accurately represent materials, finishes, lighting, and product details.", icon: "/assets/icons/3d-rendering.svg" },
-      { title: "Contextual Presentation", description: "Show products in realistic environments that demonstrate scale, use cases, and lifestyle integration.", icon: "/assets/icons/contextual.svg" },
-      { title: "Iteration Flexibility", description: "Easy updates to colors, materials, and configurations without requiring new photoshoots.", icon: "/assets/icons/iteration.svg" },
-      { title: "Marketing Integration", description: "Mockups optimized for different marketing needs—e-commerce, catalogs, social media, and investor presentations.", icon: "/assets/icons/marketing-integration.svg" },
-      { title: "Technical Accuracy", description: "Attention to manufacturing realities, material properties, and production constraints in visual representations.", icon: "/assets/icons/technical-accuracy.svg" }
-    ],
-    process: [
-      { step: 1, title: "Product & Material Analysis", text: "Study product specifications, materials, manufacturing methods, and intended use contexts.", image: "/assets/services/product-mockups/process1.jpg" },
-      { step: 2, title: "3D Modeling & Texturing", text: "Create accurate digital models with realistic material properties, finishes, and details.", image: "/assets/services/product-mockups/process2.jpg" },
-      { step: 3, title: "Lighting & Rendering", text: "Set up studio or environmental lighting that showcases products effectively and realistically.", image: "/assets/services/product-mockups/process3.jpg" },
-      { step: 4, title: "Context Integration", text: "Place products in appropriate environments that demonstrate scale, use, and lifestyle fit.", image: "/assets/services/product-mockups/process4.jpg" }
-    ],
-    gallery: {
-      title: "Product Mockups Portfolio",
-      images: [
-        { src: "/assets/services/product-mockups/portfolio1.jpg", alt: "Packaging mockup showing 3D representation", caption: "Packaging Design" },
-        { src: "/assets/services/product-mockups/portfolio2.jpg", alt: "Product in lifestyle context mockup", caption: "Lifestyle Context" },
-        { src: "/assets/services/product-mockups/portfolio3.jpg", alt: "Multiple product variations mockup", caption: "Product Variations" },
-        { src: "/assets/services/product-mockups/portfolio4.jpg", alt: "E-commerce mockup with white background", caption: "E-Commerce Ready" }
-      ]
-    }
-  },
+  
 
   // ==================== VEHICLE & FLEET BRANDING (7 services) ====================
   "full-vehicle-wraps": {

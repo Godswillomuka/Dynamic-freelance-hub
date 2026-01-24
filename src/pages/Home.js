@@ -157,6 +157,24 @@ const services = [
     desc: "Branded gifts and giveaways for events and marketing. Boost your brand visibility with memorable promo products your clients and partners will love.",
     img: promoImg,
     link: "/services"
+  },
+  {
+    title: "Promo Products",
+    desc: "Branded gifts and giveaways for events and marketing. Boost your brand visibility with memorable promo products your clients and partners will love.",
+    img: promoImg,
+    link: "/services"
+  },
+  {
+    title: "Promo Products",
+    desc: "Branded gifts and giveaways for events and marketing. Boost your brand visibility with memorable promo products your clients and partners will love.",
+    img: promoImg,
+    link: "/services"
+  },
+  {
+    title: "Promo Products",
+    desc: "Branded gifts and giveaways for events and marketing. Boost your brand visibility with memorable promo products your clients and partners will love.",
+    img: promoImg,
+    link: "/services"
   }
 ];
 

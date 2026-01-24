@@ -307,9 +307,9 @@ const Service = () => {
             </button>
             <button 
               className="cta-button secondary"
-              onClick={() => navigate('/services')}
+              onClick={() => navigate('/portfolio')}
             >
-              Browse All Services
+              View Our Portfolio
             </button>
           </div>
         </div>

@@ -15,7 +15,7 @@ const generateSlug = (text) => {
 const sidebarData = [
   {
     title: "Creative Graphic Design",
-    links: ["Logo Design", "Brand Identity Design", "Marketing Materials Design", "Social Media Graphics", "Infographics Design", "Event Posters", "Product Mockups"],
+    links: ["Logo Design", "Brand Identity Design", "Marketing Materials Design", "Event Posters"],
   },
   {
     title: "Vehicle & Fleet Branding",
