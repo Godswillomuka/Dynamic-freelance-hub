@@ -14,8 +14,13 @@ import flyer from '../assets/flyer.png';
 import tshirts from '../assets/t-shirts.png';
 import customMugs from '../assets/mug.png';
 import designImg from '../assets/service-design.png';     
-import printImg from '../assets/service-print.png';        
-import brandingImg from '../assets/service-branding.png';  
+import vehicleImg from '../assets/service-vehicle.png';
+import apparelImg from '../assets/service-apparel.png'; 
+import identityImg from '../assets/service-identity.png'; 
+import codingImg from '../assets/service-coding.png';
+import officeImg from '../assets/service-office.png';      
+import brandingImg from '../assets/service-branding.png'; 
+import largeFormatImg from '../assets/service-largeformat.png'; 
 import signageImg from '../assets/service-signage.png';    
 import packagingImg from '../assets/service-packaging.png';
 import promoImg from '../assets/service-promo.png';        
@@ -123,57 +128,57 @@ const HeroClock = () => {
 
 const services = [
   {
-    title: "Creative Design",
-    desc: "We create unique logos, marketing materials, and brand assets that make your business stand out and connect with your audience. Every design is tailored to your goals.",
+    title: "Creative Graphic Design",
+    desc: "Professional logos, brand identities, and marketing graphics designed to attract attention and engage your audience across all platforms.",
     img: designImg,
     link: "/services"
   },
   {
-    title: "Merchandise Printing",
-    desc: "Get your brand on t-shirts, apparel, and promo items. We deliver quality prints that leave a lasting impression everywhere, using the best materials and vibrant colors.",
-    img: printImg,
+    title: "Vehicle & Fleet Branding",
+    desc: "Full and partial vehicle wraps that transform your fleet into powerful mobile advertisements seen by thousands daily.",
+    img: vehicleImg,
     link: "/services"
   },
   {
-    title: "Business Branding",
-    desc: "From strategy to visuals, we build a strong, consistent identity for your business across all platforms and materials. Stand out and grow with a professional brand.",
-    img: brandingImg,
+    title: "Custom Merchandise & Apparel",
+    desc: "Branded apparel and promotional merchandise that increase visibility, strengthen your brand presence, and build lasting customer impressions.",
+    img: apparelImg,
     link: "/services"
   },
   {
-    title: "Signage & Displays",
-    desc: "We design and produce banners, pop-ups, and event displays to help your business get noticed at any venue or location. Make your message visible and memorable.",
-    img: signageImg,
+    title: "Business Identity & Stationery",
+    desc: "Professional business stationery that builds credibility and ensures consistent, polished brand communication across all official business materials.",
+    img: identityImg,
     link: "/services"
   },
   {
-    title: "Packaging & Labels",
-    desc: "Enhance your product with custom packaging and labels that reflect your brand's quality and attract customers. Creative solutions for every industry.",
+    title: "Signage & Large Format Displays",
+    desc: "Eye-catching banners, signage, and display solutions designed to maximize visibility and attract customers to your business location.",
+    img: largeFormatImg,
+    link: "/services"
+  },
+  {
+    title: "Product Packaging & Labels",
+    desc: "Creative packaging and label solutions that enhance product appeal, protect products, and strengthen your brand identity.",
     img: packagingImg,
     link: "/services"
   },
   {
-    title: "Promo Products",
-    desc: "Branded gifts and giveaways for events and marketing. Boost your brand visibility with memorable promo products your clients and partners will love.",
+    title: "Marketing & Promotional Print",
+    desc: "High-quality printed materials that support marketing campaigns, improve brand visibility, and attract more potential customers.",
     img: promoImg,
     link: "/services"
   },
   {
-    title: "Promo Products",
-    desc: "Branded gifts and giveaways for events and marketing. Boost your brand visibility with memorable promo products your clients and partners will love.",
-    img: promoImg,
+    title: "Corporate Branding & Strategy",
+    desc: "Strategic branding solutions that position your business professionally and ensure strong, consistent identity across all platforms.",
+    img: brandingImg,
     link: "/services"
   },
   {
-    title: "Promo Products",
-    desc: "Branded gifts and giveaways for events and marketing. Boost your brand visibility with memorable promo products your clients and partners will love.",
-    img: promoImg,
-    link: "/services"
-  },
-  {
-    title: "Promo Products",
-    desc: "Branded gifts and giveaways for events and marketing. Boost your brand visibility with memorable promo products your clients and partners will love.",
-    img: promoImg,
+    title: "Web Design & Software Engineering",
+    desc: "Modern websites and digital solutions designed for performance, usability, scalability, and long-term business growth online.",
+    img: codingImg,
     link: "/services"
   }
 ];
