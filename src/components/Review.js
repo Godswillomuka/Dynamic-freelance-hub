@@ -9,73 +9,107 @@ const Reviews = () => {
   const [shareStatus, setShareStatus] = useState('');
 
   const reviews = [
-    {
-      id: 1,
-      name: 'Sarah Johnson',
-      company: 'TechStart Solutions',
-      role: 'Marketing Director',
-      rating: 5,
-      text: 'Dynamic Freelance Hub transformed our entire brand identity! Their attention to detail and creative vision exceeded our expectations. The vehicle wraps they designed for our fleet have significantly increased our brand visibility.',
-      image: 'https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg',
-      service: 'Brand Design & Vehicle Wraps',
-      date: '2024-01-15'
-    },
-    {
-      id: 2,
-      name: 'Michael Chen',
-      company: 'Urban Eats Food Truck',
-      role: 'Owner',
-      rating: 5,
-      text: 'The custom apparel and promotional materials from Dynamic Freelance Hub helped us stand out at every event. Their quality is unmatched, and the customer service is exceptional. Highly recommend!',
-      image: 'https://images.pexels.com/photos/3806749/pexels-photo-3806749.jpeg',
-      service: 'Custom Apparel & Promotional Products',
-      date: '2024-02-03'
-    },
-    {
-      id: 3,
-      name: 'Emily Rodriguez',
-      company: 'Luxe Beauty Co.',
-      role: 'Brand Manager',
-      rating: 5,
-      text: 'The premium finishing work on our packaging is absolutely stunning. The foil stamping and embossing details make our products feel truly luxury. Dynamic Freelance Hub understands quality.',
-      image: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg',
-      service: 'Premium Finishing & Packaging',
-      date: '2024-01-28'
-    },
-    {
-      id: 4,
-      name: 'David Thompson',
-      company: 'Summit Construction',
-      role: 'Operations Manager',
-      rating: 5,
-      text: 'Professional, reliable, and creative. Dynamic Freelance Hub delivered our trade show displays on time and they looked incredible. We received so many compliments and leads at the expo.',
-      image: 'https://images.pexels.com/photos/1687845/pexels-photo-1687845.jpeg',
-      service: 'Trade Show Displays & Signage',
-      date: '2024-02-10'
-    },
-    {
-      id: 5,
-      name: 'Lisa Park',
-      company: 'Green Valley Organics',
-      role: 'CEO',
-      rating: 5,
-      text: 'From concept to completion, Dynamic Freelance Hub made the entire process seamless. Their team understood our vision and brought it to life beautifully. Our new branding has boosted sales significantly.',
-      image: 'https://images.pexels.com/photos/3747468/pexels-photo-3747468.jpeg',
-      service: 'Complete Brand Identity',
-      date: '2024-01-20'
-    },
-    {
-      id: 6,
-      name: 'James Wilson',
-      company: 'Metro Fitness',
-      role: 'Franchise Owner',
-      rating: 5,
-      text: 'The custom gym apparel and promotional products have been a huge hit with our members. Quality is top-notch and the designs are exactly what we wanted. Great partnership!',
-      image: 'https://images.pexels.com/photos/3806275/pexels-photo-3806275.jpeg',
-      service: 'Custom Apparel & Promotional Products',
-      date: '2024-02-05'
-    }
-  ];
+  {
+    id: 1,
+    name: 'Brian Mwangi',
+    company: 'BluePeak Technologies',
+    role: 'Marketing Manager',
+    rating: 5,
+    text: 'Dynamic Freelance Hub created a strong logo and brand identity that made our business look more professional and trustworthy.',
+    image: 'https://images.pexels.com/photos/1043474/pexels-photo-1043474.jpeg', // African male
+    service: 'Creative Graphic Design',
+    date: '2024-01-15'
+  },
+  {
+    id: 2,
+    name: 'Kevin Otieno',
+    company: 'SwiftHaul Logistics',
+    role: 'Operations Manager',
+    rating: 5,
+    text: 'Our vehicle fleet branding was excellent. Our vans now promote our business and attract customers everywhere.',
+    image: 'https://images.pexels.com/photos/1704488/pexels-photo-1704488.jpeg', // African male
+    service: 'Vehicle & Fleet Branding',
+    date: '2024-02-03'
+  },
+  {
+    id: 3,
+    name: 'Faith Wanjiku',
+    company: 'Urban Threads Apparel',
+    role: 'Owner',
+    rating: 5,
+    text: 'The branded apparel quality was outstanding. Our customers love the designs and our brand visibility increased.',
+    image: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg', // African female
+    service: 'Custom Merchandise & Apparel',
+    date: '2024-01-28'
+  },
+  {
+    id: 4,
+    name: 'Samuel Kariuki',
+    company: 'Kariuki Consulting Group',
+    role: 'Director',
+    rating: 5,
+    text: 'Professional business cards and stationery improved our image and helped us win client confidence quickly.',
+    image: 'https://images.pexels.com/photos/1559486/pexels-photo-1559486.jpeg', // African male
+    service: 'Business Identity & Stationery',
+    date: '2024-02-10'
+  },
+  {
+    id: 5,
+    name: 'Mercy Njeri',
+    company: 'GreenLeaf Organics',
+    role: 'Founder',
+    rating: 5,
+    text: 'The signage and shop branding made our store stand out and attract more walk-in customers.',
+    image: 'https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg', // African female
+    service: 'Signage & Large Format Displays',
+    date: '2024-01-20'
+  },
+  {
+    id: 6,
+    name: 'Dennis Mutua',
+    company: 'PureGlow Cosmetics',
+    role: 'Product Manager',
+    rating: 5,
+    text: 'Our product packaging now looks premium and professional. Customers immediately notice the difference.',
+    image: 'https://images.pexels.com/photos/937481/pexels-photo-937481.jpeg', // African male
+    service: 'Product Packaging & Labels',
+    date: '2024-02-05'
+  },
+  {
+    id: 7,
+    name: 'Esther Achieng',
+    company: 'Premier Events Co.',
+    role: 'Event Planner',
+    rating: 5,
+    text: 'The brochures and posters were high quality and helped us promote events successfully.',
+    image: 'https://images.pexels.com/photos/1181424/pexels-photo-1181424.jpeg', // African female
+    service: 'Marketing & Promotional Print',
+    date: '2024-02-12'
+  },
+  {
+    id: 8,
+    name: 'Joseph Kiptoo',
+    company: 'SummitCore Holdings',
+    role: 'CEO',
+    rating: 5,
+    text: 'Their corporate branding services transformed our company image and professionalism completely.',
+    image: 'https://images.pexels.com/photos/1542085/pexels-photo-1542085.jpeg', // African male
+    service: 'Corporate Branding & Strategy',
+    date: '2024-02-01'
+  },
+  {
+    id: 9,
+    name: 'Aisha Mohammed',
+    company: 'Savanna Style Boutique',
+    role: 'Owner',
+    rating: 5,
+    text: 'Our website looks modern and professional. Customers can easily find and contact us online.',
+    image: 'https://images.pexels.com/photos/1181519/pexels-photo-1181519.jpeg', // African female
+    service: 'Web Design & Software Engineering',
+    date: '2024-02-14'
+  }
+];
+
 
   const stats = [
     { icon: Users, value: '500+', label: 'Happy Clients' },

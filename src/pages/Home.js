@@ -1,29 +1,30 @@
 // src/components/Home/Home.js
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import TrustedBrands from '../components/TrustedBrands';
 import Reviews from '../components/Review';
 import WhatsApp from '../components/WhatsApp';
 import Footer from '../components/Footer'; 
 import './Home.css';
 
-// images 
+//about-image
 import aboutTeam from '../assets/about-team.png';
+
+//service-images 
 import businessCard from '../assets/bussinescard.png';
-import flyer from '../assets/flyer.png';
-import tshirts from '../assets/t-shirts.png';
-import customMugs from '../assets/mug.png';
 import designImg from '../assets/service-design.png';     
 import vehicleImg from '../assets/service-vehicle.png';
 import apparelImg from '../assets/service-apparel.png'; 
 import identityImg from '../assets/service-identity.png'; 
-import codingImg from '../assets/service-coding.png';
-import officeImg from '../assets/service-office.png';      
+import codingImg from '../assets/service-coding.png';    
 import brandingImg from '../assets/service-branding.png'; 
-import largeFormatImg from '../assets/service-largeformat.png'; 
-import signageImg from '../assets/service-signage.png';    
+import largeFormatImg from '../assets/service-largeformat.png';  
 import packagingImg from '../assets/service-packaging.png';
-import promoImg from '../assets/service-promo.png';        
+import promoImg from '../assets/service-promo.png';
+
+//product-images
+import flyer from '../assets/flyer.png';
+import tshirts from '../assets/t-shirts.png';
+import customMugs from '../assets/mug.png';        
 import capImg from '../assets/product-cap.png';            
 import penImg from '../assets/product-pen.png';           
 import bagImg from '../assets/product-bag.png';            
@@ -326,12 +327,13 @@ const Home = () => {
             <motion.div className="home-about-us-text" variants={fadeInUp}>
               <h2 className="home-section-title">Who We Are</h2>
               <p className="home-section-description">
-                <strong>Dynamic Freelance Hub</strong> is more than just a printing service,we specialize in crafting compelling visual identities and producing high-quality printed materials that help businesses:
-                  <li>Grow their visibility in competitive markets</li>
+                <strong>Dynamic Freelance Hub</strong> is more than a printing service. We craft compelling visual identities and produce high-quality printed materials that help businesses:
+                  <li>Grow visibility in competitive markets</li>
                   <li>Enhance credibility with professional, polished designs</li>
-                  <li>Strengthen brand consistency across every platform</li>
-                  From business cards and branded merchandise to large-scale prints and corporate branding, we ensure every detail reflects your brand's quality and professionalism.Using modern design tools and state-of-the-art printing, we deliver results that build trust, attract customers, and drive success.
+                  <li>Maintain consistent branding across all platforms</li> 
+                   From business cards and branded merchandise to large-scale prints and corporate branding, we ensure every detail reflects your professionalism. Using modern tools and advanced printing technology, we deliver results that build trust, attract customers, and support business growth.
               </p>
+
               <a href="/about" className="home-btn home-btn-primary-alt">
                 Learn More
               </a>
@@ -429,9 +431,7 @@ const Home = () => {
           </div>
         </div>
       </motion.section>
-      <TrustedBrands />
       
-
       {/* --- Why Choose Us Section --- */}
       <motion.section
         className="home-why-choose-us-section"

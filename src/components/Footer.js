@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import './Footer.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone, faEnvelope, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
@@ -32,7 +33,7 @@ const Footer = () => {
             <h4>Contact Us</h4>
             <div className="contact-info">
               <p><FontAwesomeIcon icon={faEnvelope} /> info@dynamicfreelancehub.com</p>
-              <p><FontAwesomeIcon icon={faPhone} /> +254 700 123 456</p>
+              <p><FontAwesomeIcon icon={faPhone} /> +254 729 489 713</p>
               <p><FontAwesomeIcon icon={faMapMarkerAlt} /> Nairobi, Kenya</p>
             </div>
           </div>
@@ -41,12 +42,17 @@ const Footer = () => {
           <div className="footer-section">
             <h4>Our Services</h4>
             <ul>
-              <li><a href="#services">Digital Printing</a></li>
-              <li><a href="#services">Large Format Printing</a></li>
-              <li><a href="#services">Brand Identity Design</a></li>
-              <li><a href="#services">Packaging Solutions</a></li>
-              <li><a href="#services">Promotional Products</a></li>
-              <li><a href="#services">Office Stationery</a></li>
+              <li><a href="#services/logo-design">Creative Graphic Design</a></li>
+              <li><a href="#services/vehicle-branding">Vehicle & Fleet Branding</a></li>
+              <li><a href="#services/custom-merchandise">Custom Merchandise & Apparel</a></li>
+              <li><a href="#services/business-identity">Business Identity & Stationery</a></li>
+              <li><a href="#services/signage">Signage & Large Format Displays</a></li>
+              <li><a href="#services/product-packaging">Product Packaging & Labels</a></li>
+              <li><a href="#services/marketing-promotional">Marketing & Promotional Print</a></li>
+              <li><a href="#services/corporate-branding">Corporate Branding & Identity</a></li>
+              <li><a href="#services/web-design-software-engineering">Web Design & Software Engineering</a></li>
+              
+              
             </ul>
           </div>
           
@@ -54,12 +60,11 @@ const Footer = () => {
           <div className="footer-section">
             <h4>Quick Links</h4>
             <ul>
-              <li><a href="#about">About Us</a></li>
-              <li><a href="#portfolio">Our Work</a></li>
-              <li><a href="#contact">Get Quote</a></li>
-              <li><a href="#contact">FAQ</a></li>
-              <li><a href="#contact">Terms & Conditions</a></li>
-              <li><a href="#contact">Privacy Policy</a></li>
+              <li><Link to="/about">About Us</Link></li>
+              <li><Link to="/services">Services</Link></li>
+              <li><Link to="/portfolio">Our Work</Link></li>
+              <li><Link to="/contact">Contact</Link></li>
+              <li><Link to="/get-quote">Get Quote</Link></li>
             </ul>
           </div>
           
