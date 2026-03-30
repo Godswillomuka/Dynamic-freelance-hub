@@ -17,10 +17,10 @@ const sidebarData = [
     title: "Creative Graphic Design",
     links: ["Logo Design", "Brand Identity Design", "Event Posters"],
   },
-  // {
-  //   title: "Vehicle & Fleet Branding",
-  //   links: ["Full Vehicle Wraps", "Partial Vehicle Wraps", "Roadshow Trucks Branding", "Delivery Van Branding", "Motorcycle Branding", "Racing & Safari Rally Cars", "Reflective Vehicle Stickers"],
-  // },
+  {
+    title: "Vehicle & Fleet Branding",
+    links: ["Full Vehicle Wraps", "Partial Vehicle Wraps", "Roadshow Trucks Branding", "Delivery Van Branding", "Motorcycle Branding", "Racing & Safari Rally Cars", "Reflective Vehicle Stickers"],
+  },
   // {
   //   title: "Custom Merchandise & Apparel",
   //   links: ["T-Shirts Printing", "Hoodies Printing", "Caps Branding", "Corporate Gifts", "Promotional Products", "Tote Bags Printing", "Mugs & Water Bottles Printing"],

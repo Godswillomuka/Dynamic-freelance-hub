@@ -13,6 +13,11 @@ import eventPosterImg from "../assets/services/event-posters/about.png";
 import eventPosterImg2 from "../assets/services/event-posters/about2.png";
 import eventPosterImg3 from "../assets/services/event-posters/about3.png";
 
+import heroImg4 from "../assets/services/vehicle-wraps/hero.jpg";
+import vehicleWrapsImg from "../assets/services/vehicle-wraps/about.jpg";
+import vehicleWrapsImg2 from "../assets/services/vehicle-wraps/about2.jpg";
+import vehicleWrapsImg3 from "../assets/services/vehicle-wraps/about3.jpg";
+
 import geometric from "../assets/icons/geometric.png";
 import analysis from "../assets/icons/analysis.png";
 import accessibility from "../assets/icons/accessibility.png";
@@ -107,34 +112,25 @@ export const ServicesContent = {
   "full-vehicle-wraps": {
     title: "Full Vehicle Wraps",
     heroIntro: "Transform vehicles into mobile billboards with precision-engineered full wraps. We design and install complete vehicle graphics that maximize brand visibility while ensuring durability and professional finish.",
-    heroImage: "/assets/services/full-vehicle-wraps/hero.jpg",
+    heroImage: heroImg4,
     about: [
-      { text: "Full vehicle wraps are complex projects requiring precise design, material selection, and installation expertise. We handle every aspect from concept to road-ready completion.", image: "/assets/services/full-vehicle-wraps/about1.jpg" },
-      { text: "Our designs consider vehicle curvature, panel breaks, and viewing angles to create graphics that work harmoniously with the vehicle's form.", image: "/assets/services/full-vehicle-wraps/about2.jpg" },
-      { text: "We use premium vinyl materials and installation techniques that ensure longevity, weather resistance, and professional appearance.", image: "/assets/services/full-vehicle-wraps/about3.jpg" }
+      { text: "Full vehicle wraps are complex projects requiring precise design, material selection, and installation expertise. We handle every aspect from concept to road-ready completion.", image: vehicleWrapsImg },
+      { text: "Our designs consider vehicle curvature, panel breaks, and viewing angles to create graphics that work harmoniously with the vehicle's form.", image: vehicleWrapsImg2 },
+      { text: "We use premium vinyl materials and installation techniques that ensure longevity, weather resistance, and professional appearance.", image: vehicleWrapsImg3 }
     ],
     whyChoose: [
-      { title: "Precision Fit & Finish", description: "Wraps engineered to vehicle-specific contours with perfect alignment at panel edges and complex curves.", icon: "/assets/icons/precision.svg" },
-      { title: "Premium Material Selection", description: "High-quality vinyls with UV protection, scratch resistance, and guaranteed longevity.", icon: "/assets/icons/materials.svg" },
-      { title: "Installation Expertise", description: "Certified installers with experience handling complex vehicles, curves, and challenging surfaces.", icon: "/assets/icons/installation.svg" },
-      { title: "Design for Motion", description: "Graphics optimized for viewing from multiple angles and while vehicle is in motion.", icon: "/assets/icons/motion.svg" },
-      { title: "Removal Protection", description: "Materials and techniques that protect original paint and allow clean removal when needed.", icon: "/assets/icons/protection.svg" }
+      { title: "Precision Fit & Finish", description: "Wraps engineered to vehicle-specific contours with perfect alignment at panel edges and complex curves.", icon: visualSystem },
+      { title: "Premium Material Selection", description: "High-quality vinyls with UV protection, scratch resistance, and guaranteed longevity.", icon: consistency },
+      { title: "Installation Expertise", description: "Certified installers with experience handling complex vehicles, curves, and challenging surfaces.", icon: colorPsychology },
+      { title: "Design for Motion", description: "Graphics optimized for viewing from multiple angles and while vehicle is in motion.", icon: flexibility },
+      { title: "Removal Protection", description: "Materials and techniques that protect original paint and allow clean removal when needed.", icon: documentation }
     ],
     process: [
-      { step: 1, title: "Vehicle Measurement & Template", text: "Create precise digital templates or physical measurements of the specific vehicle.", image: "/assets/services/full-vehicle-wraps/process1.jpg" },
-      { step: 2, title: "Curvature-Aware Design", text: "Design graphics that work with vehicle contours, panel breaks, and viewing perspectives.", image: "/assets/services/full-vehicle-wraps/process2.jpg" },
-      { step: 3, title: "Material & Print Specification", text: "Select appropriate vinyl grades, laminate protection, and printing methods for durability.", image: "/assets/services/full-vehicle-wraps/process3.jpg" },
-      { step: 4, title: "Professional Installation", text: "Expert application with proper surface prep, alignment techniques, and finishing details.", image: "/assets/services/full-vehicle-wraps/process4.jpg" }
+      { step: 1, title: "Vehicle Measurement & Template", text: "Create precise digital templates or physical measurements of the specific vehicle." },
+      { step: 2, title: "Curvature-Aware Design", text: "Design graphics that work with vehicle contours, panel breaks, and viewing perspectives." },
+      { step: 3, title: "Material & Print Specification", text: "Select appropriate vinyl grades, laminate protection, and printing methods for durability." },
+      { step: 4, title: "Professional Installation", text: "Expert application with proper surface prep, alignment techniques, and finishing details." }
     ],
-    gallery: {
-      title: "Full Vehicle Wraps Portfolio",
-      images: [
-        { src: "/assets/services/full-vehicle-wraps/portfolio1.jpg", alt: "Commercial van with full wrap design", caption: "Commercial Fleet" },
-        { src: "/assets/services/full-vehicle-wraps/portfolio2.jpg", alt: "Food truck with vibrant full wrap", caption: "Food Truck" },
-        { src: "/assets/services/full-vehicle-wraps/portfolio3.jpg", alt: "Corporate vehicle with professional wrap", caption: "Corporate Vehicle" },
-        { src: "/assets/services/full-vehicle-wraps/portfolio4.jpg", alt: "Service vehicle with complete branding", caption: "Service Vehicle" }
-      ]
-    }
   },
 
   "partial-vehicle-wraps": {
