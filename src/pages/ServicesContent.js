@@ -1,16 +1,18 @@
-import heroImage from "../assets/services/logo-design/hero.jpg";
-import about1 from "../assets/services/logo-design/about1.jpg";
-import about2 from "../assets/services/logo-design/about2.jpg";
-import about3 from "../assets/services/logo-design/about3.jpg";
-import portfolio1 from "../assets/services/logo-design/portfolio1.jpg";
-import portfolio2 from "../assets/services/logo-design/portfolio2.jpg";
-import portfolio3 from "../assets/services/logo-design/portfolio3.jpg";
-import portfolio4 from "../assets/services/logo-design/portfolio4.jpg";
-import heroimg from "../assets/services/brand-identity/hero.jpg";
-import aboutimg1 from "../assets/services/brand-identity/about1.jpg";
-import aboutimg2 from "../assets/services/brand-identity/about2.jpg";
-import aboutimg3 from "../assets/services/brand-identity/about3.jpg";
-import aboutimg4 from "../assets/services/logo-design/portfolio1.jpg";
+import heroImg from "../assets/services/logo-design/hero.jpg";
+import logoImg from "../assets/services/logo-design/about1.jpg";
+import logoImg2 from "../assets/services/logo-design/about2.jpg";
+import logoImg3 from "../assets/services/logo-design/about3.jpg";
+
+import heroImg2 from "../assets/services/brand-identity/hero.jpg";
+import brandImg from "../assets/services/brand-identity/about1.jpg";
+import brandImg2 from "../assets/services/brand-identity/about2.jpg";
+import brandImg3 from "../assets/services/brand-identity/about3.jpg";
+
+import heroImg3 from "../assets/services/event-posters/hero.jpg";
+import eventPosterImg from "../assets/services/event-posters/about.png";
+import eventPosterImg2 from "../assets/services/event-posters/about2.png";
+import eventPosterImg3 from "../assets/services/event-posters/about3.png";
+
 import geometric from "../assets/icons/geometric.png";
 import analysis from "../assets/icons/analysis.png";
 import accessibility from "../assets/icons/accessibility.png";
@@ -22,16 +24,18 @@ import colorPsychology from "../assets/icons/color-psychology.png";
 import flexibility from "../assets/icons/flexibility.png";
 import documentation from "../assets/icons/documentation.png";
 
+
+
 export const ServicesContent = {
   // ==================== CREATIVE GRAPHIC DESIGN (7 services) ====================
   "logo-design": {
     title: "Logo Design",
     heroIntro: "Your logo is your brand's signature—we engineer visual marks that encode your identity, values, and market position into a singular, memorable symbol that performs across all mediums.",
-    heroImage: heroImage,
+    heroImage: heroImg,
     about: [
-      { text: "We approach logo design as systematic visual engineering, not arbitrary aesthetics. Each mark is constructed using geometric precision, optical correction, and strategic semantic layering.", image: about1 },
-      { text: "Our process combines competitive market analysis with mathematical design principles (golden ratio, grid systems, optical weight distribution) to create logos that feel intuitively correct.", image: about2 },
-      { text: "Every logo undergoes scalability stress-testing—from 16px favicons to 10-foot signage—ensuring perfect legibility and impact at any resolution or application context.", image: about3 }
+      { text: "We approach logo design as systematic visual engineering, not arbitrary aesthetics. Each mark is constructed using geometric precision, optical correction, and strategic semantic layering.", image: logoImg },
+      { text: "Our process combines competitive market analysis with mathematical design principles (golden ratio, grid systems, optical weight distribution) to create logos that feel intuitively correct.", image: logoImg2 },
+      { text: "Every logo undergoes scalability stress-testing—from 16px favicons to 10-foot signage—ensuring perfect legibility and impact at any resolution or application context.", image: logoImg3 }
     ],
     whyChoose: [
       { title: "Architectural Design Process", description: "Logos built on geometric frameworks and systematic grid structures, not subjective design choices.", icon: geometric },
@@ -45,26 +49,17 @@ export const ServicesContent = {
       { step: 2, title: "Geometric Architecture", text: "Engineering visual frameworks using mathematical relationships, grid systems, and proportional harmony principles."},
       { step: 3, title: "Multi-Variant Prototyping", text: "Developing parallel logo ecosystems including primary marks, responsive variants, monograms, and contextual adaptations."},
       { step: 4, title: "Technical Implementation", text: "Delivering comprehensive file systems with vector masters, pixel-optimized raster sets, and cross-platform implementation guides."}
-    ],
-    gallery: {
-      title: "Logo Design Portfolio",
-      images: [
-        { src: portfolio1, alt: "Corporate logo design for financial institution", caption: "Financial Sector Identity" },
-        { src: portfolio2, alt: "Modern tech startup logo with responsive variations", caption: "Tech Startup System" },
-        { src: portfolio3, alt: "Restaurant branding with custom typography", caption: "Hospitality Brand Mark" },
-        { src: portfolio4, alt: "Healthcare logo with accessibility-focused design", caption: "Healthcare Accessibility" }
-      ]
-    }
+    ]
   },
 
   "brand-identity-design": {
     title: "Brand Identity Design",
     heroIntro: "Transform your business into a cohesive visual system. We architect comprehensive brand identities that communicate consistently across every touchpoint, from stationery to digital ecosystems.",
-    heroImage: heroimg,
+    heroImage: heroImg2,
     about: [
-      { text: "Brand identity is more than a logo—it's a visual language system comprising typography, color, imagery, and composition rules that work in harmony.", image: aboutimg1 },
-      { text: "We develop adaptive identity systems that maintain consistency while allowing flexibility for different contexts, audiences, and communication needs.", image: aboutimg2 },
-      { text: "Our approach integrates psychological color theory, typographic hierarchies, and visual rhythm to create identities that resonate emotionally while communicating clearly.", image: aboutimg3 }
+      { text: "Brand identity is more than a logo—it's a visual language system comprising typography, color, imagery, and composition rules that work in harmony.", image: brandImg },
+      { text: "We develop adaptive identity systems that maintain consistency while allowing flexibility for different contexts, audiences, and communication needs.", image: brandImg2 },
+      { text: "Our approach integrates psychological color theory, typographic hierarchies, and visual rhythm to create identities that resonate emotionally while communicating clearly.", image: brandImg3 }
     ],
     whyChoose: [
       { title: "Systematic Visual Language", description: "Cohesive design systems with clear rules for typography, color, spacing, and imagery application.", icon: visualSystem },
@@ -78,82 +73,32 @@ export const ServicesContent = {
       { step: 2, title: "Visual Language Development", text: "Create typographic systems, color palettes, photographic styles, and graphic element libraries."  },
       { step: 3, title: "Application Prototyping", text: "Test identity across core applications (digital, print, environmental) and refine based on performance."},
       { step: 4, title: "System Documentation", text: "Develop comprehensive brand guidelines with implementation rules, templates, and asset management systems." }
-    ],
-    gallery: {
-      title: "Brand Identity Systems",
-      images: [
-        { src: aboutimg1, alt: "Complete corporate identity system", caption: "Corporate Identity Suite" },
-        { src: aboutimg2, alt: "Startup branding with flexible visual language", caption: "Startup Visual Language" },
-        { src: aboutimg3, alt: "Retail brand identity with environmental applications", caption: "Retail Environment System" },
-        { src: aboutimg4, alt: "Educational institution branding", caption: "Educational Brand System" }
-      ]
-    }
-  },
-
-  "marketing-materials-design": {
-    title: "Marketing Materials Design",
-    heroIntro: "Engineered marketing collateral that converts. We design strategic marketing materials that guide prospects through the buyer's journey with clarity, persuasion, and visual impact.",
-    heroImage: "/assets/services/marketing-materials/hero.jpg",
-    about: [
-      { text: "Marketing materials are conversion tools, not just informational pieces. We design with clear calls-to-action, strategic information hierarchy, and persuasive visual storytelling.", image: "/assets/services/marketing-materials/about1.jpg" },
-      { text: "Each piece is optimized for its specific channel and audience—whether it's a trade show handout, digital PDF, or sales presentation.", image: "/assets/services/marketing-materials/about2.jpg" },
-      { text: "We integrate responsive design principles even for print, ensuring materials work effectively across different formats and viewing contexts.", image: "/assets/services/marketing-materials/about3.jpg" }
-    ],
-    whyChoose: [
-      { title: "Conversion-Focused Design", description: "Materials engineered with clear CTAs, persuasive layouts, and strategic information flow to drive action.", icon: "/assets/icons/conversion.svg" },
-      { title: "Channel-Specific Optimization", description: "Designs tailored for each distribution method—print, digital, presentation, or environmental.", icon: "/assets/icons/channel.svg" },
-      { title: "Consistent Brand Application", description: "Seamless integration of brand identity while adapting to specific marketing objectives and formats.", icon: "/assets/icons/brand-application.svg" },
-      { title: "Production-Ready Files", description: "Print-optimized files with proper bleeds, color profiles, and press specifications built in.", icon: "/assets/icons/production.svg" },
-      { title: "Templated Systems", description: "Create reusable templates for ongoing marketing needs while maintaining design consistency.", icon: "/assets/icons/templates.svg" }
-    ],
-    process: [
-      { step: 1, title: "Marketing Objective Mapping", text: "Define target audience, conversion goals, distribution channels, and key messaging hierarchy.", image: "/assets/services/marketing-materials/process1.jpg" },
-      { step: 2, title: "Information Architecture", text: "Structure content flow, visual hierarchy, and user journey through the marketing piece.", image: "/assets/services/marketing-materials/process2.jpg" },
-      { step: 3, title: "Strategic Visual Design", text: "Apply persuasion principles, attention guidance, and emotional engagement techniques.", image: "/assets/services/marketing-materials/process3.jpg" },
-      { step: 4, title: "Production Optimization", text: "Prepare files with correct specifications for chosen production method (print, digital, etc.)", image: "/assets/services/marketing-materials/process4.jpg" }
-    ],
-    gallery: {
-      title: "Marketing Materials Portfolio",
-      images: [
-        { src: "/assets/services/marketing-materials/portfolio1.jpg", alt: "Brochure design with clear information hierarchy", caption: "Corporate Brochure" },
-        { src: "/assets/services/marketing-materials/portfolio2.jpg", alt: "Sales presentation with persuasive design", caption: "Sales Presentation" },
-        { src: "/assets/services/marketing-materials/portfolio3.jpg", alt: "Trade show materials with impact-focused design", caption: "Trade Show Collateral" },
-        { src: "/assets/services/marketing-materials/portfolio4.jpg", alt: "Digital marketing assets optimized for online", caption: "Digital Marketing" }
-      ]
-    }
+    ]
   },
 
     "event-posters": {
     title: "Event Posters",
     heroIntro: "Capture attention and drive attendance with posters that command notice. We design event graphics that stop people in their tracks and communicate essential information with immediate impact.",
-    heroImage: "/assets/services/event-posters/hero.jpg",
+    heroImage: heroImg3,
     about: [
-      { text: "Event posters must work hard in competitive environments. We design for maximum visibility, immediate comprehension, and strong calls-to-action.", image: "/assets/services/event-posters/about1.jpg" },
-      { text: "Our approach considers viewing distance, environmental context, and audience movement patterns to ensure posters are effective in their specific locations.", image: "/assets/services/event-posters/about2.jpg" },
-      { text: "We create versatile poster systems that maintain brand consistency across different event types, sizes, and promotional needs.", image: "/assets/services/event-posters/about3.jpg" }
+      { text: "Event posters must work hard in competitive environments. We design for maximum visibility, immediate comprehension, and strong calls-to-action.", image: eventPosterImg },
+      { text: "Our approach considers viewing distance, environmental context, and audience movement patterns to ensure posters are effective in their specific locations.", image: eventPosterImg2 },
+      { text: "We create versatile poster systems that maintain brand consistency across different event types, sizes, and promotional needs.", image: eventPosterImg3 }
     ],
     whyChoose: [
-      { title: "Environmental Context Design", description: "Posters engineered for specific locations, viewing distances, and lighting conditions.", icon: "/assets/icons/environmental.svg" },
-      { title: "Hierarchy & Scannability", description: "Information structured for instant comprehension even from a distance or while in motion.", icon: "/assets/icons/scannability.svg" },
-      { title: "Production Material Expertise", description: "Knowledge of different papers, finishes, and printing techniques to achieve desired visual impact.", icon: "/assets/icons/material-expertise.svg" },
-      { title: "Multi-Format Systems", description: "Create coordinated poster families for different sizes, locations, and promotional phases.", icon: "/assets/icons/multi-format.svg" },
-      { title: "Call-to-Action Optimization", description: "Designs that drive specific actions—registration, attendance, social sharing, or inquiries.", icon: "/assets/icons/cta.svg" }
+      { title: "Environmental Context Design", description: "Posters engineered for specific locations, viewing distances, and lighting conditions.", icon: visualSystem },
+      { title: "Hierarchy & Scannability", description: "Information structured for instant comprehension even from a distance or while in motion.", icon: consistency },
+      { title: "Production Material Expertise", description: "Knowledge of different papers, finishes, and printing techniques to achieve desired visual impact.", icon: colorPsychology },
+      { title: "Multi-Format Systems", description: "Create coordinated poster families for different sizes, locations, and promotional phases.", icon: flexibility },
+      { title: "Call-to-Action Optimization", description: "Designs that drive specific actions—registration, attendance, social sharing, or inquiries.", icon: documentation }
     ],
     process: [
-      { step: 1, title: "Context & Audience Analysis", text: "Understand posting locations, viewing conditions, target audience demographics, and movement patterns.", image: "/assets/services/event-posters/process1.jpg" },
-      { step: 2, title: "Information Priority Mapping", text: "Establish visual hierarchy based on what information must be communicated at different viewing distances.", image: "/assets/services/event-posters/process2.jpg" },
-      { step: 3, title: "Attention-Commanding Design", text: "Create compositions that stand out in competitive visual environments while maintaining brand integrity.", image: "/assets/services/event-posters/process3.jpg" },
-      { step: 4, title: "Production Specification", text: "Select appropriate materials, finishes, and printing methods for desired impact and durability.", image: "/assets/services/event-posters/process4.jpg" }
+      { step: 1, title: "Context & Audience Analysis", text: "Understand posting locations, viewing conditions, target audience demographics, and movement patterns." },
+      { step: 2, title: "Information Priority Mapping", text: "Establish visual hierarchy based on what information must be communicated at different viewing distances." },
+      { step: 3, title: "Attention-Commanding Design", text: "Create compositions that stand out in competitive visual environments while maintaining brand integrity." },
+      { step: 4, title: "Production Specification", text: "Select appropriate materials, finishes, and printing methods for desired impact and durability."}
     ],
-    gallery: {
-      title: "Event Posters Portfolio",
-      images: [
-        { src: "/assets/services/event-posters/portfolio1.jpg", alt: "Music concert poster with vibrant design", caption: "Concert Promotion" },
-        { src: "/assets/services/event-posters/portfolio2.jpg", alt: "Conference poster with professional design", caption: "Conference Event" },
-        { src: "/assets/services/event-posters/portfolio3.jpg", alt: "Workshop poster with clear information hierarchy", caption: "Educational Workshop" },
-        { src: "/assets/services/event-posters/portfolio4.jpg", alt: "Festival poster with eye-catching artwork", caption: "Cultural Festival" }
-      ]
-    }
+   
   },
 
   

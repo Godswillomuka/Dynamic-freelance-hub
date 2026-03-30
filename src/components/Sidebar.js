@@ -15,40 +15,40 @@ const generateSlug = (text) => {
 const sidebarData = [
   {
     title: "Creative Graphic Design",
-    links: ["Logo Design", "Brand Identity Design", "Marketing Materials Design", "Event Posters"],
+    links: ["Logo Design", "Brand Identity Design", "Event Posters"],
   },
-  {
-    title: "Vehicle & Fleet Branding",
-    links: ["Full Vehicle Wraps", "Partial Vehicle Wraps", "Roadshow Trucks Branding", "Delivery Van Branding", "Motorcycle Branding", "Racing & Safari Rally Cars", "Reflective Vehicle Stickers"],
-  },
-  {
-    title: "Custom Merchandise & Apparel",
-    links: ["T-Shirts Printing", "Hoodies Printing", "Caps Branding", "Corporate Gifts", "Promotional Products", "Tote Bags Printing", "Mugs & Water Bottles Printing"],
-  },
-  {
-    title: "Business Identity & Stationery",
-    links: ["Business Cards", "Letterheads", "Envelopes", "Presentation Folders", "Company Profiles", "Staff ID Cards", "Business Stationery Sets"],
-  },
-  {
-    title: "Signage & Large Format Displays",
-    links: ["PVC Flex Banners", "Roll-Up Banners", "Pop-Up Banners", "Backdrops", "Billboards", "Shop Signage", "Window Graphics", "Wall Murals", "Floor Graphics", "Exhibition Stands"],
-  },
-  {
-    title: "Product Packaging & Labels",
-    links: ["Packaging Design", "Product Labels", "Custom Boxes", "Stickers & Decals", "Adhesive Solutions", "Shelf Display Packaging"],
-  },
-  {
-    title: "Marketing & Promotional Print",
-    links: ["Flyers & Brochures", "Posters", "Calendars", "Menus", "Receipt Books", "Notebooks & Diaries", "Promotional Booklets"],
-  },
-  {
-    title: "Corporate Branding & Strategy",
-    links: ["Brand Strategy Consulting", "Corporate Identity Design", "Brand Guidelines", "Wayfinding Signage", "Office Branding", "Safety Signage", "Corporate Communication Materials"],
-  },
-  {
-    title: "Web Design & Software Engineering",
-    links: ["Website Design & Development", "Website UI Layout", "Website Maintenance", "Search Engine Optimization", "Digital Marketing Collateral", "Web Applications", "Responsive Website Design"],
-  },
+  // {
+  //   title: "Vehicle & Fleet Branding",
+  //   links: ["Full Vehicle Wraps", "Partial Vehicle Wraps", "Roadshow Trucks Branding", "Delivery Van Branding", "Motorcycle Branding", "Racing & Safari Rally Cars", "Reflective Vehicle Stickers"],
+  // },
+  // {
+  //   title: "Custom Merchandise & Apparel",
+  //   links: ["T-Shirts Printing", "Hoodies Printing", "Caps Branding", "Corporate Gifts", "Promotional Products", "Tote Bags Printing", "Mugs & Water Bottles Printing"],
+  // },
+  // {
+  //   title: "Business Identity & Stationery",
+  //   links: ["Business Cards", "Letterheads", "Envelopes", "Presentation Folders", "Company Profiles", "Staff ID Cards", "Business Stationery Sets"],
+  // },
+  // {
+  //   title: "Signage & Large Format Displays",
+  //   links: ["PVC Flex Banners", "Roll-Up Banners", "Pop-Up Banners", "Backdrops", "Billboards", "Shop Signage", "Window Graphics", "Wall Murals", "Floor Graphics", "Exhibition Stands"],
+  // },
+  // {
+  //   title: "Product Packaging & Labels",
+  //   links: ["Packaging Design", "Product Labels", "Custom Boxes", "Stickers & Decals", "Adhesive Solutions", "Shelf Display Packaging"],
+  // },
+  // {
+  //   title: "Marketing & Promotional Print",
+  //   links: ["Flyers & Brochures", "Posters", "Calendars", "Menus", "Receipt Books", "Notebooks & Diaries", "Promotional Booklets"],
+  // },
+  // {
+  //   title: "Corporate Branding & Strategy",
+  //   links: ["Brand Strategy Consulting", "Corporate Identity Design", "Brand Guidelines", "Wayfinding Signage", "Office Branding", "Safety Signage", "Corporate Communication Materials"],
+  // },
+  // {
+  //   title: "Web Design & Software Engineering",
+  //   links: ["Website Design & Development", "Website UI Layout", "Website Maintenance", "Search Engine Optimization", "Digital Marketing Collateral", "Web Applications", "Responsive Website Design"],
+  // },
 ];
 
 export default function Sidebar() {

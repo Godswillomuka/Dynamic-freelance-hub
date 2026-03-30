@@ -261,38 +261,6 @@ const Service = () => {
         </div>
       </section>
 
-      {/* Gallery Section */}
-      {service.gallery && (
-        <section className="service-gallery">
-          <div className="section-header">
-            <h2>{service.gallery.title || 'Our Work'}</h2>
-            <p className="section-subtitle">See examples of our {service.title.toLowerCase()} in action</p>
-          </div>
-          <div className="gallery-grid">
-            {service.gallery.images.map((image, index) => (
-              <div key={index} className="gallery-item">
-                <div className="gallery-image-container">
-                  <img 
-                    src={image.src} 
-                    alt={image.alt}
-                    onError={(e) => {
-                      console.error(`Failed to load gallery image ${index + 1}: ${image.src}`);
-                      e.target.src = '/assets/services/default-portfolio.jpg';
-                      e.target.alt = 'Default portfolio image';
-                    }}
-                  />
-                </div>
-                {image.caption && (
-                  <div className="gallery-caption">
-                    <p>{image.caption}</p>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </section>
-      )}
-
       {/* CTA Section */}
       <section className="service-cta">
         <div className="cta-content">
